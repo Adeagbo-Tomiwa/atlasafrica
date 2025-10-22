@@ -1,0 +1,1078 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Atlas Africa — Create Captivate Convert</title>
+
+  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root{
+      --navy: #0A174E;
+      --gold: #F5D042;
+      --muted: #6B7280;
+      --accent-blue: #1fb6ff; /* used in artwork */
+    }
+
+    /* small extra styles */
+    .brand-navy { color: var(--navy); }
+    .brand-gold { color: var(--gold); }
+    .bg-gold { background-color: var(--gold); }
+    .text-muted { color: var(--muted); }
+
+    /* keep font consistent */
+    html,body{ font-family: 'Outfit', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+
+    /* Floating micro animation */
+    @keyframes floaty {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+      100% { transform: translateY(0px); }
+    }
+    .floaty { animation: floaty 3.6s ease-in-out infinite; }
+
+    /* small shadow and rounded for hero card */
+    .hero-card {
+      box-shadow: 0 18px 30px rgba(2,6,23,0.15);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    /* small rounded icon button */
+    .icon-btn {
+      width:44px;height:44px;border-radius:10px;
+      display:grid;place-items:center;
+      box-shadow: 0 6px 18px rgba(2,6,23,0.12);
+    }
+
+    /* exact hero headline line height and tight spacing */
+    .headline-tight { line-height: 0.95; letter-spacing: -0.02em; }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-black text-white border-b-2">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+       <div class="flex items-center gap-3">
+        <!-- simple triangle "logo" -->
+       <img src="./assets/images/atlasafrica-logo.png" alt="atlasafrica-logo" width="40px">
+        <span class="font-semibold text-sm">Atlas Africa</span>
+      </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-8">
+          <a class="text-sm hover:text-[#1EB4F1] transition-colors" href="#home">Home</a>
+          <a class="text-sm hover:text-[#1EB4F1] transition-colors" href="#services">Services</a>
+          <a class="text-sm hover:text-[#1EB4F1] transition-colors" href="#about">About</a>
+          <a class="text-sm hover:text-[#1EB4F1] transition-colors" href="#blog">Blog</a>
+          <a class="text-sm hover:text-[#1EB4F1] transition-colors" href="#contact">Contact</a>
+        </nav>
+
+        <!-- Desktop CTA & Mobile Menu -->
+        <div class="flex items-center gap-4">
+          <button class="hidden lg:block px-5 py-2 rounded-md bg-white text-black text-sm font-semibold hover:bg-gray-100 transition-colors">
+            Consultation
+          </button>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false" class="lg:hidden p-2 hover:bg-white/10 rounded transition-colors">
+            <svg id="menuIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round">
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <line x1="3" y1="12" x2="21" y2="12"/>
+              <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="hidden lg:hidden border-t border-white/10">
+        <nav class="py-4 space-y-1">
+          <a class="block px-4 py-3 text-sm hover:bg-white/5 rounded transition-colors" href="#home">Home</a>
+          <a class="block px-4 py-3 text-sm hover:bg-white/5 rounded transition-colors" href="#services">Services</a>
+          <a class="block px-4 py-3 text-sm hover:bg-white/5 rounded transition-colors" href="#about">About</a>
+          <a class="block px-4 py-3 text-sm hover:bg-white/5 rounded transition-colors" href="#blog">Blog</a>
+          <a class="block px-4 py-3 text-sm hover:bg-white/5 rounded transition-colors" href="#contact">Contact</a>
+          <div class="px-4 pt-2">
+            <button class="w-full px-5 py-3 rounded-md bg-white text-black text-sm font-semibold hover:bg-gray-100 transition-colors">
+              Consultation
+            </button>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <main class="max-w-7xl mx-auto px-6 py-12 lg:py-20">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <!-- LEFT: Text content -->
+      <section class="lg:col-span-7">
+        <div class="max-w-xl">
+          <!-- Headline -->
+          <h1 class="text-6xl md:text-7xl lg:text-8xl font-extrabold headline-tight">
+            <div class="brand-navy">CREATE</div>
+            <div class="brand-gold">CAPTIVATE</div>
+            <div class="brand-navy">CONVERT</div>
+          </h1>
+
+          <!-- Subtext -->
+          <p class="mt-6 text-muted text-base md:text-lg leading-7">
+            Meet Atlas Africa, the reason your brand suddenly needs a glow up.
+            Scrap out that Lagos influencer from your budget, we’re experts at fixing confidence issues. Of your brand, of course.
+          </p>
+
+          <!-- Buttons -->
+          <div class="mt-8 flex flex-wrap gap-4 items-center">
+            <button class="flex items-center gap-3 px-4 py-3 rounded-full brand-navy bg-gold hover:scale-105 transition-transform" aria-label="Start Your Story">
+              <!-- camera icon -->
+               <i class="fa fa-camera"></i>
+              <span class="text-sm font-semibold">Start Your Story</span>
+            </button>
+
+            <button class="flex items-center gap-3 px-4 py-3 rounded-full border border-gray-300 hover:scale-105 transition-transform bg-white" aria-label="View Our Work">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7L8 5z" fill="black"/></svg>
+              <span class="text-sm font-medium">Veiw Our Work</span>
+            </button>
+          </div>
+
+         <!-- Metrics Section -->
+<section class="mt-10 flex flex-col sm:flex-row sm:items-end sm:gap-12 gap-6">
+  <div class="counter-item">
+    <div class="text-3xl md:text-4xl font-extrabold brand-gold" data-target="400">0</div>
+    <div class="text-sm text-muted mt-1">Brands Elevated</div>
+  </div>
+
+  <div class="counter-item">
+    <div class="text-3xl md:text-4xl font-extrabold brand-navy" data-target="74">0</div>
+    <div class="text-sm text-muted mt-1">Countries Reached</div>
+  </div>
+
+  <div class="counter-item">
+    <div class="text-3xl md:text-4xl font-extrabold brand-navy" data-target="146">0</div>
+    <div class="text-sm text-muted mt-1">Views Generated (M+)</div>
+  </div>
+</section>
+
+<!-- Counter Animation Script -->
+<script>
+  // Function to animate counter
+  const counters = document.querySelectorAll('[data-target]');
+  const speed = 100; // Adjust for slower/faster count
+
+  const animateCounter = (counter) => {
+    const target = +counter.getAttribute('data-target');
+    const increment = target / speed;
+
+    const update = () => {
+      const value = +counter.innerText.replace('+', '');
+      if (value < target) {
+        counter.innerText = Math.ceil(value + increment) + '+';
+        requestAnimationFrame(update);
+      } else {
+        counter.innerText = target + '+';
+      }
+    };
+    update();
+  };
+
+  // Animate only when visible (Intersection Observer)
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target.querySelector('[data-target]'));
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  document.querySelectorAll('.counter-item').forEach((item) => observer.observe(item));
+</script>
+
+        </div>
+      </section>
+
+     <!-- RIGHT: Hero image / artwork -->
+<aside class="lg:col-span-5 flex justify-center lg:justify-end">
+  <div class="hero-card relative w-full max-w-sm md:max-w-md lg:max-w-lg bg-white" style="border: 2px solid black;">
+    <!-- blue patterned background with rounded corners -->
+    <div class="relative rounded-xl overflow-hidden bg-[#1EB4F1] p-6" 
+      style="background-image:
+        linear-gradient(135deg, rgba(255,255,255,0.03) 25%, transparent 25%),
+        linear-gradient(225deg, rgba(255,255,255,0.02) 25%, transparent 25%);
+        background-size:60px 60px;">
+      
+      <!-- Placeholder image (replace this with your Figma export later) -->
+      <div class="relative">
+        <img 
+          src="./assets/images/hero-image.png" 
+          alt="Atlas Africa Creative Artwork" 
+          class="w-full rounded-xl object-cover shadow-xl hover:scale-[1.02] transition-transform duration-500 ease-out"
+        />
+
+        <!-- floating camera icon (top-left) -->
+        <div class="absolute -left-4 -top-4 icon-btn bg-white floaty hover:scale-110 transition-transform duration-300" 
+          style="border: 2px solid black;">
+          <i class="fa fa-camera"></i>
+        </div>
+
+        <!-- floating phone icon (right middle) -->
+        <div class="absolute -right-3 top-10 icon-btn bg-[#F5D042] floaty hover:scale-110 transition-transform duration-300" 
+          style="border: 1px solid rgba(0,0,0,0.06);">
+         <i class="fa-solid fa-mobile-screen-button"></i>
+        </div>
+
+        <!-- floating video icon (left middle) -->
+        <div class="absolute -left-3 bottom-6 icon-btn bg-[#0A174E] floaty hover:scale-110 transition-transform duration-300" 
+          style="border: 1px solid rgba(255,255,255,0.06);">
+          <i class="fa fa-video text-white"></i>
+        </div>
+
+        <!-- floating mic icon (bottom-right) -->
+        <div class="absolute -right-3 -bottom-6 icon-btn bg-black floaty hover:scale-110 transition-transform duration-300" 
+          style="border: 1px solid rgba(255,255,255,0.06);">
+          <i class="fa fa-microphone text-white"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>
+
+    </div>
+
+<!-- SERVICES SECTION -->
+<section class="relative py-24 bg-gray-50 text-gray-800 overflow-hidden">
+  <div class="max-w-7xl mx-auto text-center">
+    <!-- Header -->
+    <div class="mb-16">
+      <div class="inline-block px-4 py-1 bg-white border border-gray-200 text-gray-700 rounded-full font-semibold text-sm mb-5 shadow-sm">
+        <i class="fa-solid fa-brush"></i> CREATIVE ARSENAL
+      </div>
+      <h2 class="text-3xl md:text-5xl font-extrabold text-[#0A174E] leading-tight">
+        SERVICES THAT <span class="text-[#F5D042]">AMPLIFY YOUR <span class="text-[#0A174E]">STORY</span></span>
+      </h2>
+      <p class="mt-5 text-gray-600 max-w-2xl mx-auto text-base md:text-lg">
+        From stunning visuals to strategic campaigns, we create content that connects your brand with audiences across Africa and beyond.
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      
+      <!-- CARD 1 -->
+      <div class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <div class="absolute -top-5 left-8 bg-[#F5D042] p-3 rounded-xl shadow-md">
+          <i class="fa-solid fa-bullhorn"></i>
+        </div>
+        <h3 class="text-lg font-bold text-left text-[#F5D042] mt-6 mb-3">Digital Marketing</h3>
+        <p class="text-gray-600 text-left text-sm leading-relaxed mb-5">
+          You’re not getting views because people scroll past mediocrity. We build communities that feel like a cult.
+        </p>
+        <ul class="text-sm text-left text-gray-700 space-y-1 mb-6">
+          <li>• Campaigns that slap</li>
+          <li>• SEO that flirts with Google</li>
+          <li>• Metrics you’ll brag about</li>
+        </ul>
+        <div >
+        <a href="#" class="text-[#F5D042] font-semibold hover:underline transition">GET STARTED →</a>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <div class="absolute -top-5 left-8 bg-[#0A174E] p-3 rounded-xl shadow-md">
+          <i class="fa-solid fa-video brand-gold"></i>
+        </div>
+        <h3 class="text-lg text-left text-left font-bold text-[#0A174E] mt-6 mb-3">Video Production</h3>
+        <p class="text-gray-600 text-left text-sm leading-relaxed mb-5">
+          When you’re funny and unforgettable, your content becomes an absolute client magnet.
+        </p>
+        <ul class="text-sm text-left text-gray-700 space-y-1 mb-6">
+          <li>• Storytelling with drama</li>
+          <li>• Copy that marries conversion</li>
+          <li>• Videos with vibe</li>
+        </ul>
+        <a href="#" class="text-[#0A174E] font-semibold hover:underline transition">GET STARTED →</a>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <div class="absolute -top-5 left-8 bg-[#F5D042] p-3 rounded-xl shadow-md">
+          <i class="fa-solid fa-code"></i>
+        </div>
+        <h3 class="text-lg text-left font-bold text-[#F5D042] mt-6 mb-3">Website Development</h3>
+        <p class="text-gray-600 text-left text-sm leading-relaxed mb-5">
+          If your website’s still stuck in 2015, we need to talk. Modern, responsive, built to convert.
+        </p>
+        <ul class="text-sm text-left text-gray-700 space-y-1 mb-6">
+          <li>• Fast, sexy, functional builds</li>
+          <li>• User experience smoother than silk</li>
+          <li>• Designed to impress (and express)</li>
+        </ul>
+        <a href="#" class="text-[#F5D042] font-semibold hover:underline transition">GET STARTED →</a>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <div class="absolute -top-5 left-8 bg-[#0A174E] p-3 rounded-xl shadow-md">
+         <i class="fa-regular fa-lightbulb brand-gold"></i>
+        </div>
+        <h3 class="text-lg text-left font-bold text-[#0A174E] mt-6 mb-3">Strategic Consulting</h3>
+        <p class="text-gray-600 text-left text-sm leading-relaxed mb-5">
+          We’ll tell you what’s wrong (nicely). Realistic, ROI-driven growth plans that work.
+        </p>
+        <ul class="text-sm text-left text-gray-700 space-y-1 mb-6">
+          <li>• Long-term gameplans</li>
+          <li>• Bold marketing blueprints</li>
+          <li>• Clarity & charisma</li>
+        </ul>
+        <a href="#" class="text-[#0A174E] font-semibold hover:underline transition">GET STARTED →</a>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <div class="absolute -top-5 left-8 bg-[#F5D042] p-3 rounded-xl shadow-md">
+          <i class="fa-solid fa-tag"></i>
+        </div>
+        <h3 class="text-lg text-left font-bold text-[#F5D042] mt-6 mb-3">Ads Specialization</h3>
+        <p class="text-gray-600 text-left text-sm leading-relaxed mb-5">
+          Every brand runs ads. Only a few trend. Let’s make yours unforgettable.
+        </p>
+        <ul class="text-sm text-left text-gray-700 space-y-1 mb-6">
+          <li>• Ideas that slap hard</li>
+          <li>• Campaigns that have people talking</li>
+          <li>• Audiences that never forget you</li>
+        </ul>
+        <a href="#" class="text-[#F5D042] font-semibold hover:underline transition">GET STARTED →</a>
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <div class="absolute -top-5 left-8 bg-[#0A174E] p-3 rounded-xl shadow-md">
+          <i class="fa-solid fa-book-open-reader brand-gold"></i>
+        </div>
+        <h3 class="text-lg text-left font-bold text-[#0A174E] mt-6 mb-3">Brand Positioning</h3>
+        <p class="text-gray-600 text-left text-sm leading-relaxed mb-5">
+          We make your brand an IG/LinkedIn accent and a Lagos influencer attitude. Obsession = inevitable.
+        </p>
+        <ul class="text-sm text-left text-gray-700 space-y-1 mb-6">
+          <li>• Brand personality building</li>
+          <li>• Niche domination strategy</li>
+          <li>• Emotional connection design</li>
+        </ul>
+        <a href="#" class="text-[#0A174E] font-semibold hover:underline transition">GET STARTED →</a>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-16">
+      <a href="#" class="inline-block bg-[#F5D042] text-[#0A174E] font-semibold px-10 py-4 rounded-full hover:bg-[#f7da62] transition-all duration-300">
+       <i class="fa-solid fa-mobile"></i>  READY TO CREATE SOMETHING AMAZING?
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS SECTION -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+    
+    <!-- Left Content -->
+    <div>
+      <!-- Label -->
+      <div class="mb-4">
+        <span class="inline-flex items-center gap-2 bg-yellow-100 text-[#0A174E] text-sm font-medium py-1.5 px-4 rounded-full">
+           <i class="fa-solid fa-book-open-reader"></i>
+          Our Story
+        </span>
+      </div>
+
+      <!-- Heading -->
+      <h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6 text-[#0A174E]">
+        HOW IT <span class="text-[#F5D042]">STARTED</span> VS <br />
+        HOW IT’S <span class="text-[#0A174E]">GOING</span>
+      </h2>
+
+      <!-- Paragraph -->
+      <p class="text-gray-700 mb-6 leading-relaxed">
+        Atlas started because two creative minds, Lekan and Olubukunmi got tired of traditional safe marketing that wasn’t yielding results. 
+        The world was evolving, and marketers had to catch up. They realized that with the Gen-Z attention span shorter than a yardstick,
+        they needed to bring in the big guns: Sales and content funnel. And now, some good years later, we can brag that if your marketing 
+        is not bold, it’s not Atlas.
+      </p>
+
+      <!-- Bullet Points -->
+      <ul class="space-y-2 text-gray-800 mb-8">
+        <li>Creative storytelling across Africa</li>
+        <li>A powerhouse of storytellers and creatives</li>
+        <li>Strategic campaigns that convert</li>
+        <li>Built with Africa’s bold dreams.</li>
+      </ul>
+
+      <!-- Button -->
+      <button class="inline-flex items-center gap-2 bg-yellow-100 hover:bg-yellow-200 transition text-[#0A174E] font-semibold py-2.5 px-5 rounded-full shadow-sm">
+       <i class="fa-solid fa-rocket"></i>
+        Start Your Journey
+      </button>
+    </div>
+
+    <!-- Right: Image Collage -->
+    <div class="grid grid-cols-2 gap-4 relative">
+      <!-- Top Left -->
+      <div class="relative rounded-2xl overflow-hidden group">
+        <img src="./assets/images/process1.png" alt="Atlas Team" class="w-full h-64 object-cover rounded-2xl transform group-hover:scale-105 transition duration-700">
+        <span class="absolute -top-3 -left-3 bg-yellow-200 p-2 rounded-lg shadow-md">
+         <i class="fa-solid fa-camera-retro"></i>
+        </span>
+      </div>
+
+      <!-- Top Right -->
+      <div class="rounded-2xl overflow-hidden">
+        <img src="./assets/images/process2.png" alt="Creative Shot" class="w-full h-64 object-cover rounded-2xl">
+      </div>
+
+      <!-- Bottom Left -->
+      <div class="rounded-2xl overflow-hidden">
+        <img src="./assets/images/process3.png" alt="Story Concept" class="w-full h-64 object-cover rounded-2xl">
+      </div>
+
+      <!-- Bottom Right -->
+      <div class="relative rounded-2xl overflow-hidden group">
+        <img src="./assets/images/process4.png" alt="Atlas Culture" class="w-full h-64 object-cover rounded-2xl transform group-hover:scale-105 transition duration-700">
+        <span class="absolute bottom-3 right-3 bg-[#0A174E] text-white p-2 rounded-lg shadow-md">
+          <i class="fa-solid fa-video"></i>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANIMATIONS -->
+<style>
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float-slow {
+  animation: float 7s ease-in-out infinite;
+}
+.animate-float-fast {
+  animation: float 5s ease-in-out infinite;
+}
+.animate-bob-slow {
+  animation: bob 8s ease-in-out infinite;
+}
+.animate-bob-medium {
+  animation: bob 6s ease-in-out infinite;
+}
+.animate-bob-fast {
+  animation: bob 4s ease-in-out infinite;
+}
+</style>
+
+ <!-- PORTFOLIO SECTION -->
+<section class="py-20 bg-gray-50 text-center">
+  <div class="container mx-auto">
+    <!-- Label -->
+    <div class="mb-4">
+      <span class="text-sm font-medium bg-gray-200 text-gray-800 py-1 px-3 rounded-full">Our Portfolio</span>
+    </div>
+
+    <!-- Heading -->
+    <h2 class="text-4xl md:text-5xl font-bold leading-tight text-[#0A174E] mb-4">
+      Some call it a portfolio <br />
+      <span class="text-[#F5D042]">We call it evidence</span>
+    </h2>
+
+    <!-- Subtext -->
+    <p class="max-w-2xl mx-auto text-gray-600 mb-12">
+      From automobile giants to loan companies, we’ve worked across all industries you can think of,
+      turning African brands into full-blown main characters. Looking for receipts? Scroll down a bit.
+    </p>
+
+    <!-- Portfolio Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- CARD 1 -->
+      <div class="bg-white shadow-sm hover:shadow-lg transition-all rounded-2xl overflow-hidden">
+        <div class="relative">
+          <img src="./assets/images/portfrolio1.png" alt="Fintech Project" class="w-full h-56 object-cover">
+          <span class="absolute top-3 left-3 bg-orange-500 text-white text-xs font-semibold px-3 py-1 rounded-full">Fintech</span>
+        </div>
+        <div class="p-6 text-left">
+          <h3 class="font-semibold text-lg mb-2 text-gray-900">SafariPay Financial Services</h3>
+          <p class="text-sm text-gray-600 mb-4">
+            Complete rebrand and digital marketing strategy for East Africa's leading mobile payment platform.
+          </p>
+          <p class="text-sm font-semibold text-gray-800 mb-3">300% increase in user acquisition</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs bg-gray-100 px-3 py-1 rounded-full">Brand Strategy</span>
+            <span class="text-xs bg-gray-100 px-3 py-1 rounded-full">Digital Marketing</span>
+            <span class="text-xs bg-gray-100 px-3 py-1 rounded-full">UI/UX</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="bg-white shadow-sm hover:shadow-lg transition-all rounded-2xl overflow-hidden">
+        <div class="relative">
+          <img src="./assets/images/portfrolio2.png" alt="Fashion Project" class="w-full h-56 object-cover">
+          <span class="absolute top-3 left-3 bg-blue-400 text-white text-xs font-semibold px-3 py-1 rounded-full">Fashion</span>
+        </div>
+        <div class="p-6 text-left">
+          <h3 class="font-semibold text-lg mb-2 text-gray-900">SafariPay Financial Services</h3>
+          <p class="text-sm text-gray-600 mb-4">
+            Complete rebrand and digital marketing strategy for East Africa's leading mobile payment platform.
+          </p>
+          <p class="text-sm font-semibold text-gray-800 mb-3">300% increase in user acquisition</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs bg-gray-100 px-3 py-1 rounded-full">Brand Strategy</span>
+            <span class="text-xs bg-gray-100 px-3 py-1 rounded-full">Digital Marketing</span>
+            <span class="text-xs bg-gray-100 px-3 py-1 rounded-full">UI/UX</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="bg-white shadow-sm hover:shadow-lg transition-all rounded-2xl overflow-hidden">
+        <div class="relative">
+          <img src="./assets/images/portfrolio3.png" alt="Agriculture Project" class="w-full h-56 object-cover">
+          <span class="absolute top-3 left-3 bg-yellow-500 text-white text-xs font-semibold px-3 py-1 rounded-full">Agriculture</span>
+        </div>
+        <div class="p-6 text-left">
+          <h3 class="font-semibold text-lg mb-2 text-gray-900">SafariPay Financial Services</h3>
+          <p class="text-sm text-gray-600 mb-4">
+            Complete rebrand and digital marketing strategy for East Africa's leading mobile payment platform.
+          </p>
+          <p class="text-sm font-semibold text-gray-800 mb-3">300% increase in user acquisition</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs bg-gray-100 px-3 py-1 rounded-full">Brand Strategy</span>
+            <span class="text-xs bg-gray-100 px-3 py-1 rounded-full">Digital Marketing</span>
+            <span class="text-xs bg-gray-100 px-3 py-1 rounded-full">UI/UX</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="bg-white shadow-sm hover:shadow-lg transition-all rounded-2xl overflow-hidden">
+        <div class="relative">
+          <img src="./assets/images/portfrolio4.png" alt="Technology Project" class="w-full h-56 object-cover">
+          <span class="absolute top-3 left-3 bg-black text-white text-xs font-semibold px-3 py-1 rounded-full">Technology</span>
+        </div>
+        <div class="p-6 text-left">
+          <h3 class="font-semibold text-lg mb-2 text-gray-900">SafariPay Financial Services</h3>
+          <p class="text-sm text-gray-600 mb-4">
+            Complete rebrand and digital marketing strategy for East Africa's leading mobile payment platform.
+          </p>
+          <p class="text-sm font-semibold text-gray-800 mb-3">300% increase in user acquisition</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs bg-gray-100 px-3 py-1 rounded-full">Brand Strategy</span>
+            <span class="text-xs bg-gray-100 px-3 py-1 rounded-full">Digital Marketing</span>
+            <span class="text-xs bg-gray-100 px-3 py-1 rounded-full">UI/UX</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="bg-white shadow-sm hover:shadow-lg transition-all rounded-2xl overflow-hidden">
+        <div class="relative">
+          <img src="./assets/images/portfrolio5.png" alt="Tourism Project" class="w-full h-56 object-cover">
+          <span class="absolute top-3 left-3 bg-yellow-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Tourism</span>
+        </div>
+        <div class="p-6 text-left">
+          <h3 class="font-semibold text-lg mb-2 text-gray-900">SafariPay Financial Services</h3>
+          <p class="text-sm text-gray-600 mb-4">
+            Complete rebrand and digital marketing strategy for East Africa's leading mobile payment platform.
+          </p>
+          <p class="text-sm font-semibold text-gray-800 mb-3">300% increase in user acquisition</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs bg-gray-100 px-3 py-1 rounded-full">Brand Strategy</span>
+            <span class="text-xs bg-gray-100 px-3 py-1 rounded-full">Digital Marketing</span>
+            <span class="text-xs bg-gray-100 px-3 py-1 rounded-full">UI/UX</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="bg-white shadow-sm hover:shadow-lg transition-all rounded-2xl overflow-hidden">
+        <div class="relative">
+          <img src="./assets/images/portfrolio6.png" alt="Finance Project" class="w-full h-56 object-cover">
+          <span class="absolute top-3 left-3 bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Finance</span>
+        </div>
+        <div class="p-6 text-left">
+          <h3 class="font-semibold text-lg mb-2 text-gray-900">SafariPay Financial Services</h3>
+          <p class="text-sm text-gray-600 mb-4">
+            Complete rebrand and digital marketing strategy for East Africa's leading mobile payment platform.
+          </p>
+          <p class="text-sm font-semibold text-gray-800 mb-3">300% increase in user acquisition</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs bg-gray-100 px-3 py-1 rounded-full">Brand Strategy</span>
+            <span class="text-xs bg-gray-100 px-3 py-1 rounded-full">Digital Marketing</span>
+            <span class="text-xs bg-gray-100 px-3 py-1 rounded-full">UI/UX</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <!-- TEAM SECTION -->
+    <section class="mt-24 lg:mt-32 mb-20">
+      <div class="text-center mb-4">
+        <button class="px-5 py-2 rounded-full border-2 border-gray-300 text-sm font-semibold brand-navy hover:border-navy transition-colors">
+          Meet The Team
+        </button>
+      </div>
+
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
+          <span class="brand-navy">The </span>
+          <span class="brand-gold">Troublemakers</span>
+          <span class="brand-navy"> Behind</span><br>
+          <span class="brand-navy">Your Favorite Campaigns</span>
+        </h2>
+        <p class="text-muted text-base leading-relaxed mt-4">
+          Ever wondered what happens when talent, caffeine, and a sprinkle of strategic delusion collide? You get the Atlas team, each member wired with originality and maybe an unhealthy obsession with excellence. You're welcome, btw.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Team Member 1 -->
+        <div class="group">
+          <div class="relative overflow-hidden rounded-2xl bg-white border border-gray-200 hover:shadow-xl transition-all duration-300">
+            <div class="aspect-square bg-gradient-to-br from-green-400 via-emerald-500 to-teal-600 flex items-center justify-center relative">
+              <!-- Decorative circles -->
+              <div class="absolute top-4 left-4 w-12 h-12 rounded-full bg-gray-700 opacity-60"></div>
+              <div class="absolute top-6 left-6 w-8 h-8 rounded-full bg-gray-800 opacity-70"></div>
+              <i class="fa fa-user text-white text-6xl relative z-10"></i>
+            </div>
+            <div class="p-6 bg-gray-100">
+              <h3 class="font-bold brand-navy text-lg mb-1">Team Member Name</h3>
+              <p class="text-sm text-muted">Creative Director</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="group">
+          <div class="relative overflow-hidden rounded-2xl bg-white border border-gray-200 hover:shadow-xl transition-all duration-300">
+            <div class="aspect-square bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600 flex items-center justify-center relative">
+              <div class="absolute top-8 right-8 w-16 h-16 rounded-full bg-yellow-400 opacity-70"></div>
+              <div class="absolute bottom-6 left-6 w-10 h-10 rounded-full bg-gray-700 opacity-60"></div>
+              <i class="fa fa-user text-white text-6xl relative z-10"></i>
+            </div>
+            <div class="p-6 bg-gray-100">
+              <h3 class="font-bold brand-navy text-lg mb-1">Team Member Name</h3>
+              <p class="text-sm text-muted">Brand Strategist</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="group">
+          <div class="relative overflow-hidden rounded-2xl bg-white border border-gray-200 hover:shadow-xl transition-all duration-300">
+            <div class="aspect-square bg-gradient-to-br from-fuchsia-500 via-pink-500 to-rose-600 flex items-center justify-center relative">
+              <div class="absolute top-5 right-5 w-14 h-14 rounded-full bg-purple-600 opacity-60"></div>
+              <div class="absolute bottom-8 right-8 w-12 h-12 rounded-full bg-green-400 opacity-50"></div>
+              <i class="fa fa-user text-white text-6xl relative z-10"></i>
+            </div>
+            <div class="p-6 bg-gray-100">
+              <h3 class="font-bold brand-navy text-lg mb-1">Team Member Name</h3>
+              <p class="text-sm text-muted">Lead Designer</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 4 -->
+        <div class="group">
+          <div class="relative overflow-hidden rounded-2xl bg-white border border-gray-200 hover:shadow-xl transition-all duration-300">
+            <div class="aspect-square bg-gradient-to-br from-cyan-400 via-teal-500 to-blue-600 flex items-center justify-center relative">
+              <div class="absolute bottom-10 right-10 w-16 h-16 rounded-full bg-pink-500 opacity-60"></div>
+              <div class="absolute top-6 left-8 w-10 h-10 rounded-full bg-gray-700 opacity-60"></div>
+              <i class="fa fa-user text-white text-6xl relative z-10"></i>
+            </div>
+            <div class="p-6 bg-gray-100">
+              <h3 class="font-bold brand-navy text-lg mb-1">Team Member Name</h3>
+              <p class="text-sm text-muted">Content Producer</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 5 -->
+        <div class="group">
+          <div class="relative overflow-hidden rounded-2xl bg-white border border-gray-200 hover:shadow-xl transition-all duration-300">
+            <div class="aspect-square bg-gradient-to-br from-blue-500 via-cyan-500 to-teal-500 flex items-center justify-center relative">
+              <div class="absolute top-8 right-6 w-14 h-14 rounded-full bg-pink-500 opacity-70"></div>
+              <div class="absolute bottom-12 left-8 w-12 h-12 rounded-full bg-gray-800 opacity-60"></div>
+              <i class="fa fa-user text-white text-6xl relative z-10"></i>
+            </div>
+            <div class="p-6 bg-gray-100">
+              <h3 class="font-bold brand-navy text-lg mb-1">Team Member Name</h3>
+              <p class="text-sm text-muted">Digital Marketer</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 6 -->
+        <div class="group">
+          <div class="relative overflow-hidden rounded-2xl bg-white border border-gray-200 hover:shadow-xl transition-all duration-300">
+            <div class="aspect-square bg-gradient-to-br from-green-500 via-emerald-600 to-teal-700 flex items-center justify-center relative">
+              <div class="absolute top-6 left-6 w-16 h-16 rounded-full bg-gray-700 opacity-60"></div>
+              <div class="absolute bottom-6 right-8 w-12 h-12 rounded-full bg-yellow-400 opacity-60"></div>
+              <i class="fa fa-user text-white text-6xl relative z-10"></i>
+            </div>
+            <div class="p-6 bg-gray-100">
+              <h3 class="font-bold brand-navy text-lg mb-1">Team Member Name</h3>
+              <p class="text-sm text-muted">Video Producer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- CONTACT SECTION -->
+  <section class="bg-gray-50 py-20">
+    <div class="container mx-auto">
+      <div class="text-center mb-4">
+        <button class="px-5 py-2 rounded-full border-2 border-gray-300 text-sm font-semibold brand-navy hover:border-navy transition-colors">
+          Get In Touch
+        </button>
+      </div>
+
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
+          <span class="brand-navy">Ready To Enter Your</span><br>
+          <span class="brand-gold">Rebrand</span>
+          <span class="brand-navy"> Era?</span>
+        </h2>
+        <p class="text-muted text-base leading-relaxed mt-4">
+          Let's be honest, your brand has too much potential to be mid. It's time to give your visuals, strategy, and story the audacity they deserve. Book your glow-up, let's cause a scene.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <!-- Contact Form -->
+        <div class="lg:col-span-2">
+          <div class="bg-white rounded-2xl border border-gray-200 p-8">
+            <h3 class="text-xl font-bold brand-navy mb-2">Start Your Journey</h3>
+            <p class="text-sm text-muted mb-6">
+              Tell us about your business and marketing goals. We'll get back to you in <24hours.
+            </p>
+
+            <form class="space-y-5">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-semibold brand-navy mb-2">Full Name</label>
+                  <input 
+                    type="text" 
+                    placeholder="your full name" 
+                    class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-navy focus:border-transparent text-sm"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold brand-navy mb-2">Email Address</label>
+                  <input 
+                    type="email" 
+                    placeholder="your@email.com" 
+                    class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-navy focus:border-transparent text-sm"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold brand-navy mb-2">Company Name</label>
+                <input 
+                  type="text" 
+                  placeholder="your company name" 
+                  class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-navy focus:border-transparent text-sm"
+                />
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold brand-navy mb-2">Tell Us About Your Project</label>
+                <textarea 
+                  rows="5" 
+                  placeholder="Describe your business, target market, and marketing goals..." 
+                  class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-navy focus:border-transparent text-sm resize-none"
+                ></textarea>
+              </div>
+
+              <button 
+                type="submit" 
+                class="w-full brand-navy text-white py-4 rounded-xl font-bold text-sm hover:bg-opacity-90 transition-all" style="background-color: #0A174E; color: #fff;"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Contact Info Cards -->
+        <div class="space-y-6">
+          <!-- Location Card -->
+          <div class="bg-white rounded-2xl border border-gray-200 p-6">
+            <div class="flex items-start gap-3 mb-3">
+              <i class="fa fa-map-marker-alt brand-navy text-lg mt-1"></i>
+              <h4 class="font-bold brand-navy text-base">Lagos, Nigeria</h4>
+            </div>
+            <div class="space-y-2 ml-8">
+              <div class="flex items-center gap-2 text-sm text-muted">
+                <i class="fa fa-phone w-4"></i>
+                <span>+234 1 234 5678</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-muted">
+                <i class="fa fa-envelope w-4"></i>
+                <span>lagos@atlasafrica.com</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact & Support Card -->
+          <div class="bg-[#F5F3E8] rounded-2xl border border-gray-300 p-6">
+            <div class="flex items-start gap-3 mb-3">
+              <i class="fa fa-headset brand-navy text-lg mt-1"></i>
+              <h4 class="font-bold brand-navy text-base">Contact & Support</h4>
+            </div>
+            <div class="space-y-2 ml-8">
+              <div class="flex items-center gap-2 text-sm text-muted">
+                <i class="fa fa-phone w-4"></i>
+                <span>+234 1 234 5678</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-muted">
+                <i class="fa fa-envelope w-4"></i>
+                <span>lagos@atlasafrica.com</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Partnership Card -->
+          <div class="bg-[#6B7C93] rounded-2xl border border-gray-400 p-6 text-white">
+            <div class="flex items-start gap-3 mb-3">
+              <i class="fa fa-handshake text-lg mt-1"></i>
+              <h4 class="font-bold text-base">Partnership & Brand</h4>
+            </div>
+            <div class="space-y-2 ml-8">
+              <div class="flex items-center gap-2 text-sm opacity-90">
+                <i class="fa fa-phone w-4"></i>
+                <span>+234 1 234 5678</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm opacity-90">
+                <i class="fa fa-envelope w-4"></i>
+                <span>lagos@atlasafrica.com</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+    <!-- NEWSLETTER SECTION -->
+  <section class="bg-gradient-to-br from-gray-100 to-gray-200 py-16">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="mb-4">
+        <button style="background-color: #0A174E; color: #fff;" class="px-5 py-2 rounded-full bg-navy text-white text-sm font-semibold hover:bg-opacity-90 transition-colors">
+          Join Our Creative Community
+        </button>
+      </div>
+
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
+        <span class="brand-gold">GET </span>
+        <span class="brand-navy">CREATIVE </span>
+        <span class="text-gray-300">INSPIRATION</span>
+      </h2>
+
+      <p class="text-muted text-base mb-8 max-w-2xl mx-auto">
+        Receive <strong>behind-the-scenes content</strong>, creative tips, and <strong>portfolio updates</strong> that inspire your next big project.
+      </p>
+
+      <form class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+        <input 
+          type="email" 
+          placeholder="enter your email address" 
+          class="flex-1 px-5 py-4 rounded-full bg-white/80 backdrop-blur border border-gray-300 focus:outline-none focus:ring-2 focus:ring-navy focus:border-transparent text-sm"
+        />
+        <button 
+          type="submit" 
+          class="px-8 py-4 rounded-full bg-gold brand-navy font-bold text-sm hover:scale-105 transition-transform whitespace-nowrap"
+        >
+          Subscribe
+        </button>
+      </form>
+    </div>
+  </section>
+
+   <!-- Footer -->
+  <footer class="bg-[#2D3338] text-white py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+        <!-- Brand Column -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div style="background-color: #0A174E;" class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center">
+              <img src="./assets/images/atlasafrica-logo.png" alt="Atlas Africa" width="32px">
+            </div>
+            <div>
+              <div class="font-bold text-lg">ATLAS <span class="brand-navy">AFRICA</span></div>
+              <div class="text-xs text-gray-400">CREATING • MARKETING • MEDIA</div>
+            </div>
+          </div>
+          
+          <p class="text-sm text-gray-300 leading-relaxed mb-6">
+            Your <span class="brand-gold font-semibold">creative partner</span> for visual storytelling that amplifies African brands on the <span class="font-semibold">global stage</span>. From concept to creation, we bring your vision to life.
+          </p>
+
+          <div class="space-y-3">
+            <div class="flex items-center gap-3 text-sm">
+              <div class="w-8 h-8 rounded-lg bg-[#F5D042] flex items-center justify-center">
+                <i class="fa fa-map-marker-alt text-[#2D3338]"></i>
+              </div>
+              <span class="text-gray-300">Lagos, Nigeria</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm">
+              <div class="w-8 h-8 rounded-lg bg-[#F5D042] flex items-center justify-center">
+                <i class="fa fa-phone text-[#2D3338]"></i>
+              </div>
+              <span class="text-gray-300">+234 1 234 5678</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm">
+              <div class="w-8 h-8 rounded-lg bg-[#F5D042] flex items-center justify-center">
+                <i class="fa fa-envelope text-[#2D3338]"></i>
+              </div>
+              <span class="text-gray-300">lagos@atlasafrica.com</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services Column -->
+        <div>
+          <h4 class="font-bold text-base mb-4">SERVICES</h4>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li><a href="#" class="hover:text-gold transition-colors">Digital Marketing</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Video Production</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Website Development</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Strategic Consulting</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Ads Specialization</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Brand Positioning</a></li>
+          </ul>
+        </div>
+
+        <!-- Company Column -->
+        <div>
+          <h4 class="font-bold text-base mb-4">COMPANY</h4>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li><a href="#" class="hover:text-gold transition-colors">Digital Marketing</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Video Production</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Website Development</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Strategic Consulting</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Ads Specialization</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Brand Positioning</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources Column -->
+        <div>
+          <h4 class="font-bold text-base mb-4">RESOURCES</h4>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li><a href="#" class="hover:text-gold transition-colors">Digital Marketing</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Video Production</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Website Development</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Strategic Consulting</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Ads Specialization</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Brand Positioning</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="border-t border-gray-600 pt-6">
+        <div class="flex flex-col md:flex-row md:justify-between items-center gap-4">
+          <div class="text-sm text-gray-400">
+            © 2025 Atlas Africa - <span class="text-gold">Creative Excellence</span> | 
+            <a href="#" class="hover:text-gold transition-colors ml-1">Privacy Policy</a> | 
+            <a href="#" class="hover:text-gold transition-colors ml-1">Terms of Service</a>
+          </div>
+          
+          <div class="flex items-center gap-3">
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-600 hover:bg-gold hover:text-navy transition-all flex items-center justify-center" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-600 hover:bg-gold hover:text-navy transition-all flex items-center justify-center" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-600 hover:bg-gold hover:text-navy transition-all flex items-center justify-center" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-600 hover:bg-gold hover:text-navy transition-all flex items-center justify-center" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-600 hover:bg-gold hover:text-navy transition-all flex items-center justify-center" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS for mobile menu & small interactions -->
+  <script>
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    mobileBtn.addEventListener('click', () => {
+      const showing = mobileMenu.classList.toggle('hidden');
+      // toggle aria-expanded for accessibility
+      const expanded = !mobileMenu.classList.contains('hidden');
+      mobileBtn.setAttribute('aria-expanded', expanded);
+    });
+
+    // small intersection observer to add gentle fade-in on hero components (progressive reveal)
+    document.addEventListener('DOMContentLoaded', () => {
+      const targets = document.querySelectorAll('main .hero-card, main section');
+      targets.forEach(t => {
+        t.style.opacity = 0;
+        t.style.transform = 'translateY(8px)';
+        t.style.transition = 'opacity .6s ease, transform .6s ease';
+      });
+
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.style.opacity = 1;
+            e.target.style.transform = 'translateY(0)';
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      targets.forEach(t => io.observe(t));
+    });
+  </script>
+</body>
+</html>

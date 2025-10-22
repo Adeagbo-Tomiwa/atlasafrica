@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Atlas Africa — Prototype (Hero + Nav)</title>
+
+    <!-- Google Font (Outfit) to match the Figma feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Play CDN for quick prototyping (replace with built CSS for production) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Tailwind config overrides (fonts/colors) — reading from Figma-like tokens
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Outfit', 'ui-sans-serif', 'system-ui'],
+            },
+            colors: {
+              atlasBlue: '#0A174E',
+              atlasGold: '#F5D042',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(12px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' }
+              }
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 600ms ease-out both'
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      /* small helper to improve focus outlines for keyboard users */
+      :focus{outline: none}
+      .focus-ring:focus{outline: 3px solid rgba(10,23,78,0.15); outline-offset: 3px}
+    </style>
+  </head>
+
+  <body class="antialiased text-slate-900 bg-white font-sans">
+
+    <!-- Header / Nav -->
+    <header class="fixed inset-x-0 top-0 z-40 bg-black backdrop-blur-md border-b">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+
+          <!-- Logo -->
+          <a href="#" class="flex items-center gap-3" aria-label="Atlas Africa home">
+            <img src="./assets/images/atlasafrica.jpeg" alt="atlasafrica-logo" class="w-10">
+          </a>
+
+          <!-- Desktop Nav -->
+          <nav class="hidden md:flex items-center gap-6 ml-6">
+            <a href="#" class="text-sm font-medium text-white hover:text-atlasBlue">Home</a>
+            <a href="#services" class="text-sm font-medium text-white hover:text-atlasBlue">Services</a>
+            <a href="#about" class="text-sm font-medium text-white hover:text-atlasBlue">About</a>
+            <a href="#blog" class="text-sm font-medium text-white hover:text-atlasBlue">Blog</a>
+            <a href="#contact" class="text-sm font-medium text-white hover:text-atlasBlue">Contact</a>
+          </nav>
+
+          <!-- Actions -->
+          <div class="hidden md:flex items-center gap-3">
+            <a href="#" class="text-sm font-medium text-white hover:text-atlasBlue">Sign in</a>
+            <a href="#" class="inline-flex items-center gap-2 rounded-md px-4 py-2 bg-atlasBlue text-white text-sm font-semibold shadow hover:opacity-95 focus-ring" role="button">Get Started</a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+            <button id="menu-btn" aria-expanded="false" aria-controls="mobile-menu" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-slate-100 focus-ring" aria-label="Open main menu">
+              <svg id="icon-open" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+              <svg id="icon-close" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Mobile menu (slide-down) -->
+      <div id="mobile-menu" class="md:hidden" hidden>
+        <div class="pt-2 pb-6 space-y-1 px-4">
+          <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-atlasBlue bg-atlasBlue/5">Home</a>
+          <a href="#features" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-slate-50">Features</a>
+          <a href="#explore" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-slate-50">Explore</a>
+          <a href="#pricing" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-slate-50">Pricing</a>
+          <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-slate-50">Contact</a>
+
+          <div class="mt-3 px-3">
+            <a href="#" class="block w-full text-center rounded-md px-4 py-2 bg-atlasBlue text-white font-semibold">Get Started</a>
+          </div>
+        </div>
+      </div>
+
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="pt-24">
+
+      <!-- HERO -->
+      <section class="relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
+            <!-- Left: copy -->
+            <div class="lg:col-span-6">
+              <div class="max-w-xl">
+                <p class="inline-block text-sm font-semibold uppercase tracking-wide text-atlasBlue mb-3">Discover Africa</p>
+                <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight text-slate-900 mb-4">Atlas Africa — Explore rich stories, places, and data across the continent</h1>
+                <p class="text-lg text-slate-600 mb-6">A curated interactive map and travel research platform built to showcase Africa’s diversity, with insightful datasets, cultural highlights, and travel-ready guides.</p>
+
+                <div class="flex flex-col sm:flex-row gap-3">
+                  <a href="#explore" class="inline-flex items-center justify-center rounded-md px-5 py-3 bg-atlasBlue text-white font-semibold shadow hover:opacity-95 focus-ring">Explore Atlas</a>
+                  <a href="#how" class="inline-flex items-center justify-center rounded-md px-5 py-3 border border-slate-200 text-white bg-white hover:bg-slate-50">How it works</a>
+                </div>
+
+                <!-- Trust badges / quick stats -->
+                <div class="mt-8 grid grid-cols-3 gap-4 sm:grid-cols-3 md:grid-cols-3">
+                  <div class="text-center">
+                    <div class="text-2xl font-bold">54</div>
+                    <div class="text-xs text-slate-500">Countries</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-2xl font-bold">1.2k</div>
+                    <div class="text-xs text-slate-500">Places</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-2xl font-bold">25k</div>
+                    <div class="text-xs text-slate-500">Profiles</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Right: mockup / image -->
+            <div class="lg:col-span-6 lg:order-last order-first">
+              <div class="relative mx-auto max-w-md lg:max-w-none">
+                <!-- Decorative gradient blob -->
+                <div class="absolute -left-10 -top-10 w-64 h-64 rounded-full bg-gradient-to-tr from-atlasBlue/40 to-atlasGold/40 blur-3xl opacity-80 -z-10"></div>
+
+                <!-- Replace this image with your exported Figma hero mockup -->
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Atlas mockup" class="w-full shadow-2xl rounded-2xl">
+
+                <!-- small caption / feature card -->
+                <div class="mt-4 bg-white/90 border border-slate-100 rounded-xl p-4 shadow-sm">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <div class="text-sm font-semibold">Lagos — Lagos Island</div>
+                      <div class="text-xs text-slate-500">Top cultural hub • 4.8 rating</div>
+                    </div>
+                    <div class="text-sm font-bold text-atlasBlue">View</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Wave / separator -->
+        <div class="mt-12">
+          <svg viewBox="0 0 1440 60" class="w-full -mb-1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,0 C360,60 1080,0 1440,60 L1440 60 L0 60 Z" fill="#ffffff" />
+          </svg>
+        </div>
+
+      </section>
+
+      <!-- tiny placeholder section so links have targets -->
+      <section id="features" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-2xl font-bold mb-4">Features</h2>
+          <p class="text-slate-600 max-w-2xl">(Placeholder) — I can continue converting the next sections from your Figma: features, map, guides, footer.</p>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="bg-slate-50 border-t border-slate-100 py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-slate-600">
+        © Atlas Africa — Built with ❤️
+      </div>
+    </footer>
+
+
+    <!-- Interactivity scripts (move to /js/main.js in production) -->
+    <script>
+      // Mobile menu toggle
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const iconOpen = document.getElementById('icon-open');
+      const iconClose = document.getElementById('icon-close');
+
+      menuBtn.addEventListener('click', () => {
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true' || false;
+        menuBtn.setAttribute('aria-expanded', !expanded);
+        if (mobileMenu.hidden) {
+          mobileMenu.hidden = false;
+          iconOpen.classList.add('hidden');
+          iconClose.classList.remove('hidden');
+        } else {
+          mobileMenu.hidden = true;
+          iconOpen.classList.remove('hidden');
+          iconClose.classList.add('hidden');
+        }
+      });
+
+      // Animate elements as they appear using IntersectionObserver
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-in-up');
+            observer.unobserve(entry.target);
+          }
+        })
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll('h1, p, .text-2xl, img, .grid > div').forEach(el => {
+        el.classList.add('opacity-0');
+        observer.observe(el);
+      });
+
+      // keyboard accessibility: hide mobile menu on Escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !mobileMenu.hidden) {
+          mobileMenu.hidden = true;
+          iconOpen.classList.remove('hidden');
+          iconClose.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Simple smooth-scroll for internal anchors
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const href = this.getAttribute('href');
+          if (href.length > 1) {
+            e.preventDefault();
+            const el = document.querySelector(href);
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+    </script>
+
+  </body>
+</html>
