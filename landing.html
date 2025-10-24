@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Basic Meta -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Atlas Africa — Empowering Growth Across the Continent</title>
+  <meta name="description" content="Atlas Africa is building transformative opportunities across industries — connecting talent, innovation, and growth across the African continent. Coming soon.">
+  <meta name="keywords" content="Atlas Africa, Africa Development, Innovation, Business Growth, Entrepreneurship, Economic Empowerment, African Projects, Coming Soon">
+  <meta name="author" content="Atlas Africa Team">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://atlasafrica.org/">
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow">
+
+  <!-- Favicon & App Icons -->
+  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+  <link rel="manifest" href="./assets/apple-touch-icon.png">
+
+  <!-- Open Graph (Facebook, LinkedIn) -->
+  <meta property="og:title" content="Atlas Africa — Empowering Growth Across the Continent">
+  <meta property="og:description" content="Atlas Africa is creating opportunities, driving innovation, and empowering growth across Africa. Stay tuned for our launch.">
+  <meta property="og:image" content="https://atlasafrica.org/assets/images/atlasafrica.jpeg">
+  <meta property="og:url" content="https://atlasafrica.org/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Atlas Africa">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Atlas Africa — Empowering Growth Across the Continent">
+  <meta name="twitter:description" content="Atlas Africa is building transformative opportunities across industries — connecting talent, innovation, and growth across Africa.">
+  <meta name="twitter:image" content="https://atlasafrica.org/assets/teams/IMG_5194.JPG">
+  <meta name="twitter:site" content="@atlasafrica">
+
+  <!-- JSON-LD Structured Data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Atlas Africa",
+    "alternateName": "AtlasAfrica",
+    "url": "https://atlasafrica.org",
+    "logo": "https://atlasafrica.org/assets/images/atlasafrica.jpeg",
+    "foundingDate": "2025",
+    "description": "Atlas Africa is an emerging organization dedicated to empowering African growth through innovation, entrepreneurship, and collaboration across industries.",
+    "sameAs": [
+      "https://www.facebook.com/atlasafrica",
+      "https://www.linkedin.com/company/atlasafrica/",
+      "https://x.com/AtlasAfrica_?t=7cOXHAitfBsxgTstjqB6XQ&s=09",
+      "https://www.instagram.com/atlas_africa_?igsh=YnAzcmx6djZocjRo"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "info@atlasafrica.org",
+      "contactType": "Customer Support",
+      "availableLanguage": ["English"]
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "NG",
+      "addressRegion": "Lagos",
+      "addressLocality": "Ikeja"
+    }
+  }
+  </script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root{
+      --navy: #0A174E;
+      --gold: #F5D042;
+      --muted: #6B7280;
+    }
+
+    html,body {
+      font-family: 'Outfit', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background-color: #fff;
+    }
+
+    .brand-navy { color: var(--navy); }
+    .brand-gold { color: var(--gold); }
+    .bg-gold { background: var(--gold); }
+    .text-muted { color: var(--muted); }
+
+    .focus-ring {
+      box-shadow: 0 6px 24px rgba(10,23,78,0.08), 0 0 0 4px rgba(245,208,66,0.08);
+      outline: none;
+    }
+
+    @keyframes floatA { 0% { transform: translateY(0); } 50% { transform: translateY(-8px); } 100% { transform: translateY(0);} }
+    @keyframes floatB { 0% { transform: translateY(0); } 50% { transform: translateY(-6px); } 100% { transform: translateY(0);} }
+    .float-1 { animation: floatA 6s ease-in-out infinite; }
+    .float-2 { animation: floatB 5s ease-in-out infinite; }
+
+    .gold-glow {
+      box-shadow: 0 6px 28px rgba(245,208,66,0.12), 0 2px 6px rgba(10,23,78,0.06);
+    }
+
+    .pattern-bg {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Cdefs%3E%3Cpattern id='p' width='80' height='80' patternUnits='userSpaceOnUse'%3E%3Crect width='80' height='80' fill='%23fff' opacity='0'/%3E%3Cpath d='M0 40h80M40 0v80' stroke='%230a174e' stroke-opacity='0.04' stroke-width='6'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23p)'/%3E%3C/svg%3E");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .count-digit { font-feature-settings: "tnum"; font-variant-numeric: tabular-nums; }
+    .hero-min { min-height: calc(100vh - 80px); }
+
+    @media (max-width:640px){
+      .floating-decor { display: none; }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 antialiased">
+
+<!-- Responsive Header -->
+<header class="w-full fixed top-0 left-0 z-40 bg-white/70 backdrop-blur-md border-b border-gray-100">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    
+    <!-- Logo -->
+    <a href="#" class="flex items-center gap-2">
+      <img src="./assets/images/atlasafrica-logo.png" alt="Atlas Africa Logo" class="w-9 h-9 object-contain">
+      <span class="font-semibold text-gray-900 text-base">Atlas Africa</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center gap-6 text-sm">
+      <a href="#about" class="text-gray-600 hover:text-brand-navy transition">About</a>
+      <a href="#" class="text-gray-600 hover:text-brand-navy transition">Contact</a>
+      <a href="https://bit.ly/AtlasAfricaConsultationForm?fbclid=PAZXh0bgNhZW0CMTEAAaf6ls_NGCq_GrD6ulSvAsqfH_W2tlXfcX4Ig3Tz5NHibPB5SE8ytprzgn0rDQ_aem_FYkaCCOtlLxKXOnfF4olWw" class="px-4 py-2 rounded-full border border-gray-300 text-sm font-medium hover:bg-gray-100 transition">Book a free consultation</a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button id="menu-toggle" class="md:hidden flex flex-col gap-[5px] w-6" aria-label="Menu">
+      <span class="block w-full h-[2px] bg-gray-800 rounded"></span>
+      <span class="block w-full h-[2px] bg-gray-800 rounded"></span>
+      <span class="block w-full h-[2px] bg-gray-800 rounded"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-md">
+    <nav class="flex flex-col p-4 space-y-3 text-sm">
+      <a href="#" class="text-gray-700 hover:text-brand-navy transition">About</a>
+      <a href="#" class="text-gray-700 hover:text-brand-navy transition">Contact</a>
+      <a href="#" class="px-4 py-2 rounded-full border border-gray-300 text-center hover:bg-gray-50 transition">Join Beta</a>
+    </nav>
+  </div>
+</header>
+
+<!-- JS for mobile menu toggle -->
+<script>
+  const menuBtn = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+
+  <!-- HERO -->
+  <main class="hero-min pattern-bg relative pt-20 overflow-hidden">
+    <!-- overlay gradient for contrast -->
+    <div class="absolute inset-0 bg-gradient-to-b from-white/90 via-white/85 to-white/60 pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-6 py-24 relative z-10 flex flex-col items-center text-center">
+      <!-- Small badge -->
+      <div class="mb-6">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 gold-glow">
+          <i class="fa-solid fa-clock"></i>
+          <span class="text-sm font-semibold brand-navy">Coming Soon</span>
+        </div>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold brand-navy leading-tight max-w-3xl">
+        The <span class="brand-gold">Atlas Africa</span> Experience is <br class="hidden sm:inline" />Coming Soon
+      </h1>
+
+      <!-- Subtext -->
+      <p class="mt-6 text-md sm:text-lg md:text-xl text-muted max-w-2xl">
+        Bold insights, creative trends, and stories that move Africa forward.
+      </p>
+
+      <!-- Countdown + Form Row -->
+      <div class="mt-10 w-full max-w-xl">
+        <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-5 md:p-6 shadow-md border border-gray-100">
+          <!-- countdown -->
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <!-- timer -->
+            <div class="flex-1">
+              <div class="flex items-center justify-center sm:justify-start gap-3">
+                <div class="flex items-end gap-2">
+                  <div class="text-2xl md:text-3xl font-extrabold count-digit" id="cd-days">00</div>
+                  <div class="text-xs text-muted">days</div>
+                </div>
+                <div class="hidden sm:block w-px h-8 bg-gray-100 mx-3"></div>
+                <div class="flex items-end gap-2">
+                  <div class="text-2xl md:text-3xl font-extrabold count-digit" id="cd-hours">00</div>
+                  <div class="text-xs text-muted">hours</div>
+                </div>
+                <div class="hidden sm:block w-px h-8 bg-gray-100 mx-3"></div>
+                <div class="flex items-end gap-2">
+                  <div class="text-2xl md:text-3xl font-extrabold count-digit" id="cd-mins">00</div>
+                  <div class="text-xs text-muted">mins</div>
+                </div>
+                <div class="hidden sm:block w-px h-8 bg-gray-100 mx-3"></div>
+                <div class="flex items-end gap-2">
+                  <div class="text-2xl md:text-3xl font-extrabold count-digit" id="cd-secs">00</div>
+                  <div class="text-xs text-muted">secs</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- email form -->
+            <form id="notifyForm" class="w-full sm:w-auto sm:flex-1">
+              <div class="flex items-center gap-3">
+                <label for="email" class="sr-only">Email address</label>
+                <input id="email" name="email" type="email" required
+                  placeholder="Enter your email to be notified"
+                  class="flex-1 min-w-0 px-4 py-3 rounded-full border border-gray-200 focus:ring-0 focus:outline-none focus-ring"
+                />
+                <button type="submit" class="ml-2 px-4 py-2 rounded-full bg-[#0A174E] hover:bg-[#071139] text-white font-semibold transition-shadow">
+                  Notify Me
+                </button>
+              </div>
+              <p id="formMsg" class="text-xs text-muted mt-2 hidden"></p>
+            </form>
+            <script>
+document.getElementById('notifyForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  const emailInput = document.getElementById('email');
+  const formMsg = document.getElementById('formMsg');
+  const formData = new FormData();
+  formData.append('email', emailInput.value);
+  
+  formMsg.classList.remove('hidden');
+  formMsg.textContent = 'Submitting...';
+  
+  try {
+    const res = await fetch('./api/save_email.php', {
+      method: 'POST',
+      body: formData
+    });
+    const data = await res.json();
+
+    if (data.success) {
+      formMsg.textContent = '✅ Thanks! You’ll be notified when we launch.';
+      formMsg.classList.remove('text-red-500');
+      formMsg.classList.add('text-green-600');
+      emailInput.value = '';
+    } else {
+      formMsg.textContent = data.message || 'Something went wrong.';
+      formMsg.classList.add('text-red-500');
+    }
+  } catch (err) {
+    formMsg.textContent = '⚠️ Network error, please try again.';
+    formMsg.classList.add('text-red-500');
+  }
+});
+</script>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Social icons -->
+      <div class="mt-6 flex gap-4 items-center">
+        <a href="https://x.com/AtlasAfrica_?t=7cOXHAitfBsxgTstjqB6XQ&s=09" class="social h-10 w-10 rounded-full flex items-center justify-center bg-white border border-gray-200 shadow-sm hover:bg-[#F5D042] transition" aria-label="Twitter">
+          <i class="fa-brands fa-x-twitter"></i>
+
+        <a href="https://www.instagram.com/atlas_africa_?igsh=YnAzcmx6djZocjRo" class="social h-10 w-10 rounded-full flex items-center justify-center bg-white border border-gray-200 shadow-sm hover:bg-[#F5D042] transition" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/company/atlasafrica/" class="social h-10 w-10 rounded-full flex items-center justify-center bg-white border border-gray-200 shadow-sm hover:bg-[#F5D042] transition" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Floating decorative shapes (parallax) -->
+    <svg class="floating-decor absolute right-8 top-24 w-24 h-24 float-1 opacity-70" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="40" cy="40" r="36" stroke="#0A174E" stroke-opacity="0.08" stroke-width="6"/>
+      <circle cx="40" cy="40" r="10" fill="#F5D042" opacity="0.16"/>
+    </svg>
+
+    <svg class="floating-decor absolute left-6 bottom-28 w-20 h-20 float-2 opacity-80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="8" y="8" width="64" height="64" rx="12" stroke="#0A174E" stroke-opacity="0.06" stroke-width="6"/>
+    </svg>
+
+  </main>
+
+    <!-- ABOUT SECTION -->
+<section class="py-20 bg-white text-gray-800" id="about">
+  <div class="mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+    <!-- Left: Text Content -->
+    <div>
+      <div class="inline-block px-4 py-10 brand-navy text-gray-700 rounded-full font-semibold text-xs mb-4">
+        💡 ABOUT ATLAS AFRICA
+      </div>
+      <h2 class="text-3xl md:text-5xl font-extrabold text-brand-navy leading-tight">
+        We don’t just tell stories — <br class="hidden md:block" />
+        <span class="brand-gold">we create culture.</span>
+      </h2>
+
+      <p class="mt-6 text-gray-600 text-base leading-relaxed">
+        Atlas Africa is where creativity meets impact. We’re the team your favorite brands call when they’re tired of being mid.  
+        We craft stories that hit hard, look good, and move people — from Lagos to the world.
+      </p>
+
+      <p class="mt-4 text-gray-600 text-base leading-relaxed">
+        Think bold visuals, viral campaigns, and strategies that actually make sense.  
+        We blend Gen Z energy with timeless storytelling to keep your brand iconic — not just relevant.
+      </p>
+
+      <div class="mt-8">
+        <a href="https://bit.ly/AtlasAfricaConsultationForm?fbclid=PAZXh0bgNhZW0CMTEAAaf6ls_NGCq_GrD6ulSvAsqfH_W2tlXfcX4Ig3Tz5NHibPB5SE8ytprzgn0rDQ_aem_FYkaCCOtlLxKXOnfF4olWw" class="inline-block brand-navy font-semibold px-8 py-3 rounded-full border-2 hover:bg-yellow-400 transition">
+          Book a free consultation ✨
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: Image / Graphic -->
+    <div class="relative">
+      <div class="rounded-2xl overflow-hidden shadow-xl">
+        <img src="./assets/team/IMG_5192.JPG" alt="Atlas Africa Team" class="w-full object-cover h-[350px] md:h-[450px]">
+      </div>
+
+      <!-- Floating Elements -->
+      <div class="absolute -top-6 -left-6 brand-gold brand-navy border-2 px-4 py-2 rounded-lg font-bold text-sm shadow-lg animate-bounce hidden sm:block">
+        🔥 100% Original Energy
+      </div>
+      <div class="absolute -bottom-6 -right-6 border-2 brand-navy text-white px-4 py-2 rounded-lg font-bold text-sm shadow-lg animate-pulse hidden sm:block">
+        🌍 Africa to the World
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Small footer -->
+ <!-- ===========================
+  Footer Section
+=========================== -->
+<footer class="py-8 text-center text-sm text-muted bg-white border-t border-gray-100"
+        role="contentinfo"
+        itemscope itemtype="https://schema.org/Organization">
+
+  <div class="max-w-3xl mx-auto px-4">
+
+    <!-- Brand Info -->
+    <p class="mb-2">
+      <span itemprop="name" class="font-semibold brand-navy">Atlas Africa</span> —
+      <span itemprop="slogan">Building Africa’s Future, One Innovation at a Time.</span>
+    </p>
+
+    <!-- Contact / Legal Links -->
+    <p class="mb-3">
+      <a href="mailto:info@atlasafrica.org" class="underline hover:text-brand-gold" itemprop="email">info@atlasafrica.org</a>
+      ·
+      <a href="https://atlasafrica.org" class="underline hover:text-brand-gold" itemprop="url">www.atlasafrica.org</a>
+    </p>
+
+    <!-- Social Icons -->
+    <div class="flex justify-center gap-4 mb-4" aria-label="Follow Atlas Africa on social media">
+      <a href="https://x.com/AtlasAfrica_?t=7cOXHAitfBsxgTstjqB6XQ&s=09" target="_blank" rel="noopener" aria-label="Atlas Africa on Twitter" class="hover:text-brand-gold">
+        <i class="fab fa-x-twitter text-lg"></i>
+      </a>
+      <a href="https://www.instagram.com/atlas_africa_?igsh=YnAzcmx6djZocjRo" target="_blank" rel="noopener" aria-label="Atlas Africa on Instagram" class="hover:text-brand-gold">
+        <i class="fab fa-instagram text-lg"></i>
+      </a>
+      <a href="https://www.linkedin.com/company/atlasafrica/" target="_blank" rel="noopener" aria-label="Atlas Africa on LinkedIn" class="hover:text-brand-gold">
+        <i class="fab fa-linkedin text-lg"></i>
+      </a>
+    </div>
+
+    <!-- Copyright -->
+    <p>
+      © <span id="yr"></span>
+      <span itemprop="name">Atlas Africa</span> —
+      <span>All rights reserved.</span>
+    </p>
+  </div>
+
+  <!-- JSON-LD Organization Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Atlas Africa",
+    "alternateName": "Atlas Africa Ltd.",
+    "url": "https://atlasafrica.org",
+    "logo": "https://atlasafrica.org/assets/images/atlasafrica.jpeg",
+    "description": "Atlas Africa is an upcoming African innovation and technology organization, empowering growth, sustainability, and digital transformation across the continent.",
+    "email": "info@atlasafrica.org",
+    "sameAs": [
+      "https://x.com/AtlasAfrica_?t=7cOXHAitfBsxgTstjqB6XQ&s=09",
+      "https://www.instagram.com/atlas_africa_?igsh=YnAzcmx6djZocjRo",
+      "https://www.linkedin.com/company/atlasafrica/"
+    ],
+    "foundingDate": "2020",
+    "founder": {
+      "@type": "Person",
+      "name": "Atlas Africa Team"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Lagos",
+      "addressCountry": "NG"
+    }
+  }
+  </script>
+
+  <!-- Auto Year -->
+  <script>
+    document.getElementById("yr").textContent = new Date().getFullYear();
+  </script>
+
+</footer>
+
+
+  <!-- JS: Countdown, Form, Parallax -->
+  <script>
+    // ==== CONFIG: Set target date here (YYYY, M-1, D, H, M, S) ====
+    // Example: Dec 1, 2025 00:00:00 => new Date(2025, 11, 1, 0, 0, 0)
+    const TARGET_DATE = new Date(2025, 11, 1, 0, 0, 0);
+
+    // Utility pad
+    const pad = (n) => String(n).padStart(2, '0');
+
+    // countdown update function
+    function updateCountdown() {
+      const now = new Date();
+      let diff = Math.max(0, TARGET_DATE - now);
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      diff -= days * (1000 * 60 * 60 * 24);
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      diff -= hours * (1000 * 60 * 60);
+      const mins = Math.floor(diff / (1000 * 60));
+      diff -= mins * (1000 * 60);
+      const secs = Math.floor(diff / 1000);
+
+      document.getElementById('cd-days').textContent = pad(days);
+      document.getElementById('cd-hours').textContent = pad(hours);
+      document.getElementById('cd-mins').textContent = pad(mins);
+      document.getElementById('cd-secs').textContent = pad(secs);
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // form handling (client-side only) - replace with your endpoint
+    const form = document.getElementById('notifyForm');
+    const formMsg = document.getElementById('formMsg');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      if (!/^\S+@\S+\.\S+$/.test(email)) {
+        formMsg.textContent = 'Please enter a valid email address.';
+        formMsg.classList.remove('hidden');
+        formMsg.classList.add('text-red-500');
+        return;
+      }
+
+      // placeholder behavior: show success message
+      formMsg.classList.remove('hidden', 'text-red-500');
+      formMsg.classList.add('text-green-600');
+      formMsg.textContent = 'Thanks — we will notify you when Atlas Africa launches.';
+      form.reset();
+
+      // TODO: integrate with your email service (POST fetch to your API)
+      // fetch('/api/subscribe', { method: 'POST', body: JSON.stringify({email}), headers: {'Content-Type':'application/json'} })
+    });
+
+    // set year in footer
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Parallax cursor + scroll effect for floating shapes (lightweight)
+    (function () {
+      const decor = document.querySelectorAll('.floating-decor');
+      // cursor parallax
+      window.addEventListener('mousemove', (e) => {
+        const x = (e.clientX / window.innerWidth - 0.5) * 20;
+        const y = (e.clientY / window.innerHeight - 0.5) * 20;
+        decor.forEach((d, i) => {
+          const depth = 1 + i * 0.6;
+          d.style.transform = `translate(${x * depth}px, ${y * depth}px)`;
+        });
+      });
+
+      // scroll parallax (subtle)
+      window.addEventListener('scroll', () => {
+        const sc = window.scrollY;
+        decor.forEach((d, i) => {
+          const depth = 0.15 + i * 0.1;
+          d.style.transform += ` translateY(${sc * depth}px)`;
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

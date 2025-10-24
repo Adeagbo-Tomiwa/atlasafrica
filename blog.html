@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Atlas Africa — Blogs</title>
+
+  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root{
+      --navy: #0A174E;
+      --gold: #F5D042;
+      --muted: #6B7280;
+      --accent-blue: #1fb6ff; /* used in artwork */
+    }
+
+    /* small extra styles */
+    .brand-navy { color: var(--navy); }
+    .brand-gold { color: var(--gold); }
+    .bg-gold { background-color: var(--gold); }
+    .text-muted { color: var(--muted); }
+
+    /* keep font consistent */
+    html,body{ font-family: 'Outfit', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+
+    /* Floating micro animation */
+    @keyframes floaty {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+      100% { transform: translateY(0px); }
+    }
+    .floaty { animation: floaty 3.6s ease-in-out infinite; }
+
+    /* small shadow and rounded for hero card */
+    .hero-card {
+      box-shadow: 0 18px 30px rgba(2,6,23,0.15);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    /* small rounded icon button */
+    .icon-btn {
+      width:44px;height:44px;border-radius:10px;
+      display:grid;place-items:center;
+      box-shadow: 0 6px 18px rgba(2,6,23,0.12);
+    }
+
+    /* exact hero headline line height and tight spacing */
+    .headline-tight { line-height: 0.95; letter-spacing: -0.02em; }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-black text-white border-b-2">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+       <div class="flex items-center gap-3">
+        <!-- simple triangle "logo" -->
+       <img src="./assets/images/atlasafrica-logo.png" alt="atlasafrica-logo" width="40px">
+        <span class="font-semibold text-sm">Atlas Africa</span>
+      </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-8">
+          <a class="text-sm hover:text-[#1EB4F1] transition-colors" href="#home">Home</a>
+          <a class="text-sm hover:text-[#1EB4F1] transition-colors" href="#services">Services</a>
+          <a class="text-sm hover:text-[#1EB4F1] transition-colors" href="#about">About</a>
+          <a class="text-sm hover:text-[#1EB4F1] transition-colors" href="#blog">Blog</a>
+          <a class="text-sm hover:text-[#1EB4F1] transition-colors" href="#contact">Contact</a>
+        </nav>
+
+        <!-- Desktop CTA & Mobile Menu -->
+        <div class="flex items-center gap-4">
+          <button class="hidden lg:block px-5 py-2 rounded-md bg-white text-black text-sm font-semibold hover:bg-gray-100 transition-colors">
+            Consultation
+          </button>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false" class="lg:hidden p-2 hover:bg-white/10 rounded transition-colors">
+            <svg id="menuIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round">
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <line x1="3" y1="12" x2="21" y2="12"/>
+              <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="hidden lg:hidden border-t border-white/10">
+        <nav class="py-4 space-y-1">
+          <a class="block px-4 py-3 text-sm hover:bg-white/5 rounded transition-colors" href="#home">Home</a>
+          <a class="block px-4 py-3 text-sm hover:bg-white/5 rounded transition-colors" href="#services">Services</a>
+          <a class="block px-4 py-3 text-sm hover:bg-white/5 rounded transition-colors" href="#about">About</a>
+          <a class="block px-4 py-3 text-sm hover:bg-white/5 rounded transition-colors" href="#blog">Blog</a>
+          <a class="block px-4 py-3 text-sm hover:bg-white/5 rounded transition-colors" href="#contact">Contact</a>
+          <div class="px-4 pt-2">
+            <button class="w-full px-5 py-3 rounded-md bg-white text-black text-sm font-semibold hover:bg-gray-100 transition-colors">
+              Consultation
+            </button>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <!-- Blog Hero -->
+    <section class="relative bg-[url('./assets/images/blog-bg.png')] bg-cover bg-center">
+      <div class="max-w-4xl mx-auto text-center px-6 py-16">
+        <div style="background-color: #000;" class="inline-block px-4 py-1 text-white text-sm font-medium text-gray-700 rounded-full mb-4"><i class="fa-solid fa-chart-simple"></i> &nbsp;&nbsp; Strategy & Innovation</div>
+        <h3>Why Traditional Marketing is <span class="brand-gold">Dead</span> and How Disruptive Thinking Wins</h3>
+        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight text-brand-navy mt-3">
+          The rules have <span class="brand-gold">changed.</span> Learn how the
+          world’s most innovative brands are breaking through the noise and
+          creating movements, not just campaigns.
+        </h1>
+
+        <!-- Author & Meta Info -->
+<div class="mt-8 flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4 sm:gap-6 bg-gray-50/70 backdrop-blur-sm rounded-xl p-4 sm:p-5 shadow-sm border border-gray-100 max-w-md mx-auto sm:max-w-none">
+  <!-- Author -->
+  <div class="flex items-center gap-3">
+    <img
+      src="./assets/images/portfrolio1.png"
+      alt="Author"
+      class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-brand-gold shadow-md"
+    />
+    <div class="text-center sm:text-left">
+      <div class="font-semibold text-gray-900 text-left text-base sm:text-lg">
+        Miss Kim
+      </div>
+      <div class="text-gray-500 text-xs text-left sm:text-sm">
+        Chief Strategy Officer
+      </div>
+    </div>
+  </div>
+
+  <!-- Divider (hidden on mobile) -->
+  <div class="hidden sm:block text-gray-300 text-lg">•</div>
+
+  <!-- Post Meta -->
+  <div
+    class="flex flex-wrap justify-center sm:justify-start items-center gap-3 text-gray-600 text-xs sm:text-sm"
+  >
+    <div class="flex items-center gap-1">
+      <i class="fa fa-calendar text-brand-gold"></i>
+      <span>Oct 15, 2025</span>
+    </div>
+    <div class="text-gray-400 hidden sm:block">•</div>
+    <div class="flex items-center gap-1">
+      <i class="fa fa-clock text-brand-gold"></i>
+      <span>8 min read</span>
+    </div>
+  </div>
+</div>
+      </div>
+    </section>
+    <!-- Article Body -->
+    <main class="mx-auto px-6 py-16 space-y-10 leading-relaxed">
+      <p class="text-gray-700 text-lg">
+        In a world where consumers are bombarded with over 10,000 brand messages
+        daily, playing by the old rules is a guaranteed path to obscurity. The
+        marketing landscape has fundamentally shifted, and the brands winning
+        today aren’t just thinking outside the box—they’re burning the box
+        entirely. This isn’t about being loud. It’s about being impossible to
+        ignore.
+      </p>
+
+      <!-- Embedded Media Placeholder -->
+      <div
+        class="bg-gray-100 h-56 md:h-72 rounded-xl flex items-center justify-center text-gray-400 italic"
+      >
+        [ Embedded Video or Image Here ]
+      </div>
+
+      <!-- Quote Block -->
+      <blockquote
+        class="border-l-4 border-brand-gold bg-gray-50 p-6 rounded-lg italic text-gray-600"
+      >
+        “The biggest risk is not taking any risk. In a world that’s changing
+        quickly, the only strategy that is guaranteed to fail is not taking
+        risks.”
+        <footer class="mt-3 not-italic text-gray-500 font-medium">
+          — Mark Zuckerberg
+        </footer>
+      </blockquote>
+    </main>
+
+
+    <!-- Blog List -->
+    <div class="space-y-10">
+    <!-- Example Additional Posts (You’ll replace with PHP loop) -->
+      <article
+        class="p-6 bg-gray-50 hover:bg-white transition-all duration-300"
+      >
+        <div class="flex items-center gap-3 mb-3">
+          <img
+            src="https://i.pravatar.cc/100?img=5"
+            alt="Author"
+            class="w-10 h-10 rounded-full border border-gray-300"
+          />
+          <div>
+            <div class="font-semibold text-gray-900 text-sm">Mike Joy</div>
+            <div class="text-xs text-gray-500">Creative Director</div>
+          </div>
+        </div>
+
+        <h3
+          class="text-xl sm:text-2xl font-bold text-gray-900 mb-2 hover:text-brand-gold transition"
+        >
+         The Death of Conventional Marketing
+        </h3>
+        <p class="text-gray-600 text-sm sm:text-base mb-4">
+          Traditional marketing relied on interruption—commercials breaking up your favorite show, billboards cluttering highways, pop-ups destroying user experience. But audiences have evolved. They've installed ad blockers, subscribed to ad-free streaming, and developed an almost supernatural ability to tune out anything that feels like marketing.
+The old playbook promised that if you shouted loud enough and spent enough money, you'd win. Today, that approach doesn't just fail—it actively damages your brand. Consumers don't want to be marketed to; they want to be engaged, entertained, and inspired.
+        </p>
+        <div class="flex items-center gap-5">
+           <div class="text-xs text-gray-500">
+            <i class="fa fa-calendar text-brand-gold"></i> Oct 18, 2025
+          </div>
+          <div class="text-xs text-gray-500">
+            <i class="fa fa-clock text-brand-gold"></i> 5 min read
+          </div>
+        </div>
+      </article>
+
+      <!-- Example Additional Posts (You’ll replace with PHP loop) -->
+      <article
+        class="p-6 bg-gray-50 hover:bg-white transition-all duration-300"
+      >
+        <div class="flex items-center gap-3 mb-3">
+          <img
+            src="https://i.pravatar.cc/100?img=5"
+            alt="Author"
+            class="w-10 h-10 rounded-full border border-gray-300"
+          />
+          <div>
+            <div class="font-semibold text-gray-900 text-sm">Mike Joy</div>
+            <div class="text-xs text-gray-500">Creative Director</div>
+          </div>
+        </div>
+
+        <h3
+          class="text-xl sm:text-2xl font-bold text-gray-900 mb-2 hover:text-brand-gold transition"
+        >
+          What Disruptive Marketing Actually Means
+        </h3>
+        <p class="text-gray-600 text-sm sm:text-base mb-4">
+          Disruption isn't about being different for the sake of being different. It's about understanding cultural moments, leveraging emerging platforms before they're saturated, and creating experiences so compelling that people become your advocates without being asked.
+Think about the brands you actually remember from the past year. Did they buy the most ads? Or did they do something that made you feel something, think differently, or want to share with your friends?
+        </p>
+        <div class="flex items-center gap-5">
+           <div class="text-xs text-gray-500">
+            <i class="fa fa-calendar text-brand-gold"></i> Oct 18, 2025
+          </div>
+          <div class="text-xs text-gray-500">
+            <i class="fa fa-clock text-brand-gold"></i> 5 min read
+          </div>
+        </div>
+         <!-- Embedded Media Placeholder -->
+      <div class="bg-gray-100 h-56 md:h-72 rounded-xl flex items-center justify-center text-gray-400 italic mt-5">
+        [ Embedded Video or Image Here ]
+      </div>
+      <div class="flex items-center">
+        <p class="text-gray-600 text-sm sm:text-center">Modern brands are built in collaborative, creative environments that challenge conventional thinking</p>
+      </div>
+      </article>
+    </div>
+</section>
+  </main>
+
+    <!-- NEWSLETTER SECTION -->
+  <section class="bg-gradient-to-br from-gray-100 to-gray-200 py-16">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="mb-4">
+        <button style="background-color: #0A174E; color: #fff;" class="px-5 py-2 rounded-full bg-navy text-white text-sm font-semibold hover:bg-opacity-90 transition-colors">
+          Join Our Creative Community
+        </button>
+      </div>
+
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
+        <span class="brand-gold">GET </span>
+        <span class="brand-navy">CREATIVE </span>
+        <span class="text-gray-300">INSPIRATION</span>
+      </h2>
+
+      <p class="text-muted text-base mb-8 max-w-2xl mx-auto">
+        Receive <strong>behind-the-scenes content</strong>, creative tips, and <strong>portfolio updates</strong> that inspire your next big project.
+      </p>
+
+      <form class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+        <input 
+          type="email" 
+          placeholder="enter your email address" 
+          class="flex-1 px-5 py-4 rounded-full bg-white/80 backdrop-blur border border-gray-300 focus:outline-none focus:ring-2 focus:ring-navy focus:border-transparent text-sm"
+        />
+        <button 
+          type="submit" 
+          class="px-8 py-4 rounded-full bg-gold brand-navy font-bold text-sm hover:scale-105 transition-transform whitespace-nowrap"
+        >
+          Subscribe
+        </button>
+      </form>
+    </div>
+  </section>
+
+   <!-- Footer -->
+  <footer class="bg-[#2D3338] text-white py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+        <!-- Brand Column -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div style="background-color: #0A174E;" class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center">
+              <img src="./assets/images/atlasafrica-logo.png" alt="Atlas Africa" width="32px">
+            </div>
+            <div>
+              <div class="font-bold text-lg">ATLAS <span class="brand-navy">AFRICA</span></div>
+              <div class="text-xs text-gray-400">CREATING • MARKETING • MEDIA</div>
+            </div>
+          </div>
+          
+          <p class="text-sm text-gray-300 leading-relaxed mb-6">
+            Your <span class="brand-gold font-semibold">creative partner</span> for visual storytelling that amplifies African brands on the <span class="font-semibold">global stage</span>. From concept to creation, we bring your vision to life.
+          </p>
+
+          <div class="space-y-3">
+            <div class="flex items-center gap-3 text-sm">
+              <div class="w-8 h-8 rounded-lg bg-[#F5D042] flex items-center justify-center">
+                <i class="fa fa-map-marker-alt text-[#2D3338]"></i>
+              </div>
+              <span class="text-gray-300">Lagos, Nigeria</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm">
+              <div class="w-8 h-8 rounded-lg bg-[#F5D042] flex items-center justify-center">
+                <i class="fa fa-phone text-[#2D3338]"></i>
+              </div>
+              <span class="text-gray-300">+234 1 234 5678</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm">
+              <div class="w-8 h-8 rounded-lg bg-[#F5D042] flex items-center justify-center">
+                <i class="fa fa-envelope text-[#2D3338]"></i>
+              </div>
+              <span class="text-gray-300">lagos@atlasafrica.com</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services Column -->
+        <div>
+          <h4 class="font-bold text-base mb-4">SERVICES</h4>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li><a href="#" class="hover:text-gold transition-colors">Digital Marketing</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Video Production</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Website Development</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Strategic Consulting</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Ads Specialization</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Brand Positioning</a></li>
+          </ul>
+        </div>
+
+        <!-- Company Column -->
+        <div>
+          <h4 class="font-bold text-base mb-4">COMPANY</h4>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li><a href="#" class="hover:text-gold transition-colors">Digital Marketing</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Video Production</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Website Development</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Strategic Consulting</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Ads Specialization</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Brand Positioning</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources Column -->
+        <div>
+          <h4 class="font-bold text-base mb-4">RESOURCES</h4>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li><a href="#" class="hover:text-gold transition-colors">Digital Marketing</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Video Production</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Website Development</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Strategic Consulting</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Ads Specialization</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Brand Positioning</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="border-t border-gray-600 pt-6">
+        <div class="flex flex-col md:flex-row md:justify-between items-center gap-4">
+          <div class="text-sm text-gray-400">
+            © 2025 Atlas Africa - <span class="text-gold">Creative Excellence</span> | 
+            <a href="#" class="hover:text-gold transition-colors ml-1">Privacy Policy</a> | 
+            <a href="#" class="hover:text-gold transition-colors ml-1">Terms of Service</a>
+          </div>
+          
+          <div class="flex items-center gap-3">
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-600 hover:bg-gold hover:text-navy transition-all flex items-center justify-center" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-600 hover:bg-gold hover:text-navy transition-all flex items-center justify-center" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-600 hover:bg-gold hover:text-navy transition-all flex items-center justify-center" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-600 hover:bg-gold hover:text-navy transition-all flex items-center justify-center" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-600 hover:bg-gold hover:text-navy transition-all flex items-center justify-center" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS for mobile menu & small interactions -->
+  <script>
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    mobileBtn.addEventListener('click', () => {
+      const showing = mobileMenu.classList.toggle('hidden');
+      // toggle aria-expanded for accessibility
+      const expanded = !mobileMenu.classList.contains('hidden');
+      mobileBtn.setAttribute('aria-expanded', expanded);
+    });
+
+    // small intersection observer to add gentle fade-in on hero components (progressive reveal)
+    document.addEventListener('DOMContentLoaded', () => {
+      const targets = document.querySelectorAll('main .hero-card, main section');
+      targets.forEach(t => {
+        t.style.opacity = 0;
+        t.style.transform = 'translateY(8px)';
+        t.style.transition = 'opacity .6s ease, transform .6s ease';
+      });
+
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.style.opacity = 1;
+            e.target.style.transform = 'translateY(0)';
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      targets.forEach(t => io.observe(t));
+    });
+  </script>
+</body>
+</html>
