@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Atlas Africa — Blogs</title>
 
-  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -68,8 +68,47 @@
   }
 </style>
 
+
+  <style>
+  /* Optional subtle glow for the logo */
+  #pageLoader img {
+    filter: drop-shadow(0 0 10px rgba(30, 180, 241, 0.6));
+  }
+
+  /* Hide scroll while loading */
+  body.loading {
+    overflow: hidden;
+  }
+
+  /* Fade-out animation */
+  #pageLoader.fade-out {
+    opacity: 0;
+    pointer-events: none;
+  }
+</style>
 </head>
 <body class="bg-white text-gray-900">
+
+    <!-- PAGE LOADER -->
+<div id="pageLoader" class="fixed inset-0 z-[9999] flex items-center justify-center bg-white transition-opacity duration-700">
+  <div class="flex flex-col items-center gap-4">
+    <!-- Logo -->
+    <img 
+      src="../assets/images/atlasafrica-logo.png" 
+      alt="Atlas Africa Logo" 
+      class="w-24 h-24 animate-pulse drop-shadow-lg"
+    />
+    <!-- Loader Text or Spinner -->
+    <div class="flex items-center gap-2 text-brand-navy font-semibold tracking-wide text-sm uppercase">
+      <span>Loading</span>
+      <span class="dots flex gap-1">
+        <span class="w-1.5 h-1.5 bg-[#C3A438] rounded-full animate-bounce"></span>
+        <span class="w-1.5 h-1.5 bg-[#C3A438] rounded-full animate-bounce [animation-delay:0.2s]"></span>
+        <span class="w-1.5 h-1.5 bg-[#C3A438] rounded-full animate-bounce [animation-delay:0.4s]"></span>
+      </span>
+    </div>
+  </div>
+</div>
 
   <!-- NAVBAR -->
   <header class="sticky top-0 z-50 bg-black text-white border-b-2">
@@ -78,7 +117,7 @@
         <!-- Logo -->
        <div class="flex items-center gap-3">
         <!-- simple triangle "logo" -->
-       <img src="./assets/images/atlasafrica-logo.png" alt="atlasafrica-logo" width="40px">
+       <img src="../assets/images/atlasafrica-logo.png" alt="atlasafrica-logo" width="40px">
         <span class="font-semibold text-sm">Atlas Africa</span>
       </div>
 
@@ -87,16 +126,17 @@
         <div class="flex items-center gap-4">
            <!-- Desktop Navigation -->
         <nav class="hidden lg:flex items-center gap-8">
-          <a class="text-sm hover:text-[#1EB4F1] transition-colors" href="#home">Home</a>
-          <a class="text-sm hover:text-[#1EB4F1] transition-colors" href="#services">Services</a>
-          <a class="text-sm hover:text-[#1EB4F1] transition-colors" href="#about">About</a>
-          <a class="text-sm hover:text-[#1EB4F1] transition-colors" href="#blog">Blog</a>
-          <a class="text-sm hover:text-[#1EB4F1] transition-colors" href="#contact">Contact</a>
+          <a class="text-sm hover:text-[#1EB4F1] transition-colors" href="../">Home</a>
+          <a class="text-sm hover:text-[#1EB4F1] transition-colors" href="../services">Services</a>
+          <a class="text-sm hover:text-[#1EB4F1] transition-colors" href="../about/">About</a>
+          <a class="text-sm hover:text-[#1EB4F1] transition-colors" href="##">Blog</a>
+          <a class="text-sm hover:text-[#1EB4F1] transition-colors" href="../#contact">Contact</a>
         </nav>
-
+        <a href="https://bit.ly/AtlasAfricaConsultationForm?fbclid=PAZXh0bgNhZW0CMTEAAaf6ls_NGCq_GrD6ulSvAsqfH_W2tlXfcX4Ig3Tz5NHibPB5SE8ytprzgn0rDQ_aem_FYkaCCOtlLxKXOnfF4olWw">
           <button class="hidden lg:block px-5 py-2 rounded-md bg-white text-black text-sm font-semibold hover:bg-gray-100 transition-colors">
             <i class="fa fa-calendar mr-2"></i> Book a Consultation
           </button>
+        </a>
 
           <!-- Mobile Menu Button -->
           <button id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false" class="lg:hidden p-2 hover:bg-white/10 rounded transition-colors">
@@ -112,16 +152,19 @@
       <!-- Mobile Menu -->
       <div id="mobileMenu" class="hidden lg:hidden border-t border-white/10">
         <nav class="py-4 space-y-1">
-          <a class="block px-4 py-3 text-sm hover:bg-white/5 rounded transition-colors" href="#home">Home</a>
-          <a class="block px-4 py-3 text-sm hover:bg-white/5 rounded transition-colors" href="#services">Services</a>
-          <a class="block px-4 py-3 text-sm hover:bg-white/5 rounded transition-colors" href="#about">About</a>
-          <a class="block px-4 py-3 text-sm hover:bg-white/5 rounded transition-colors" href="#blog">Blog</a>
-          <a class="block px-4 py-3 text-sm hover:bg-white/5 rounded transition-colors" href="#contact">Contact</a>
-          <div class="px-4 pt-2">
+          <a class="block px-4 py-3 text-sm hover:bg-white/5 rounded transition-colors" href="../">Home</a>
+          <a class="block px-4 py-3 text-sm hover:bg-white/5 rounded transition-colors" href="../services/">Services</a>
+          <a class="block px-4 py-3 text-sm hover:bg-white/5 rounded transition-colors" href="../about/">About</a>
+          <a class="block px-4 py-3 text-sm hover:bg-white/5 rounded transition-colors" href="##">Blog</a>
+          <a class="block px-4 py-3 text-sm hover:bg-white/5 rounded transition-colors" href="../#contact">Contact</a>
+          <a href="https://bit.ly/AtlasAfricaConsultationForm?fbclid=PAZXh0bgNhZW0CMTEAAaf6ls_NGCq_GrD6ulSvAsqfH_W2tlXfcX4Ig3Tz5NHibPB5SE8ytprzgn0rDQ_aem_FYkaCCOtlLxKXOnfF4olWw">
+         <div class="px-4 pt-2">
             <button class="w-full px-5 py-3 rounded-md bg-white text-black text-sm font-semibold hover:bg-gray-100 transition-colors">
                <i class="fa fa-calendar mr-2"></i> Book a Consultation
             </button>
           </div>
+          </a>
+         
         </nav>
       </div>
     </div>
@@ -129,7 +172,7 @@
 
 
   <!-- Blog Hero -->
-    <section class="relative bg-[url('./assets/images/blog-bg.png')] bg-cover bg-center">
+    <section class="relative bg-[url('../assets/images/blog-bg.png')] bg-cover bg-center">
       <div class="max-w-4xl mx-auto text-center px-6 py-16">
         <div style="background-color: #000;" class="inline-block px-4 py-1 text-white text-sm font-medium text-gray-700 rounded-full mb-4"><i class="fa-solid fa-chart-simple"></i> &nbsp;&nbsp; Strategy & Innovation</div>
         <h3>Why Traditional Marketing is <span class="brand-gold">Dead</span> and How Disruptive Thinking Wins</h3>
@@ -144,7 +187,7 @@
   <!-- Author -->
   <div class="flex items-center gap-3">
     <img
-      src="./assets/images/portfrolio1.png"
+      src="../assets/images/portfrolio1.png"
       alt="Author"
       class="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-brand-gold shadow-md"
     />
@@ -270,7 +313,7 @@ Traditional marketing relied on interruption—commercials breaking up your favo
     data-role="Chief Strategy Officer"
     data-date="Oct 18, 2025"
     data-readtime="5 min read"
-    data-avatar="./assets/images/portfrolio1.png"
+    data-avatar="../assets/images/portfrolio1.png"
     data-body="Disruption isn't about being different for the sake of being different. It's about understanding cultural moments, leveraging emerging platforms before they're saturated, and creating experiences so compelling that people become your advocates without being asked.
 Think about the brands you actually remember from the past year. Did they buy the most ads? Or did they do something that made you feel something, think differently, or want to share with your friends?S"
     onclick="openArticleModal(this)"
@@ -278,7 +321,7 @@ Think about the brands you actually remember from the past year. Did they buy th
          <div class="flex items-center justify-between gap-3 mb-3">
           <div class="flex items-center gap-3 mb-3">
              <div>
-            <img src="./assets/images/portfrolio1.png" alt="Author" class="w-10 h-10 rounded-full border border-gray-300"/>
+            <img src="../assets/images/portfrolio1.png" alt="Author" class="w-10 h-10 rounded-full border border-gray-300"/>
           </div>
 
             <div>
@@ -328,7 +371,7 @@ Think about the brands you actually remember from the past year. Did they buy th
     data-role="Creative Director"
     data-date="Oct 18, 2025"
     data-readtime="5 min read"
-    data-avatar="./assets/images/portfrolio3.png"
+    data-avatar="../assets/images/portfrolio3.png"
     data-body="Disruption isn't about being different for the sake of being different. It's about understanding cultural moments, leveraging emerging platforms before they're saturated, and creating experiences so compelling that people become your advocates without being asked.
 Think about the brands you actually remember from the past year. Did they buy the most ads? Or did they do something that made you feel something, think differently, or want to share with your friends?S"
     onclick="openArticleModal(this)"
@@ -336,7 +379,7 @@ Think about the brands you actually remember from the past year. Did they buy th
      <div class="flex items-center justify-between gap-3 mb-3">
           <div class="flex items-center gap-3 mb-3">
              <div>
-            <img src="./assets/images/portfrolio3.png" alt="Author" class="w-10 h-10 rounded-full border border-gray-300"/>
+            <img src="../assets/images/portfrolio3.png" alt="Author" class="w-10 h-10 rounded-full border border-gray-300"/>
           </div>
 
             <div>
@@ -392,7 +435,7 @@ Think about the brands you actually remember from the past year. Did they buy th
         
       <!-- Article Card 1 -->
 <div class="article-card group cursor-pointer relative rounded-2xl overflow-hidden bg-cover bg-center"
-     style="background-image: url('./assets/images/bg-blog.png');">
+     style="background-image: url('../assets/images/bg-blog.png');">
 
   <!-- Overlay (makes text pop) -->
   <div class="absolute inset-0 bg-white/80 backdrop-blur-sm"></div>
@@ -403,7 +446,7 @@ Think about the brands you actually remember from the past year. Did they buy th
       <!-- Author Avatar -->
       <div class="flex-shrink-0">
         <img 
-          src="./assets/team/atlas-group.png" 
+          src="../assets/team/atlas-group.png" 
           alt="Miss Kim" 
           class="w-10 h-10 rounded-full object-cover"
           onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'%3E%3Crect fill=\'%230A174E\' width=\'40\' height=\'40\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-family=\'Arial\' font-size=\'16\' font-weight=\'bold\'%3EMK%3C/text%3E%3C/svg%3E'"
@@ -442,7 +485,7 @@ Think about the brands you actually remember from the past year. Did they buy th
 
         <!-- Article Card 2 -->
         <div class="article-card group cursor-pointer relative rounded-2xl overflow-hidden bg-cover bg-center"
-     style="background-image: url('./assets/images/bg-blog.png');">
+     style="background-image: url('../assets/images/bg-blog.png');">
 
   <!-- Overlay (makes text pop) -->
   <div class="absolute inset-0 bg-white/80 backdrop-blur-sm"></div>
@@ -453,7 +496,7 @@ Think about the brands you actually remember from the past year. Did they buy th
       <!-- Author Avatar -->
       <div class="flex-shrink-0">
         <img 
-          src="./assets/team/atlas-group.png" 
+          src="../assets/team/atlas-group.png" 
           alt="Miss Kim" 
           class="w-10 h-10 rounded-full object-cover"
           onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'%3E%3Crect fill=\'%230A174E\' width=\'40\' height=\'40\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-family=\'Arial\' font-size=\'16\' font-weight=\'bold\'%3EMK%3C/text%3E%3C/svg%3E'"
@@ -491,7 +534,7 @@ Think about the brands you actually remember from the past year. Did they buy th
 
         <!-- Article Card 3 -->
         <div class="article-card group cursor-pointer relative rounded-2xl overflow-hidden bg-cover bg-center"
-     style="background-image: url('./assets/images/bg-blog.png');">
+     style="background-image: url('../assets/images/bg-blog.png');">
 
   <!-- Overlay (makes text pop) -->
   <div class="absolute inset-0 bg-white/80 backdrop-blur-sm"></div>
@@ -502,7 +545,7 @@ Think about the brands you actually remember from the past year. Did they buy th
       <!-- Author Avatar -->
       <div class="flex-shrink-0">
         <img 
-          src="./assets/team/atlas-group.png" 
+          src="../assets/team/atlas-group.png" 
           alt="Miss Kim" 
           class="w-10 h-10 rounded-full object-cover"
           onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'%3E%3Crect fill=\'%230A174E\' width=\'40\' height=\'40\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-family=\'Arial\' font-size=\'16\' font-weight=\'bold\'%3EMK%3C/text%3E%3C/svg%3E'"
@@ -540,7 +583,7 @@ Think about the brands you actually remember from the past year. Did they buy th
 
         <!-- Article Card 4 -->
     <div class="article-card group cursor-pointer relative rounded-2xl overflow-hidden bg-cover bg-center"
-     style="background-image: url('./assets/images/bg-blog.png');">
+     style="background-image: url('../assets/images/bg-blog.png');">
 
   <!-- Overlay (makes text pop) -->
   <div class="absolute inset-0 bg-white/80 backdrop-blur-sm"></div>
@@ -551,7 +594,7 @@ Think about the brands you actually remember from the past year. Did they buy th
       <!-- Author Avatar -->
       <div class="flex-shrink-0">
         <img 
-          src="./assets/team/atlas-group.png" 
+          src="../assets/team/atlas-group.png" 
           alt="Miss Kim" 
           class="w-10 h-10 rounded-full object-cover"
           onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'%3E%3Crect fill=\'%230A174E\' width=\'40\' height=\'40\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-family=\'Arial\' font-size=\'16\' font-weight=\'bold\'%3EMK%3C/text%3E%3C/svg%3E'"
@@ -588,7 +631,7 @@ Think about the brands you actually remember from the past year. Did they buy th
 </div>
         <!-- Article Card 5 -->
        <div class="article-card group cursor-pointer relative rounded-2xl overflow-hidden bg-cover bg-center"
-     style="background-image: url('./assets/images/bg-blog.png');">
+     style="background-image: url('../assets/images/bg-blog.png');">
 
   <!-- Overlay (makes text pop) -->
   <div class="absolute inset-0 bg-white/80 backdrop-blur-sm"></div>
@@ -599,7 +642,7 @@ Think about the brands you actually remember from the past year. Did they buy th
       <!-- Author Avatar -->
       <div class="flex-shrink-0">
         <img 
-          src="./assets/team/atlas-group.png" 
+          src="../assets/team/atlas-group.png" 
           alt="Miss Kim" 
           class="w-10 h-10 rounded-full object-cover"
           onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'%3E%3Crect fill=\'%230A174E\' width=\'40\' height=\'40\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-family=\'Arial\' font-size=\'16\' font-weight=\'bold\'%3EMK%3C/text%3E%3C/svg%3E'"
@@ -640,7 +683,7 @@ Think about the brands you actually remember from the past year. Did they buy th
 <!-- Featured Bottom Box -->
 <div class="featured-box mt-8 relative rounded-2xl overflow-hidden">
   <!-- Background Image with overlay -->
-  <div class="absolute inset-0 bg-[url('./assets/images/blog-bg.png')] bg-cover bg-center opacity-50"></div>
+  <div class="absolute inset-0 bg-[url('../assets/images/blog-bg.png')] bg-cover bg-center opacity-50"></div>
 
   <!-- Content -->
   <div class="relative p-5">
@@ -696,7 +739,7 @@ Think about the brands you actually remember from the past year. Did they buy th
         <div class="lg:col-span-2">
           <div class="flex items-center gap-3 mb-4">
             <div style="background-color: #0A174E;" class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center">
-              <img src="./assets/images/atlasafrica-logo.png" alt="Atlas Africa" width="32px">
+              <img src="../assets/images/atlasafrica-logo.png" alt="Atlas Africa" width="32px">
             </div>
             <div>
               <div class="font-bold text-lg">ATLAS <span class="brand-navy">AFRICA</span></div>
@@ -912,5 +955,48 @@ Think about the brands you actually remember from the past year. Did they buy th
   }
 </script>
 
+  <!-- SCROLL TO TOP BUTTON -->
+<button 
+  id="scrollToTopBtn" 
+  class="hidden fixed bottom-6 right-6 z-50 bg-[#163661] text-white p-3 rounded-full shadow-lg hover:bg-brand-gold transition-all duration-300"
+  aria-label="Scroll to top"
+>
+  <i class="fa-solid fa-arrow-up text-lg"></i>
+</button>
+<script>
+// Show button when user scrolls down
+window.addEventListener("scroll", function() {
+  const scrollBtn = document.getElementById("scrollToTopBtn");
+  if (window.scrollY > 300) {
+    scrollBtn.classList.remove("hidden");
+    scrollBtn.classList.add("flex");
+  } else {
+    scrollBtn.classList.add("hidden");
+    scrollBtn.classList.remove("flex");
+  }
+});
+
+// Smooth scroll to top when clicked
+document.getElementById("scrollToTopBtn").addEventListener("click", function() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+</script>
+
+
+<script>
+document.body.classList.add("loading");
+
+window.addEventListener("load", () => {
+  const loader = document.getElementById("pageLoader");
+  loader.classList.add("fade-out");
+  document.body.classList.remove("loading");
+  
+  // Fully remove from DOM after fade-out
+  setTimeout(() => loader.remove(), 700);
+});
+</script>
 </body>
 </html>
