@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Atlas Africa — Blogs</title>
+  <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root{
+      --navy: #0A174E;
+      --gold: #F5D042;
+      --muted: #6B7280;
+      --accent-blue: #1fb6ff; /* used in artwork */
+    }
+
+    /* small extra styles */
+    .brand-navy { color: var(--navy); }
+    .brand-gold { color: var(--gold); }
+    .bg-gold { background-color: var(--gold); }
+    .text-muted { color: var(--muted); }
+
+    /* keep font consistent */
+    html,body{ font-family: 'Outfit', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+
+    /* Floating micro animation */
+    @keyframes floaty {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+      100% { transform: translateY(0px); }
+    }
+    .floaty { animation: floaty 3.6s ease-in-out infinite; }
+
+    /* small shadow and rounded for hero card */
+    .hero-card {
+      box-shadow: 0 18px 30px rgba(2,6,23,0.15);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    /* small rounded icon button */
+    .icon-btn {
+      width:44px;height:44px;border-radius:10px;
+      display:grid;place-items:center;
+      box-shadow: 0 6px 18px rgba(2,6,23,0.12);
+    }
+
+    /* exact hero headline line height and tight spacing */
+    .headline-tight { line-height: 0.95; letter-spacing: -0.02em; }
+  </style>
+
+  <!-- Tailwind Fade Animation -->
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+</style>
+
+
+  <style>
+  /* Optional subtle glow for the logo */
+  #pageLoader img {
+    filter: drop-shadow(0 0 10px rgba(30, 180, 241, 0.6));
+  }
+
+  /* Hide scroll while loading */
+  body.loading {
+    overflow: hidden;
+  }
+
+  /* Fade-out animation */
+  #pageLoader.fade-out {
+    opacity: 0;
+    pointer-events: none;
+  }
+</style>
+</head>
+
+<body class="bg-white text-gray-900">
+
+    <!-- PAGE LOADER -->
+<div id="pageLoader" class="fixed inset-0 z-[9999] flex items-center justify-center bg-white transition-opacity duration-700">
+  <div class="flex flex-col items-center gap-4">
+    <!-- Logo -->
+    <img 
+      src="../assets/images/atlasafrica-logo.png" 
+      alt="Atlas Africa Logo" 
+      class="w-24 h-24 animate-pulse drop-shadow-lg"
+    />
+    <!-- Loader Text or Spinner -->
+    <div class="flex items-center gap-2 text-brand-navy font-semibold tracking-wide text-sm uppercase">
+      <span>Loading</span>
+      <span class="dots flex gap-1">
+        <span class="w-1.5 h-1.5 bg-[#C3A438] rounded-full animate-bounce"></span>
+        <span class="w-1.5 h-1.5 bg-[#C3A438] rounded-full animate-bounce [animation-delay:0.2s]"></span>
+        <span class="w-1.5 h-1.5 bg-[#C3A438] rounded-full animate-bounce [animation-delay:0.4s]"></span>
+      </span>
+    </div>
+  </div>
+</div>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-black text-white border-b-2">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+       <div class="flex items-center gap-3">
+        <!-- simple triangle "logo" -->
+       <img src="../assets/images/atlaslogo.png" alt="atlasafrica-logo" width="150px">
+      </div>
+
+      
+        <!-- Desktop CTA & Mobile Menu -->
+        <div class="flex items-center gap-4">
+           <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-8">
+          <a class="text-sm hover:text-[#1EB4F1] transition-colors" href="../">Home</a>
+          <a class="text-sm hover:text-[#1EB4F1] transition-colors" href="../services">Services</a>
+          <a class="text-sm hover:text-[#1EB4F1] transition-colors" href="../about/">About</a>
+          <a class="text-sm hover:text-[#1EB4F1] transition-colors" href="../blogs/">Blog</a>
+          <a class="text-sm hover:text-[#1EB4F1] transition-colors" href="../#contact">Contact</a>
+        </nav>
+        <a href="##">
+          <button class="hidden lg:block px-5 py-2 rounded-md bg-white text-black text-sm font-semibold hover:bg-gray-100 transition-colors">
+            <i class="fa fa-calendar mr-2"></i> Book a Consultation
+          </button>
+        </a>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false" class="lg:hidden p-2 hover:bg-white/10 rounded transition-colors">
+            <svg id="menuIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round">
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <line x1="3" y1="12" x2="21" y2="12"/>
+              <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="hidden lg:hidden border-t border-white/10">
+        <nav class="py-4 space-y-1">
+          <a class="block px-4 py-3 text-sm hover:bg-white/5 rounded transition-colors" href="../">Home</a>
+          <a class="block px-4 py-3 text-sm hover:bg-white/5 rounded transition-colors" href="../services/">Services</a>
+          <a class="block px-4 py-3 text-sm hover:bg-white/5 rounded transition-colors" href="../about/">About</a>
+          <a class="block px-4 py-3 text-sm hover:bg-white/5 rounded transition-colors" href="../blogs/">Blog</a>
+          <a class="block px-4 py-3 text-sm hover:bg-white/5 rounded transition-colors" href="../#contact">Contact</a>
+          <a href="##">
+         <div class="px-4 pt-2">
+            <button class="w-full px-5 py-3 rounded-md bg-white text-black text-sm font-semibold hover:bg-gray-100 transition-colors">
+               <i class="fa fa-calendar mr-2"></i> Book a Consultation
+            </button>
+          </div>
+          </a>
+         
+        </nav>
+      </div>
+    </div>
+  </header>
+
+<!-- BOOK A FREE CONSULTATION -->
+<!-- ========================= -->
+ 
+<section id="book-consultation" class="relative py-20 overflow-hidden text-white">
+
+
+  <!-- Logo Watermark (faint in background) -->
+  <img 
+    src="../assets/images/atlasafrica-logo.png" 
+    alt="Atlas Africa Logo"
+    class="absolute inset-0 m-auto opacity-10 w-[350px] md:w-[500px] h-auto object-contain z-0 pointer-events-none"
+  />
+
+  <!-- CONTENT -->
+  <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
+    <!-- Heading -->
+    <div class="mb-10">
+         <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
+              <span class="brand-navy">Book</span><br>
+              <span class="brand-gold">a Free</span>
+              <span class="brand-navy underline-gold">Consultation</span>
+            </h2>
+      <!-- <h2 class="text-3xl md:text-5xl font-extrabold mb-4">
+        <span class="text-brand-gold">Book</span> a Free Consultation
+      </h2> -->
+      <p class="text-gray-600 text-sm md:text-base max-w-lg mx-auto leading-relaxed">
+        <!-- class="text-gray-600 text-sm md:text-base leading-relaxed mb-8 max-w-lg" -->
+        Ready to take your brand to the next level? Schedule a one-on-one strategy session with our experts. 
+        It’s free, easy, and tailored to your goals.
+      </p>
+    </div>
+
+    <!-- CALENDLY EMBED -->
+    <div 
+      class="calendly-inline-widget rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-white/10 backdrop-blur-md"
+      data-url="https://calendly.com/atlasafrica-info/30min"
+      style="min-width:320px;height:700px;"
+    ></div>
+  </div>
+
+  <!-- Calendly Script -->
+  <script 
+    type="text/javascript" 
+    src="https://assets.calendly.com/assets/external/widget.js" 
+    async>
+  </script>
+</section>
+
+
+    <!-- NEWSLETTER SECTION -->
+     <section class="bg-gradient-to-br from-gray-100 to-gray-200 py-16">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="mb-4">
+        <button style="background-color: #0A174E; color: #fff;" class="px-5 py-2 rounded-lg bg-navy text-white text-sm font-semibold hover:bg-opacity-90 transition-colors">
+          Join Our Creative Community
+        </button>
+      </div>
+
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
+        <span class="brand-gold">GET </span>
+        <span class="brand-navy">CREATIVE </span>
+        <span class="text-gray-300">INSPIRATION</span>
+      </h2>
+
+      <p class="text-muted text-base mb-8 max-w-2xl mx-auto">
+        Receive <strong>behind-the-scenes content</strong>, creative tips, and <strong>portfolio updates</strong> that inspire your next big project.
+      </p>
+
+      <form class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+        <input 
+          type="email" 
+          placeholder="enter your email address" 
+          class="flex-1 px-5 py-4 rounded-full bg-white/80 backdrop-blur border border-gray-300 focus:outline-none focus:ring-2 focus:ring-navy focus:border-transparent text-sm"
+        />
+        <button 
+          type="submit" 
+          class="px-8 py-4 rounded-full bg-gold brand-navy font-bold text-sm hover:scale-105 transition-transform whitespace-nowrap"
+        >
+          Subscribe
+        </button>
+      </form>
+    </div>
+  </section>
+
+   <!-- Footer -->
+  <footer class="bg-[#2D3338] text-white py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+        <!-- Brand Column -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div style="background-color: #0A174E;" class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center">
+              <img src="../assets/images/atlasafrica-logo.png" alt="Atlas Africa" width="32px">
+            </div>
+            <div>
+              <div class="font-bold text-lg">ATLAS <span class="brand-navy">AFRICA</span></div>
+              <div class="text-xs text-gray-400">CREATING • MARKETING • MEDIA</div>
+            </div>
+          </div>
+          
+          <p class="text-sm text-gray-300 leading-relaxed mb-6">
+            Your <span class="brand-gold font-semibold">creative partner</span> for visual storytelling that amplifies African brands on the <span class="font-semibold">global stage</span>. From concept to creation, we bring your vision to life.
+          </p>
+
+          <div class="space-y-3">
+            <div class="flex items-center gap-3 text-sm">
+              <div class="w-8 h-8 rounded-lg bg-[#F5D042] flex items-center justify-center">
+                <i class="fa fa-map-marker-alt text-[#2D3338]"></i>
+              </div>
+              <span class="text-gray-300">Lagos, Nigeria</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm">
+              <div class="w-8 h-8 rounded-lg bg-[#F5D042] flex items-center justify-center">
+                <i class="fa fa-phone text-[#2D3338]"></i>
+              </div>
+              <span class="text-gray-300">+234 1 234 5678</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm">
+              <div class="w-8 h-8 rounded-lg bg-[#F5D042] flex items-center justify-center">
+                <i class="fa fa-envelope text-[#2D3338]"></i>
+              </div>
+              <span class="text-gray-300">lagos@atlasafrica.com</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services Column -->
+        <div>
+          <h4 class="font-bold text-base mb-4">SERVICES</h4>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li><a href="#" class="hover:text-gold transition-colors">Digital Marketing</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Video Production</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Website Development</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Strategic Consulting</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Ads Specialization</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Brand Positioning</a></li>
+          </ul>
+        </div>
+
+        <!-- Company Column -->
+        <div>
+          <h4 class="font-bold text-base mb-4">COMPANY</h4>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li><a href="#" class="hover:text-gold transition-colors">Digital Marketing</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Video Production</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Website Development</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Strategic Consulting</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Ads Specialization</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Brand Positioning</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources Column -->
+        <div>
+          <h4 class="font-bold text-base mb-4">RESOURCES</h4>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li><a href="#" class="hover:text-gold transition-colors">Digital Marketing</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Video Production</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Website Development</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Strategic Consulting</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Ads Specialization</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Brand Positioning</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="border-t border-gray-600 pt-6">
+        <div class="flex flex-col md:flex-row md:justify-between items-center gap-4">
+          <div class="text-sm text-gray-400">
+            © 2025 Atlas Africa - <span class="text-gold">Creative Excellence</span> | 
+            <a href="#" class="hover:text-gold transition-colors ml-1">Privacy Policy</a> | 
+            <a href="#" class="hover:text-gold transition-colors ml-1">Terms of Service</a>
+          </div>
+          
+          <div class="flex items-center gap-3">
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-600 hover:bg-gold hover:text-navy transition-all flex items-center justify-center" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-600 hover:bg-gold hover:text-navy transition-all flex items-center justify-center" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-600 hover:bg-gold hover:text-navy transition-all flex items-center justify-center" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-600 hover:bg-gold hover:text-navy transition-all flex items-center justify-center" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-600 hover:bg-gold hover:text-navy transition-all flex items-center justify-center" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- JS for mobile menu & small interactions -->
+  <script>
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    mobileBtn.addEventListener('click', () => {
+      const showing = mobileMenu.classList.toggle('hidden');
+      // toggle aria-expanded for accessibility
+      const expanded = !mobileMenu.classList.contains('hidden');
+      mobileBtn.setAttribute('aria-expanded', expanded);
+    });
+
+    // small intersection observer to add gentle fade-in on hero components (progressive reveal)
+    document.addEventListener('DOMContentLoaded', () => {
+      const targets = document.querySelectorAll('main .hero-card, main section');
+      targets.forEach(t => {
+        t.style.opacity = 0;
+        t.style.transform = 'translateY(8px)';
+        t.style.transition = 'opacity .6s ease, transform .6s ease';
+      });
+
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.style.opacity = 1;
+            e.target.style.transform = 'translateY(0)';
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      targets.forEach(t => io.observe(t));
+    });
+
+  //  Scripts Article detail Popup 
+
+  const modal = document.getElementById("articleModal");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalAuthor = document.getElementById("modalAuthor");
+  const modalRole = document.getElementById("modalRole");
+  const modalDate = document.getElementById("modalDate");
+  const modalReadTime = document.getElementById("modalReadTime");
+  const modalBody = document.getElementById("modalBody");
+  const modalAvatar = document.getElementById("modalAvatar");
+
+  function openArticleModal(article) {
+    modalTitle.textContent = article.dataset.title;
+    modalAuthor.textContent = article.dataset.author;
+    modalRole.textContent = article.dataset.role;
+    modalDate.textContent = article.dataset.date;
+    modalReadTime.textContent = article.dataset.readtime;
+    modalBody.textContent = article.dataset.body;
+    modalAvatar.src = article.dataset.avatar;
+
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeArticleModal() {
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+    document.body.style.overflow = "auto";
+  }
+</script>
+
+  <!-- SCROLL TO TOP BUTTON -->
+<button 
+  id="scrollToTopBtn" 
+  class="hidden fixed bottom-6 right-6 z-50 bg-[#163661] text-white p-3 rounded-full shadow-lg hover:bg-brand-gold transition-all duration-300"
+  aria-label="Scroll to top"
+>
+  <i class="fa-solid fa-arrow-up text-lg"></i>
+</button>
+<script>
+// Show button when user scrolls down
+window.addEventListener("scroll", function() {
+  const scrollBtn = document.getElementById("scrollToTopBtn");
+  if (window.scrollY > 300) {
+    scrollBtn.classList.remove("hidden");
+    scrollBtn.classList.add("flex");
+  } else {
+    scrollBtn.classList.add("hidden");
+    scrollBtn.classList.remove("flex");
+  }
+});
+
+// Smooth scroll to top when clicked
+document.getElementById("scrollToTopBtn").addEventListener("click", function() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+</script>
+
+
+<script>
+document.body.classList.add("loading");
+
+window.addEventListener("load", () => {
+  const loader = document.getElementById("pageLoader");
+  loader.classList.add("fade-out");
+  document.body.classList.remove("loading");
+  
+  // Fully remove from DOM after fade-out
+  setTimeout(() => loader.remove(), 700);
+});
+</script>
+</body>
+</html>
