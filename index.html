@@ -18,7 +18,7 @@
   <style>
     :root{
       --navy: #0A174E;
-      --gold: #F5D042;
+      --gold: #C3A438;
       --muted: #6B7280;
       --accent-blue: #1fb6ff; /* used in artwork */
     }
@@ -123,7 +123,7 @@
         </nav>
 
           <a href="./consultation/">
-          <button class="hidden lg:block px-5 py-2 rounded-md bg-white text-black text-sm font-semibold hover:bg-gray-100 transition-colors">
+          <button class="hidden lg:block px-5 py-2 rounded-md bg-white text-black text-sm font-semibold hover:bg-[#C3A438] transition-colors">
             <i class="fa fa-calendar mr-2"></i> Book a Consultation
           </button>
         </a>
@@ -149,7 +149,7 @@
           <a class="block px-4 py-3 text-sm hover:bg-white/5 rounded transition-colors" href="#contact">Contact</a>
            <a href="./consultation/">
          <div class="px-4 pt-2">
-            <button class="w-full px-5 py-3 rounded-md bg-white text-black text-sm font-semibold hover:bg-gray-100 transition-colors">
+            <button class="w-full px-5 py-3 rounded-md bg-white text-black text-sm font-semibold hover:bg-[#C3A438] transition-colors">
                <i class="fa fa-calendar mr-2"></i> Book a Consultation
             </button>
           </div>
@@ -180,17 +180,18 @@
 
           <!-- Buttons -->
           <div class="mt-8 flex flex-wrap gap-4 items-center">
-            <a href="./consultation/">
-             <button style="border: 2px solid #000;" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-[#C3A438] text-[black] hover:scale-105 transition-transform shadow-xl" aria-label="Start Your Story">
-              <!-- camera icon -->
-               <i class="fa fa-calendar"></i>
-              <span class="text-sm font-semibold">Book a Consultation</span>
-            </button>
-            </a>
+           <a href="./consultation/">
+        <button style="border: 1px solid #000;" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-[#E6D27A] text-black hover:bg-[#C3A438] hover:scale-105 transition-all shadow-xl"
+        aria-label="Start Your Story">
+    <i class="fa fa-calendar"></i>
+    <span class="text-sm font-semibold">Book a Consultation</span>
+  </button>
+</a>
+
             
 
             <a href="./services/">
-              <button style="border: 2px solid #000;" class="flex items-center gap-3 px-4 py-3 rounded-lg border border-gray-300 hover:scale-105 transition-transform bg-white shadow-xl" aria-label="View Our Work">
+              <button style="border: 1px solid #000;" class="flex items-center gap-3 px-4 py-3 rounded-lg border border-gray-300 hover:scale-105 transition-transform bg-white shadow-xl" aria-label="View Our Work">
               <i class="fa fa-play"></i>
               <span class="text-sm font-medium">Veiw Our Work</span>
             </button>
@@ -271,12 +272,12 @@
 
         <!-- floating camera icon (top-left) -->
         <div class="absolute -left-4 -top-4 icon-btn bg-white floaty hover:scale-110 transition-transform duration-300" 
-          style="border: 2px solid black;">
+          style="border: 1px solid black;">
           <i class="fa fa-camera"></i>
         </div>
 
         <!-- floating phone icon (right middle) -->
-        <div class="absolute -right-3 top-10 icon-btn bg-[#F5D042] floaty hover:scale-110 transition-transform duration-300" 
+        <div class="absolute -right-3 top-10 icon-btn bg-[#C3A438] floaty hover:scale-110 transition-transform duration-300" 
           style="border: 1px solid rgba(0,0,0,0.06);">
          <i class="fa-solid fa-mobile-screen-button"></i>
         </div>
@@ -304,11 +305,15 @@
   <div class="max-w-7xl mx-auto text-center">
     <!-- Header -->
     <div class="mb-16">
-      <div style="border: 2px solid #000;" class="inline-block px-4 py-1 bg-[#C3A438] border border-gray-200 text-[black] rounded-lg font-semibold text-sm mb-5 shadow-lg">
-        <i class="fa-solid fa-brush"></i> CREATIVE ARSENAL
-      </div>
+     <div
+  style="border: 1px solid #000;"
+  class="inline-block px-4 py-1 bg-[#D7BE57] border border-gray-200 text-[black] rounded-lg font-semibold text-sm mb-5 shadow-lg hover:bg-[#C3A438] transition-all duration-300"
+>
+  <i class="fa-solid fa-brush"></i> CREATIVE ARSENAL
+</div>
+
       <h2 class="text-3xl md:text-5xl font-extrabold text-[#0A174E] leading-tight">
-        SERVICES THAT <span class="text-[#F5D042]">AMPLIFY YOUR <span class="text-[#0A174E]">STORY</span></span>
+        SERVICES THAT <span class="text-[#C3A438]">AMPLIFY YOUR <span class="text-[#0A174E]">STORY</span></span>
       </h2>
       <p class="mt-5 text-gray-600 max-w-2xl mx-auto text-base md:text-lg">
         From stunning visuals to strategic campaigns, we create content that connects your brand with audiences across Africa and beyond.
@@ -319,11 +324,12 @@
     <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       
       <!-- CARD 1 -->
-      <div class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-        <div class="absolute -top-5 left-8 bg-[#F5D042] p-3 rounded-xl shadow-md">
-          <i class="fa-solid fa-bullhorn"></i>
+      <div style="border: 1PX solid #000;" class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <div class="bg-[#C3A438] p-3 rounded-xl shadow-md w-10">
+          <img src="./assets/icons/Vector.svg">
         </div>
-        <h3 class="text-lg font-bold text-left text-[#F5D042] mt-6 mb-3">Digital Marketing</h3>
+         <p class="text-left mt-4 font-bold">TREND • TALK • TAKE OVER</p>
+        <h3 class="text-2xl font-bold text-left text-[#F5D042] mt-6 mb-3">Digital Marketing</h3>
         <p class="text-gray-600 text-left text-sm leading-relaxed mb-5">
           You’re not getting views because people scroll past mediocrity. We build communities that feel like a cult.
         </p>
@@ -338,11 +344,12 @@
       </div>
 
       <!-- CARD 2 -->
-      <div class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-        <div class="absolute -top-5 left-8 bg-[#0A174E] p-3 rounded-xl shadow-md">
-          <i class="fa-solid fa-video brand-gold"></i>
+      <div style="border: 1PX solid #000;" class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <div class="bg-[#0A174E] p-3 rounded-xl shadow-md w-10">
+          <img src="./assets/icons/video.svg" alt="">
         </div>
-        <h3 class="text-lg text-left text-left font-bold text-[#0A174E] mt-6 mb-3">Video Production</h3>
+         <p class="text-left mt-4 font-bold">SHOOT • SCRIPT • SERVE</p>
+        <h3 class="text-2xl text-left text-left font-bold text-[#0A174E] mt-6 mb-3">Video Production</h3>
         <p class="text-gray-600 text-left text-sm leading-relaxed mb-5">
           When you’re funny and unforgettable, your content becomes an absolute client magnet.
         </p>
@@ -355,11 +362,12 @@
       </div>
 
       <!-- CARD 3 -->
-      <div class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-        <div class="absolute -top-5 left-8 bg-[#F5D042] p-3 rounded-xl shadow-md">
-          <i class="fa-solid fa-code"></i>
+      <div style="border: 1PX solid #000;" class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <div class="bg-[#F5D042] p-3 rounded-xl shadow-md w-10">
+         <img src="./assets/icons/pen.svg" alt="">
         </div>
-        <h3 class="text-lg text-left font-bold text-[#F5D042] mt-6 mb-3">Website Development</h3>
+         <p class="text-left mt-4 font-bold">DESIGN • CODE • SLAY</p>
+        <h3 class="text-2xl text-left font-bold text-[#F5D042] mt-6 mb-3">Website Development</h3>
         <p class="text-gray-600 text-left text-sm leading-relaxed mb-5">
           If your website’s still stuck in 2015, we need to talk. Modern, responsive, built to convert.
         </p>
@@ -372,11 +380,12 @@
       </div>
 
       <!-- CARD 4 -->
-      <div class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-        <div class="absolute -top-5 left-8 bg-[#0A174E] p-3 rounded-xl shadow-md">
-         <i class="fa-regular fa-lightbulb brand-gold"></i>
+      <div style="border: 1PX solid #000;" class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <div class="bg-[#0A174E] p-3 rounded-xl shadow-md w-10">
+         <img src="./assets/icons/analytics.svg" alt="">
         </div>
-        <h3 class="text-lg text-left font-bold text-[#0A174E] mt-6 mb-3">Strategic Consulting</h3>
+         <p class="text-left mt-4 font-bold">PLAN • POSITION • PROFIT</p>
+        <h3 class="text-2xl text-left font-bold text-[#0A174E] mt-6 mb-3">Strategic Consulting</h3>
         <p class="text-gray-600 text-left text-sm leading-relaxed mb-5">
           We’ll tell you what’s wrong (nicely). Realistic, ROI-driven growth plans that work.
         </p>
@@ -389,11 +398,12 @@
       </div>
 
       <!-- CARD 5 -->
-      <div class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-        <div class="absolute -top-5 left-8 bg-[#F5D042] p-3 rounded-xl shadow-md">
-          <i class="fa-solid fa-tag"></i>
+      <div style="border: 1PX solid #000;" class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <div class="bg-[#F5D042] p-3 rounded-xl shadow-md w-10">
+          <img src="./assets/icons/tag-alt.svg" alt="">
         </div>
-        <h3 class="text-lg text-left font-bold text-[#F5D042] mt-6 mb-3">Ads Specialization</h3>
+        <p class="text-left mt-4 font-bold">SHOOT • HOOK • CASHOUT</p>
+        <h3 class="text-2xl text-left font-bold text-[#F5D042] mt-3 mb-3">Ads Specialization</h3>
         <p class="text-gray-600 text-left text-sm leading-relaxed mb-5">
           Every brand runs ads. Only a few trend. Let’s make yours unforgettable.
         </p>
@@ -406,11 +416,12 @@
       </div>
 
       <!-- CARD 6 -->
-      <div class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-        <div class="absolute -top-5 left-8 bg-[#0A174E] p-3 rounded-xl shadow-md">
-          <i class="fa-solid fa-book-open-reader brand-gold"></i>
+      <div style="border: 1PX solid #000;" class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <div class="bg-[#0A174E] p-3 rounded-xl shadow-md w-10">
+          <img src="./assets/icons/book-reader.svg" alt="">
         </div>
-        <h3 class="text-lg text-left font-bold text-[#0A174E] mt-6 mb-3">Brand Positioning</h3>
+         <p class="text-left mt-4 font-bold">DEFINE • DIFFERENTIATE • DOMINATE</p>
+        <h3 class="text-2xl text-left font-bold text-[#0A174E] mt-6 mb-3">Brand Positioning</h3>
         <p class="text-gray-600 text-left text-sm leading-relaxed mb-5">
           We make your brand an IG/LinkedIn accent and a Lagos influencer attitude. Obsession = inevitable.
         </p>
@@ -425,7 +436,7 @@
 
     <!-- CTA -->
     <div class="mt-16">
-      <a href="./consultation/"style="border: 2px solid #000;" class="inline-block bg-[#C3A438] text-[black] font-semibold px-10 py-4 rounded-lg hover:bg-[#f7da62] transition-all duration-300 shadow-xl">
+      <a href="./consultation/"style="border: 1px solid #000;" class="inline-block bg-[#C3A438] text-[black] font-semibold px-10 py-4 rounded-lg hover:hover:bg-[white] transition-all duration-300 shadow-xl">
        <i class="fa-solid fa-calendar"></i>  Book a Consultation
       </a>
     </div>
@@ -440,7 +451,7 @@
     <div>
       <!-- Label -->
       <div class="mb-4">
-        <span style="border: 2px solid #000;" class="inline-flex items-center gap-2 bg-[#C3A438] text-[black] text-sm font-medium py-1.5 px-4 rounded-lg shadow-xl">
+        <span style="border: 1px solid #000;" class="inline-flex items-center gap-2 bg-[#C3A438] text-[black] text-sm font-medium py-1.5 px-4 rounded-lg shadow-xl">
            <i class="fa-solid fa-book-open-reader"></i>
           Our Story
         </span>
@@ -462,15 +473,15 @@
 
       <!-- Bullet Points -->
       <ul class="space-y-2 text-gray-800 mb-8">
-        <li><i class="fa-solid fa-brush"></i> Creative storytelling across Africa</li>
-        <li><i class="fa-solid fa-palette"></i> A powerhouse of storytellers and creatives</li>
-        <li><i class="fa-solid fa-bullhorn"></i> Strategic campaigns that convert</li>
-        <li><i class="fa-solid fa-user-secret"></i> Built with Africa’s bold dreams.</li>
+        <li class="flex gap-3 items-center"><img src="./assets/icons/brush-alt.svg" alt=""> Creative storytelling across Africa</li>
+        <li class="flex gap-3 items-center"><img src="./assets/icons/palette.svg" alt=""> A powerhouse of storytellers and creatives</li>
+        <li class="flex gap-3 items-center"><img src="./assets/icons/megaphone.svg" alt=""> Strategic campaigns that convert</li>
+        <li class="flex gap-3 items-center"><img src="./assets/icons/constructor.svg" alt=""> Built with Africa’s bold dreams.</li>
       </ul>
 
       <!-- Button -->
       <a href="./consultation/"> 
-        <button style="border: 2px solid #000;" class="inline-flex items-center gap-2 bg-[#C3A438] text-[black] hover:bg-yellow-200 transition font-semibold py-2.5 px-5 rounded-lg shadow-lg">
+        <button style="border: 1px solid #000;" class="inline-flex items-center gap-2 bg-[#C3A438] text-[black] hover:bg-[white] transition font-semibold py-2.5 px-5 rounded-lg shadow-lg">
         <i class="fa fa-calendar mr-2"></i> Book a Consultation
       </button>
       </a>
@@ -479,13 +490,21 @@
 
     <!-- Right: Image Collage -->
     <div class="grid grid-cols-2 gap-4 relative">
-      <!-- Top Left -->
-      <div class="relative rounded-2xl overflow-hidden group">
-        <img src="./assets/team/FLP-9028.jpg" alt="Atlas Team" class="w-full h-64 object-cover rounded-2xl transform group-hover:scale-105 transition duration-700">
-        <span class="absolute -top-3 -left-3 z-50 bg-yellow-200 p-2 rounded-lg shadow-md">
-         <i class="fa-solid fa-camera-retro"></i>
-        </span>
-      </div>
+    <!-- Top Left -->
+<div class="relative rounded-2xl overflow-visible group">
+  <!-- Floating Camera Icon Above Image -->
+  <span class="absolute -top-6 left-4 z-50 bg-[#D7BE57] text-black p-2 rounded-lg shadow-lg border border-black transform group-hover:-translate-y-1 transition-all duration-300">
+    <i class="fa-solid fa-camera-retro"></i>
+  </span>
+
+  <!-- Image -->
+  <img
+    src="./assets/team/FLP-9028.jpg"
+    alt="Atlas Team"
+    class="w-full h-64 object-cover rounded-2xl transform group-hover:scale-105 transition duration-700"
+  />
+</div>
+
 
       <!-- Top Right -->
       <div class="rounded-2xl overflow-hidden">
@@ -541,13 +560,13 @@
   <div class="container mx-auto">
     <!-- Label -->
     <div class="mb-4">
-      <span style="border: 2px solid #000;" class="text-sm font-medium bg-gray-200 text-gray-800 py-1 px-3 rounded-lg shadow-xl">Our Portfolio</span>
+      <span style="border: 1px solid #000;" class="text-sm font-medium bg-gray-200 text-gray-800 py-1 px-3 rounded-lg shadow-xl">Our Portfolio</span>
     </div>
 
     <!-- Heading -->
     <h2 class="text-4xl md:text-5xl font-bold leading-tight text-[#0A174E] mb-4">
       Some call it a portfolio <br />
-      <span class="text-[#F5D042]">We call it evidence</span>
+      <span>We call it</span> <span class="text-[#C3A438]">evidence</span>
     </h2>
 
     <!-- Subtext -->
@@ -684,7 +703,7 @@
 
     <div class="text-center mt-10">
         <a href="./consultation/"> 
-          <button style="border: 2px solid #000;" class="px-5 py-2 rounded-lg border-2 text-sm font-semibold text-[black] hover:border-navy transition-colors">
+          <button style="border: 1px solid #000;" class="px-5 py-2 rounded-lg border-2 text-sm font-semibold text-[black] hover:bg-[#C3A438] hover:border-navy transition-colors">
            <i class="fa fa-calendar mr-2"></i> Book a Consultation
         </button>
 
@@ -695,7 +714,7 @@
     <!-- TEAM SECTION -->
     <section class="mt-24 lg:mt-32 mb-20">
       <div class="text-center mb-4">
-        <button style="border: 2px solid #000;" class="px-5 py-2 rounded-lg border-2 text-sm font-semibold text-[black] hover:border-navy transition-colors">
+        <button style="border: 1px solid #000;" class="px-5 py-2 rounded-lg border-2 text-sm font-semibold text-[black] hover:border-navy transition-colors">
           Meet The Team
         </button>
       </div>
@@ -731,7 +750,7 @@
 
             <!-- Team Member Image -->
             <img 
-              src="./assets/team/FLP-8999.jpg" 
+              src="./assets/team/founder.png" 
               alt="Adebayo Ogundimu" 
               class="absolute inset-0 w-full h-full object-cover z-20 mix-blend-normal"
             />
@@ -776,7 +795,7 @@
             </div>
 
             <img 
-              src="./assets/team/FLP-8895.jpg" 
+              src="./assets/team/bukunmi.png" 
               alt="Adebayo Ogundimu" 
               class="absolute inset-0 w-full h-full object-cover z-20"
             />
@@ -819,7 +838,7 @@
             </div>
 
             <img 
-              src="./assets/team/FLP-8967.jpg" 
+              src="./assets/team/shile.png" 
               alt="Adebayo Ogundimu" 
               class="absolute inset-0 w-full h-full object-cover z-20"
             />
@@ -859,7 +878,7 @@
             </div>
 
             <img 
-              src="./assets/team/FLP-8852.jpg" 
+              src="./assets/team/temi.png" 
               alt="Adebayo Ogundimu" 
               class="absolute inset-0 w-full h-full object-cover z-20"
             />
@@ -899,7 +918,7 @@
             </div>
 
             <img 
-              src="./assets/team/FLP-8910.jpg" 
+              src="./assets/team/sharon.png" 
               alt="Adebayo Ogundimu" 
               class="absolute inset-0 w-full h-full object-cover z-20"
             />
@@ -938,7 +957,7 @@
             </div>
 
             <img 
-              src="./assets/team/FLP-8818.jpg" 
+              src="./assets/team/demilade.png" 
               alt="Adebayo Ogundimu" 
               class="absolute inset-0 w-full h-full object-cover z-20"
             />
@@ -1134,7 +1153,7 @@
         />
         <button 
           type="submit" 
-          class="px-8 py-4 rounded-full bg-gold brand-navy font-bold text-sm hover:scale-105 transition-transform whitespace-nowrap"
+          class="px-8 py-4 rounded-full bg-gold text-[white] font-bold text-sm hover:scale-105 transition-transform whitespace-nowrap"
         >
           Subscribe
         </button>
@@ -1164,19 +1183,19 @@
 
           <div class="space-y-3">
             <div class="flex items-center gap-3 text-sm">
-              <div class="w-8 h-8 rounded-lg bg-[#F5D042] flex items-center justify-center">
+              <div class="w-8 h-8 rounded-lg bg-[#C3A438] flex items-center justify-center">
                 <i class="fa fa-map-marker-alt text-[#2D3338]"></i>
               </div>
               <span class="text-gray-300">Lagos, Nigeria</span>
             </div>
             <div class="flex items-center gap-3 text-sm">
-              <div class="w-8 h-8 rounded-lg bg-[#F5D042] flex items-center justify-center">
+              <div class="w-8 h-8 rounded-lg bg-[#C3A438] flex items-center justify-center">
                 <i class="fa fa-phone text-[#2D3338]"></i>
               </div>
               <span class="text-gray-300">+234 805 4906 152</span>
             </div>
             <div class="flex items-center gap-3 text-sm">
-              <div class="w-8 h-8 rounded-lg bg-[#F5D042] flex items-center justify-center">
+              <div class="w-8 h-8 rounded-lg bg-[#C3A438] flex items-center justify-center">
                 <i class="fa fa-envelope text-[#2D3338]"></i>
               </div>
               <span class="text-gray-300">info@atlasafrica.org</span>
@@ -1189,11 +1208,11 @@
           <h4 class="font-bold text-base mb-4">SERVICES</h4>
           <ul class="space-y-2 text-sm text-gray-300">
             <li><a href="#" class="hover:text-gold transition-colors">Digital Marketing</a></li>
-            <li><a href="#" class="hover:text-gold transition-colors">Video Production</a></li>
             <li><a href="#" class="hover:text-gold transition-colors">Website Development</a></li>
             <li><a href="#" class="hover:text-gold transition-colors">Strategic Consulting</a></li>
             <li><a href="#" class="hover:text-gold transition-colors">Ads Specialization</a></li>
             <li><a href="#" class="hover:text-gold transition-colors">Brand Positioning</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Video Production</a></li>
           </ul>
         </div>
 
@@ -1201,11 +1220,11 @@
         <div>
           <h4 class="font-bold text-base mb-4">COMPANY</h4>
           <ul class="space-y-2 text-sm text-gray-300">
-            <li><a href="#" class="hover:text-gold transition-colors">Digital Marketing</a></li>
-            <li><a href="#" class="hover:text-gold transition-colors">Video Production</a></li>
-            <li><a href="#" class="hover:text-gold transition-colors">Website Development</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Home</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">About Atlas</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Our Services</a></li>
+            <li><a href="#" class="hover:text-gold transition-colors">Our Blogs</a></li>
             <li><a href="#" class="hover:text-gold transition-colors">Strategic Consulting</a></li>
-            <li><a href="#" class="hover:text-gold transition-colors">Ads Specialization</a></li>
             <li><a href="#" class="hover:text-gold transition-colors">Brand Positioning</a></li>
           </ul>
         </div>
