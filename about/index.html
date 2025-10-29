@@ -162,8 +162,8 @@
  <main class="max-w-7xl mx-auto px-6 py-12 lg:py-20">
 <!-- ABOUT SECTION 1 - WE DON'T FOLLOW RULES -->
 <section class="mb-20 bg-white">
-  <div class="max-w-7xl mx-auto lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
       
       <!-- LEFT: Text content -->
       <div class="order-2 lg:order-1">
@@ -194,48 +194,61 @@
         </div>
       </div>
 
-      <!-- RIGHT: Image Collage -->
-      <div class="order-1 lg:order-2 relative flex justify-center items-center">
-        <div class="relative w-full max-w-[550px] h-[500px] md:h-[550px] lg:h-[600px]">
+      <!-- RIGHT: Image Collage with Camera -->
+      <div class="order-1 lg:order-2 relative">
+        <div class="relative w-full max-w-[600px] h-[450px] md:h-[500px] lg:h-[550px] mx-auto">
 
           <!-- Tripod Camera (Behind All Cards) -->
-          <div class="absolute -right-8 md:-right-12 top-0 z-0">
-            <img 
-              src="../assets/images/vecteezy_dslr-camera-on-a-tripod-isolated-on-transparent-background_55392223.png"
-              alt="Camera Tripod"
-              class="w-[250px] md:w-[320px] lg:w-[360px] h-auto object-contain opacity-95"
-            />
-          </div>
+<div class="absolute -right-8 md:-right-12 top-0 z-0">
+  <img
+    src="../assets/images/vecteezy_dslr-camera-on-a-tripod-isolated-on-transparent-background_55392223.png"
+    alt="Camera Tripod"
+    class="w-[250px] md:w-[320px] lg:w-[360px] h-auto object-contain opacity-95"
+    style="transform: scaleX(-1);"
+  />
+</div>
 
-          <!-- Image 1 (Top Right Group Image) -->
-          <div class="absolute top-0 right-8 md:right-12 w-48 md:w-56 lg:w-64 z-20 transform rotate-[2deg] hover:rotate-0 hover:scale-105 transition-all duration-300">
-            <img 
-              src="../assets/team/IMG_5193.JPG"
-              alt="Team group photo"
-              class="rounded-2xl shadow-xl w-full h-auto object-cover"
-            />
-          </div>
 
-          <!-- Image 2 (Middle Left Image - Duo with shopping bag) -->
-          <div class="absolute left-0 bottom-20 md:bottom-24 lg:bottom-28 w-44 md:w-52 lg:w-60 z-30 transform rotate-[-3deg] hover:rotate-0 hover:scale-105 transition-all duration-300">
-            <img 
-              src="../assets/team/FLP-9132.jpg"
-              alt="Creative collaboration"
-              class="rounded-2xl shadow-xl w-full h-auto object-cover"
-            />
-          </div>
+          <!-- Image Cards Container -->
+          <div class="relative w-full h-full">
+            
+            <!-- Image 1 - Top Left (Group of 4 people) -->
+            <div class="absolute top-0 left-4 md:left-8 w-48 md:w-56 lg:w-64 z-30 transform rotate-[-2deg] hover:rotate-0 hover:scale-105 transition-all duration-300 shadow-2xl">
+              <div class="bg-white rounded-2xl p-3 md:p-4">
+                <img 
+                  src="../assets/team/FLP-9040.jpg"
+                  alt="Team group photo"
+                  class="rounded-xl w-full h-44 md:h-52 lg:h-56 object-cover"
+                />
+              </div>  
+            </div>
 
-          <!-- Image 3 (Bottom Right Image - Group lying down) -->
-          <div class="absolute bottom-0 right-0 w-52 md:w-60 lg:w-64 z-40 transform rotate-[1.5deg] hover:rotate-0 hover:scale-105 transition-all duration-300">
-            <img 
-              src="../assets/team/FLP-9040.jpg"
-              alt="Fun team photo"
-              class="rounded-2xl shadow-xl w-full h-auto object-cover"
-            />
-          </div>
+            <!-- Image 2 - Bottom Left (2 people with shopping bags - Pink background) -->
+            <div class="absolute bottom-12 left-0 md:left-4 w-40 md:w-48 lg:w-52 z-20 transform rotate-[3deg] hover:rotate-0 hover:scale-105 transition-all duration-300 shadow-2xl">
+              <div class="bg-gradient-to-br from-pink-100 via-pink-50 to-purple-50 rounded-2xl p-3 md:p-4">
+                <img 
+                  src="../assets/team/FLP-9132.jpg"
+                  alt="Creative collaboration"
+                  class="rounded-xl w-full h-40 md:h-48 lg:h-52 object-cover"
+                />
+              </div>
+            </div>
 
+            <!-- Image 3 - Bottom Right (Group lying down/overlapping faces) -->
+            <div class="absolute bottom-0 right-4 md:right-8 lg:right-12 w-48 md:w-56 lg:w-60 z-25 transform rotate-[2deg] hover:rotate-0 hover:scale-105 transition-all duration-300 shadow-2xl">
+              <div class="bg-white rounded-2xl p-3 md:p-4">
+                <img 
+                  src="../assets/team/IMG_5193.JPG"
+                  alt="Fun team photo"
+                  class="rounded-xl w-full h-44 md:h-52 lg:h-56 object-cover"
+                />
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
