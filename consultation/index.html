@@ -17,7 +17,7 @@
   <style>
     :root{
       --navy: #0A174E;
-      --gold: #F5D042;
+      --gold: #C3A438;
       --muted: #6B7280;
       --accent-blue: #1fb6ff; /* used in artwork */
     }
@@ -55,6 +55,139 @@
 
     /* exact hero headline line height and tight spacing */
     .headline-tight { line-height: 0.95; letter-spacing: -0.02em; }
+
+    .service-card {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      transition: all 0.3s ease;
+      border: 1px solid #E5E7EB;
+      position: relative;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      background-color: var(--gold);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+     .process-step {
+      position: relative;
+      text-align: center;
+    }
+
+    .step-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, #E8D39F 0%, #D4C08A 100%);
+      border-radius: 12px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(212, 192, 138, 0.3);
+    }
+
+    .step-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background-color: var(--gold);
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .step-icon {
+        width: 48px;
+        height: 48px;
+      }
+    }
+
+    .step-indicator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid #E5E7EB;
+      background: white;
+      font-weight: 600;
+      font-size: 14px;
+      color: #9CA3AF;
+      transition: all 0.3s ease;
+    }
+
+    .step-indicator.active {
+      background: var(--navy);
+      color: white;
+      border-color: var(--navy);
+    }
+
+    .step-indicator.completed {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+
+    .progress-line {
+      height: 4px;
+      background: #E5E7EB;
+      flex: 1;
+      margin: 0 8px;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .progress-line-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--navy) 0%, var(--gold) 100%);
+      width: 0%;
+      transition: width 0.4s ease;
+    }
+
+    .form-step {
+      display: none;
+    }
+
+    .form-step.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .underline-gold {
+      position: relative;
+      display: inline-block;
+    }
+
+    .underline-gold::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      height: 8px;
+      background-color: var(--gold);
+      z-index: -1;
+    }
   </style>
 
   <!-- Tailwind Fade Animation -->
@@ -121,7 +254,6 @@
        <img src="../assets/images/atlaslogo.png" alt="atlasafrica-logo" width="150px">
       </div>
 
-      
         <!-- Desktop CTA & Mobile Menu -->
         <div class="flex items-center gap-4">
            <!-- Desktop Navigation -->
@@ -170,44 +302,469 @@
     </div>
   </header>
 
-<!-- BOOK A FREE CONSULTATION -->
-<!-- ========================= -->
- 
-<section id="book-consultation" class="relative py-20 overflow-hidden text-white">
+  <!-- <img src="../assets/backgrounds/bg-svg.svg" alt=""> -->
 
+  <!-- LETS DISRUPT YOUR MARKET SECTION -->
+    <section class="text-center mb-16 relative bg-[url('../assets/backgrounds/bg-svg.svg')] bg-cover bg-center p-20">
+      <!-- Main Headline -->
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
+        <span class="brand-navy">LETS </span>
+        <span class="brand-gold">DISTRUPT</span><br>
+        <span class="brand-navy">YOUR MARKET</span>
+      </h1>
 
-  <!-- Logo Watermark (faint in background) -->
-  <img 
-    src="../assets/images/atlasafrica-logo.png" 
-    alt="Atlas Africa Logo"
-    class="absolute inset-0 m-auto opacity-10 w-[350px] md:w-[500px] h-auto object-contain z-0 pointer-events-none"
-  />
-
-  <!-- CONTENT -->
-  <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
-    <!-- Heading -->
-    <div class="mb-10">
-         <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
-              <span class="brand-navy">Book</span><br>
-              <span class="brand-gold">a Free</span>
-              <span class="brand-navy underline-gold">Consultation</span>
-            </h2>
-      <!-- <h2 class="text-3xl md:text-5xl font-extrabold mb-4">
-        <span class="text-brand-gold">Book</span> a Free Consultation
-      </h2> -->
-      <p class="text-gray-600 text-sm md:text-base max-w-lg mx-auto leading-relaxed">
-        <!-- class="text-gray-600 text-sm md:text-base leading-relaxed mb-8 max-w-lg" -->
-        Ready to take your brand to the next level? Schedule a one-on-one strategy session with our experts. 
-        It’s free, easy, and tailored to your goals.
+      <!-- Description -->
+      <p class="text-sm md:text-base text-gray-600 max-w-2xl mx-auto mb-8">
+        We don't do ordinary. Book a free consultation and discover how our 360° approach can transform your brand into a market leader.
       </p>
-    </div>
 
-    <!-- CALENDLY EMBED -->
-    <div 
-      class="calendly-inline-widget rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-white/10 backdrop-blur-md"
-      data-url="https://calendly.com/atlasafrica-info/30min"
-      style="min-width:320px;height:700px;"
-    ></div>
+      <!-- CTA Button -->
+      <a href="#book">
+        <button style="border: 1px solid #000;" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#E3DBBE] hover:bg-gray-50 transition-all mb-12 group">
+        <img src="../assets/icons/calendar.svg" class="mr-5" alt="calendar">
+        <span class="text-sm font-bold">Book a Free Consultation</span>
+      </button>
+      </a>
+
+      <!-- Stats Row -->
+      <div class="grid grid-cols-3 gap-6 max-w-3xl mx-auto mb-16">
+        <!-- Stat 1 -->
+        <div>
+          <div class="text-3xl md:text-4xl font-extrabold brand-navy mb-1">300+</div>
+          <div class="text-xs md:text-sm text-gray-600">Average ROI Increase</div>
+        </div>
+
+        <!-- Stat 2 -->
+        <div>
+          <div class="text-3xl md:text-4xl font-extrabold brand-navy mb-1">150+</div>
+          <div class="text-xs md:text-sm text-gray-600">Brands Transformed</div>
+        </div>
+
+        <!-- Stat 3 -->
+        <div>
+          <div class="text-3xl md:text-4xl font-extrabold brand-navy mb-1">50M+</div>
+          <div class="text-xs md:text-sm text-gray-600">People Reached</div>
+        </div>
+      </div>
+    </section>
+
+
+      <main class="max-w-6xl mx-auto px-6">
+         <!-- 360° SERVICES SECTION -->
+           <section class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold brand-navy mb-2">
+        360° Services,
+      </h2>
+      <h3 class="text-3xl md:text-4xl lg:text-5xl font-extrabold brand-navy mb-4">
+        One Mission
+      </h3>
+      <p class="text-sm md:text-base text-gray-600 max-w-2xl mx-auto mb-12">
+        Everything you need to build, grow, and scale your brand under one roof.
+      </p>
+
+      <!-- Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        
+        <!-- Service 1 - Brand Strategy -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-lightbulb text-xl text-white"></i>
+          </div>
+          <h4 class="text-base font-bold mb-2 text-left">Brand Strategy</h4>
+          <p class="text-xs text-gray-600 leading-relaxed text-left">
+            Define Your Unique Position And Dominate Your Niche Market.
+          </p>
+        </div>
+
+        <!-- Service 2 - Digital Marketing -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-chart-line text-xl text-white"></i>
+          </div>
+          <h4 class="text-base font-bold mb-2 text-left">Digital Marketing</h4>
+          <p class="text-xs text-gray-600 leading-relaxed text-left">
+            Define Your Unique Position And Dominate Your Niche Market.
+          </p>
+        </div>
+
+        <!-- Service 3 - Social Media -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-share-nodes text-xl text-white"></i>
+          </div>
+          <h4 class="text-base font-bold mb-2 text-left">Social Media</h4>
+          <p class="text-xs text-gray-600 leading-relaxed text-left">
+            Define Your Unique Position And Dominate Your Niche Market.
+          </p>
+        </div>
+
+        <!-- Service 4 - Content Creation -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-pen-nib text-xl text-white"></i>
+          </div>
+          <h4 class="text-base font-bold mb-2 text-left">Content Creation</h4>
+          <p class="text-xs text-gray-600 leading-relaxed text-left">
+            Define Your Unique Position And Tech Content Your Niche Market.
+          </p>
+        </div>
+
+        <!-- Service 5 - SEO & SEM -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-magnifying-glass text-white text-xl"></i>
+          </div>
+          <h4 class="text-base font-bold text-left mb-2">SEO & SEM</h4>
+          <p class="text-xs text-gray-600 leading-relaxed text-left">
+            Define Your Unique Position And Dominate Your Niche Market.
+          </p>
+        </div>
+
+        <!-- Service 6 - Web Development -->
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-code text-white text-xl"></i>
+          </div>
+          <h4 class="text-base font-bold text-left mb-2">Web Development</h4>
+          <p class="text-xs text-gray-600 leading-relaxed text-left">
+            Define Your Unique Position And Tech Content Your Niche Market.
+          </p>
+        </div>
+
+      </div>
+           </section>
+
+         <!-- OUR PROVEN PROCESS SECTION -->
+        <section class="mb-16">
+      <!-- Section Header -->
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold brand-navy mb-3">
+          Our Proven<br>Process
+        </h2>
+        <p class="text-sm md:text-base text-gray-600 max-w-2xl mx-auto">
+          From first call to market domination, we're with you every step
+        </p>
+      </div>
+
+      <!-- Process Steps -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        
+        <!-- Step 1 - Discovery -->
+        <div class="process-step">
+          <div class="step-icon"></div>
+          <div class="step-badge">Step 1</div>
+          <h3 class="text-lg font-bold brand-navy mb-2">Discovery</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            We Uncover Your Brand Story And Identify Growth Opportunities.
+          </p>
+        </div>
+
+        <!-- Step 2 - Strategy -->
+        <div class="process-step">
+          <div class="step-icon"></div>
+          <div class="step-badge">Step 2</div>
+          <h3 class="text-lg font-bold brand-navy mb-2">Strategy</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            We Craft A Data-Driven Action Plan Tailored To Your Goals.
+          </p>
+        </div>
+
+        <!-- Step 3 - Execution -->
+        <div class="process-step">
+          <div class="step-icon"></div>
+          <div class="step-badge">Step 3</div>
+          <h3 class="text-lg font-bold brand-navy mb-2">Execution</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            We Launch Campaigns That Captivate Audiences And Drive Results.
+          </p>
+        </div>
+
+        <!-- Step 4 - Optimization -->
+        <div class="process-step">
+          <div class="step-icon"></div>
+          <div class="step-badge">Step 4</div>
+          <h3 class="text-lg font-bold brand-navy mb-2">Optimization</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            We Continuously Improve And Scale Your Success.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Large Image/Video Placeholder -->
+      <div class="bg-gray-200 rounded-3xl h-64 md:h-80 lg:h-96 flex items-center justify-center">
+        <div class="text-center text-gray-400">
+          <i class="fas fa-play-circle text-6xl mb-4"></i>
+          <p class="text-sm">Video or Image Content</p>
+        </div>
+      </div>
+
+          </section>
+
+
+  <style>
+    :root{
+      --navy: #163661;
+      --gold: #F5D042;
+      --muted: #6B7280;
+    }
+
+    .brand-navy { color: var(--navy); }
+    .brand-gold { color: var(--gold); }
+    .bg-gold { background-color: var(--gold); }
+    .bg-navy { background-color: var(--navy); }
+    .text-muted { color: var(--muted); }
+
+    html,body{ 
+      font-family: 'Outfit', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; 
+    }
+
+    
+  </style>
+
+  <div class="min-h-screen py-12 px-4">
+    <div class="max-w-6xl mx-auto">
+     
+      <!-- MULTI-STEP FORM CONTAINER -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        
+        <!-- LEFT SIDE - Step 1 & 2 Forms -->
+        <div id="leftFormContainer" class="bg-white rounded-3xl shadow-xl p-8 lg:p-10">
+          
+          <!-- Header -->
+          <div class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-extrabold brand-navy mb-3">
+              BOOK YOUR FREE<br>CONSULTATION
+            </h1>
+            <p class="text-sm text-gray-600">Just 3 simple steps to start your transformation</p>
+          </div>
+
+          <!-- Progress Indicator -->
+          <div class="flex items-center mb-8">
+            <div class="flex flex-col items-center">
+              <div class="step-indicator active" data-step="1">1</div>
+              <span class="text-xs font-semibold brand-navy mt-2">Details</span>
+            </div>
+            <div class="progress-line">
+              <div class="progress-line-fill" id="progressLine1"></div>
+            </div>
+            <div class="flex flex-col items-center">
+              <div class="step-indicator" data-step="2">2</div>
+              <span class="text-xs font-semibold text-gray-400 mt-2">Services</span>
+            </div>
+            <div class="progress-line">
+              <div class="progress-line-fill" id="progressLine2"></div>
+            </div>
+            <div class="flex flex-col items-center">
+              <div class="step-indicator" data-step="3">3</div>
+              <span class="text-xs font-semibold text-gray-400 mt-2">Schedule</span>
+            </div>
+          </div>
+
+          <!-- STEP 1 - Details Form -->
+          <div class="form-step active" id="step1">
+            <form class="space-y-4">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-semibold brand-navy mb-2">Full Name</label>
+                  <input 
+                    type="text" 
+                    id="fullName"
+                    placeholder="your full name" 
+                    class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-navy focus:border-transparent text-sm"
+                    required
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold brand-navy mb-2">Email Address</label>
+                  <input 
+                    type="email" 
+                    id="emailAddress"
+                    placeholder="your@email.com" 
+                    class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-navy focus:border-transparent text-sm"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-semibold brand-navy mb-2">Company Name</label>
+                  <input 
+                    type="text" 
+                    id="companyName"
+                    placeholder="your company name" 
+                    class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-navy focus:border-transparent text-sm"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold brand-navy mb-2">Phone Number</label>
+                  <input 
+                    type="tel" 
+                    id="phoneNumber"
+                    placeholder="input your phone number" 
+                    class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-navy focus:border-transparent text-sm"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold brand-navy mb-2">Tell Us About Your Project</label>
+                <textarea 
+                  id="projectDetails"
+                  rows="5" 
+                  placeholder="Describe your business, target market, and marketing goals..." 
+                  class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-navy focus:border-transparent text-sm resize-none"
+                ></textarea>
+              </div>
+
+              <button 
+                type="button" 
+                onclick="goToStep(2)" 
+                class="w-full py-4 bg-navy text-white rounded-xl font-bold hover:bg-opacity-90 transition-all"
+              >
+                Next
+              </button>
+            </form>
+          </div>
+
+          <!-- STEP 2 - Services Form -->
+          <div class="form-step" id="step2">
+            <form class="space-y-4">
+              <div>
+                <label class="block text-sm font-semibold brand-navy mb-2">Services Needed</label>
+                <select 
+                  id="servicesNeeded"
+                  class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-navy focus:border-transparent text-sm"
+                  required
+                >
+                  <option value="">select a service</option>
+                  <option value="video-production">Video Production</option>
+                  <option value="digital-marketing">Digital Marketing</option>
+                  <option value="social-media">Social Media Management</option>
+                  <option value="brand-strategy">Brand Strategy</option>
+                  <option value="content-creation">Content Creation</option>
+                  <option value="web-development">Web Development</option>
+                  <option value="seo-sem">SEO & SEM</option>
+                  <option value="multiple">Multiple Services</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold brand-navy mb-2">Budget</label>
+                <select 
+                  id="budget"
+                  class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-navy focus:border-transparent text-sm"
+                  required
+                >
+                  <option value="">pick a budget range</option>
+                  <option value="under-1k">Under $1,000</option>
+                  <option value="1k-5k">$1,000 - $5,000</option>
+                  <option value="5k-10k">$5,000 - $10,000</option>
+                  <option value="10k-25k">$10,000 - $25,000</option>
+                  <option value="25k-50k">$25,000 - $50,000</option>
+                  <option value="50k-plus">$50,000+</option>
+                </select>
+              </div>
+
+              <div class="flex gap-4">
+                <button 
+                  type="button" 
+                  onclick="goToStep(1)" 
+                  class="flex-1 py-4 bg-gray-200 text-gray-700 rounded-xl font-bold hover:bg-gray-300 transition-all"
+                >
+                  Back
+                </button>
+                <button 
+                  type="button" 
+                  onclick="goToStep(3)" 
+                  class="flex-1 py-4 bg-navy text-white rounded-xl font-bold hover:bg-opacity-90 transition-all"
+                >
+                  Next
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDE - Step 2 Preview (shown on desktop) -->
+        <div id="rightFormContainer" class="hidden lg:block bg-gray-800 rounded-3xl shadow-xl p-8 lg:p-10 text-white">
+          <div class="text-center mb-6">
+            <div class="inline-flex items-center gap-2 mb-4">
+              <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center font-bold text-sm">2</div>
+              <span class="text-sm font-bold">Services</span>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <div>
+              <label class="block text-sm font-semibold mb-2">Services Needed</label>
+              <div class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-sm text-gray-300">
+                select a service
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-semibold mb-2">Budget</label>
+              <div class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-sm text-gray-300">
+                pick a budget range
+              </div>
+            </div>
+
+            <div class="flex gap-4 pt-4">
+              <button class="flex-1 py-3 bg-gray-700 rounded-lg font-semibold text-sm">Back</button>
+              <button class="flex-1 py-3 bg-blue-600 rounded-lg font-semibold text-sm">Next</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3 - Calendly Schedule (Full Width) -->
+        <div class="form-step lg:col-span-2" id="step3">
+          <div class="bg-white rounded-3xl shadow-xl p-8 lg:p-10">
+            <section id="book-consultation" class="relative overflow-hidden">
+              <!-- Logo Watermark -->
+              <img 
+                src="../assets/images/atlasafrica-logo.png" 
+                alt="Atlas Africa Logo"
+                class="absolute inset-0 m-auto opacity-5 w-[350px] md:w-[500px] h-auto object-contain z-0 pointer-events-none"
+              />
+
+              <!-- Content -->
+              <div class="relative z-10 max-w-6xl mx-auto text-center">
+                <!-- Heading -->
+                <div class="mb-10">
+                  <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
+                    <span class="brand-navy">Book</span><br>
+                    <span class="brand-gold">a Free </span>
+                    <span class="brand-navy underline-gold">Consultation</span>
+                  </h2>
+                  <p class="text-gray-600 text-sm md:text-base max-w-lg mx-auto leading-relaxed">
+                    Ready to take your brand to the next level? Schedule a one-on-one strategy session with our experts. 
+                    It's free, easy, and tailored to your goals.
+                  </p>
+                </div>
+
+                <!-- Back Button -->
+                <button 
+                  onclick="goToStep(2)" 
+                  class="mb-6 px-6 py-3 bg-gray-200 text-gray-700 rounded-xl font-bold hover:bg-gray-300 transition-all"
+                >
+                  <i class="fas fa-arrow-left mr-2"></i>Back
+                </button>
+
+                <!-- Calendly Embed -->
+                <div 
+                  class="calendly-inline-widget rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-white"
+                  data-url="https://calendly.com/atlasafrica-info/30min"
+                  style="min-width:320px;height:700px;"
+                ></div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 
   <!-- Calendly Script -->
@@ -216,7 +773,100 @@
     src="https://assets.calendly.com/assets/external/widget.js" 
     async>
   </script>
-</section>
+
+  <!-- Multi-Step Form Logic -->
+ <script>
+  let currentStep = 1;
+  const totalSteps = 3;
+
+  function goToStep(step) {
+    // Validate current step before proceeding
+    if (step > currentStep && !validateStep(currentStep)) {
+      return;
+    }
+
+    // Hide all steps
+    document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+    
+    // Show target step
+    document.getElementById(`step${step}`).classList.add('active');
+
+    // Update step indicators
+    document.querySelectorAll('.step-indicator').forEach((indicator, index) => {
+      const stepNum = index + 1;
+      indicator.classList.remove('active', 'completed');
+      
+      if (stepNum < step) {
+        indicator.classList.add('completed');
+        indicator.querySelector('span')?.classList.remove('text-gray-400');
+        indicator.querySelector('span')?.classList.add('brand-navy');
+      } else if (stepNum === step) {
+        indicator.classList.add('active');
+      }
+    });
+
+    // Update progress lines
+    if (step >= 2) {
+      document.getElementById('progressLine1').style.width = '100%';
+    } else {
+      document.getElementById('progressLine1').style.width = '0%';
+    }
+
+    if (step >= 3) {
+      document.getElementById('progressLine2').style.width = '100%';
+    } else {
+      document.getElementById('progressLine2').style.width = '0%';
+    }
+
+    // Show/hide containers based on step
+    if (step === 3) {
+      document.getElementById('leftFormContainer').style.display = 'none';
+      document.getElementById('rightFormContainer').style.display = 'none';
+    } else {
+      document.getElementById('leftFormContainer').style.display = 'block';
+      document.getElementById('rightFormContainer').style.display = 'block';
+    }
+
+    currentStep = step;
+
+    // ❌ Removed scroll-to-top behavior
+    // window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function validateStep(step) {
+    if (step === 1) {
+      const fullName = document.getElementById('fullName').value;
+      const email = document.getElementById('emailAddress').value;
+      
+      if (!fullName || !email) {
+        alert('Please fill in required fields: Full Name and Email');
+        return false;
+      }
+      
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address');
+        return false;
+      }
+    }
+
+    if (step === 2) {
+      const services = document.getElementById('servicesNeeded').value;
+      const budget = document.getElementById('budget').value;
+      
+      if (!services || !budget) {
+        alert('Please select both Service and Budget');
+        return false;
+      }
+    }
+
+    return true;
+  }
+</script>
+
+
+      
+      </main>
 
 
     <!-- NEWSLETTER SECTION -->

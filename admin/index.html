@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas Africa - Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .dark .glass {
+            background: rgba(17, 24, 39, 0.6);
+            border: 1px solid rgba(75, 85, 99, 0.3);
+        }
+        
+        .gradient-oxford {
+            background: linear-gradient(135deg, #0A174E 0%, #1e3a8a 100%);
+        }
+        
+        .gradient-gold {
+            background: linear-gradient(135deg, #D9C993 0%, #eab308 100%);
+        }
+        
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .progress-bar {
+            transition: width 1s ease-in-out;
+        }
+        
+        .sidebar-transition {
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    
+    <!-- Top Navigation Bar -->
+    <nav class="bg-black text-white sticky top-0 z-50 shadow-2xl">
+        <div class="flex items-center justify-between px-6 py-4">
+            <!-- Logo & Mobile Menu -->
+            <div class="flex items-center space-x-4">
+                <button onclick="toggleSidebar()" class="lg:hidden text-white hover:text-yellow-300 transition">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 gradient-gold p-2 rounded-lg flex items-center justify-center font-bold text-[#0A174E] shadow-lg">
+                        <img src="../assets/icons/Logo-Off-white-06.svg" alt="icon">
+                    </div>
+                    <span class="text-white font-bold text-xl hidden sm:block">Atlas Africa</span>
+                </div>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="flex-1 max-w-xl mx-8 hidden md:block">
+                <div class="relative">
+                    <i class="fas fa-search absolute left-3 top-1/2 z-50 transform -translate-y-1/2 text-gray-300"></i>
+                    <input
+                        type="text"
+                        placeholder="Search projects, clients, media..."
+                        class="w-full pl-10 pr-4 py-2 glass rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                    />
+                </div>
+            </div>
+
+            <!-- Right Side Icons -->
+            <div class="flex items-center space-x-4">
+                <button class="relative p-2 hover:bg-white hover:bg-opacity-10 rounded-lg transition-colors">
+                    <i class="fas fa-bell text-white text-lg"></i>
+                    <span class="absolute top-1 right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
+                </button>
+                <div class="w-10 h-10 gradient-gold rounded-full flex items-center justify-center font-bold text-[#0A174E] cursor-pointer shadow-lg hover:shadow-xl transition">
+                    JD
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar-transition fixed inset-y-0 left-0 z-40 w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 shadow-xl lg:shadow-none -translate-x-full lg:translate-x-0">
+            <div class="flex flex-col h-full p-6 pt-8 overflow-y-auto">
+                <nav class="flex-1 space-y-2 mt-20">
+                    <a href="#" class="nav-item active flex items-center space-x-3 px-4 py-3 rounded-xl transition-all bg-black text-white shadow-lg">
+                        <i class="fas fa-home"></i>
+                        <span class="font-medium">Dashboard</span>
+                    </a>
+                    <a href="#" class="nav-item flex items-center space-x-3 px-4 py-3 rounded-xl transition-all text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <i class="fas fa-briefcase"></i>
+                        <span class="font-medium">Projects</span>
+                    </a>
+                    <a href="#" class="nav-item flex items-center space-x-3 px-4 py-3 rounded-xl transition-all text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <i class="fas fa-users"></i>
+                        <span class="font-medium">Clients</span>
+                    </a>
+                    <a href="#" class="nav-item flex items-center space-x-3 px-4 py-3 rounded-xl transition-all text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <i class="fas fa-film"></i>
+                        <span class="font-medium">Media</span>
+                    </a>
+                    <a href="#" class="nav-item flex items-center space-x-3 px-4 py-3 rounded-xl transition-all text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <i class="fas fa-chart-bar"></i>
+                        <span class="font-medium">Analytics</span>
+                    </a>
+                      <a href="#" class="nav-item flex items-center space-x-3 px-4 py-3 rounded-xl transition-all text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <i class="fas fa-envelope"></i>
+                        <span class="font-medium">Subscribers</span>
+                    </a>
+                    <a href="#" class="nav-item flex items-center space-x-3 px-4 py-3 rounded-xl transition-all text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <i class="fas fa-cog"></i>
+                        <span class="font-medium">Settings</span>
+                    </a>
+                </nav>
+                
+                <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-600 dark:text-gray-400 hover:bg-red-50 dark:hover:bg-red-900 hover:text-red-600 transition-all mt-auto">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span class="font-medium">Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-6 lg:p-8 lg:ml-64 overflow-x-hidden">
+            <!-- Header -->
+            <div class="mb-8">
+                <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-2">Welcome back, John</h1>
+                <p class="text-gray-600 dark:text-gray-400">Here's what's happening with your projects today.</p>
+            </div>
+
+            <!-- Summary Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <!-- Card 1 -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover-lift cursor-pointer border border-gray-100 dark:border-gray-700">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+                            <i class="fas fa-folder text-white text-lg"></i>
+                        </div>
+                        <span class="text-green-500 text-sm font-semibold">+12%</span>
+                    </div>
+                    <h3 class="text-gray-600 dark:text-gray-400 text-sm font-medium mb-1">Active Projects</h3>
+                    <p class="text-3xl font-bold text-gray-900 dark:text-white">24</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover-lift cursor-pointer border border-gray-100 dark:border-gray-700">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 gradient-gold rounded-xl flex items-center justify-center shadow-lg">
+                            <i class="fas fa-users text-[#0A174E] text-lg"></i>
+                        </div>
+                        <span class="text-green-500 text-sm font-semibold">+28%</span>
+                    </div>
+                    <h3 class="text-gray-600 dark:text-gray-400 text-sm font-medium mb-1">New Leads</h3>
+                    <p class="text-3xl font-bold text-gray-900 dark:text-white">156</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover-lift cursor-pointer border border-gray-100 dark:border-gray-700">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                            <i class="fas fa-eye text-white text-lg"></i>
+                        </div>
+                        <span class="text-green-500 text-sm font-semibold">+15%</span>
+                    </div>
+                    <h3 class="text-gray-600 dark:text-gray-400 text-sm font-medium mb-1">Campaign Reach</h3>
+                    <p class="text-3xl font-bold text-gray-900 dark:text-white">2.4M</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover-lift cursor-pointer border border-gray-100 dark:border-gray-700">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg">
+                            <i class="fas fa-mouse-pointer text-white text-lg"></i>
+                        </div>
+                        <span class="text-green-500 text-sm font-semibold">+3.2%</span>
+                    </div>
+                    <h3 class="text-gray-600 dark:text-gray-400 text-sm font-medium mb-1">Engagement Rate</h3>
+                    <p class="text-3xl font-bold text-gray-900 dark:text-white">8.7%</p>
+                </div>
+            </div>
+
+            <!-- Content Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                <!-- Recent Activity -->
+                <div class="lg:col-span-2 bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-bold text-gray-900 dark:text-white">Recent Activity</h2>
+                        <button class="text-[#0A174E] dark:text-yellow-400 text-sm font-semibold hover:underline">View All</button>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition cursor-pointer">
+                            <div class="w-10 h-10 gradient-oxford rounded-lg flex items-center justify-center font-bold text-white text-sm">TC</div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-900 dark:text-white text-sm">Brand Refresh - TechCorp</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-xs">Design approved</p>
+                            </div>
+                            <span class="text-gray-500 dark:text-gray-400 text-xs">2h ago</span>
+                        </div>
+                        <div class="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition cursor-pointer">
+                            <div class="w-10 h-10 gradient-gold rounded-lg flex items-center justify-center font-bold text-[#0A174E] text-sm">RC</div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-900 dark:text-white text-sm">Social Campaign - RetailCo</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-xs">Content published</p>
+                            </div>
+                            <span class="text-gray-500 dark:text-gray-400 text-xs">5h ago</span>
+                        </div>
+                        <div class="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition cursor-pointer">
+                            <div class="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center font-bold text-white text-sm">SX</div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-900 dark:text-white text-sm">Video Production - StartupX</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-xs">First draft ready</p>
+                            </div>
+                            <span class="text-gray-500 dark:text-gray-400 text-xs">1d ago</span>
+                        </div>
+                        <div class="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition cursor-pointer">
+                            <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center font-bold text-white text-sm">EP</div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-900 dark:text-white text-sm">SEO Optimization - EcomPlus</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-xs">Keywords updated</p>
+                            </div>
+                            <span class="text-gray-500 dark:text-gray-400 text-xs">2d ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Performance Chart -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-6">Performance</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Campaigns</span>
+                                <span class="text-sm font-bold text-gray-900 dark:text-white">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="progress-bar gradient-oxford h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Engagement</span>
+                                <span class="text-sm font-bold text-gray-900 dark:text-white">72%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="progress-bar gradient-gold h-2 rounded-full" style="width: 72%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Reach</span>
+                                <span class="text-sm font-bold text-gray-900 dark:text-white">93%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="progress-bar bg-gradient-to-r from-purple-500 to-purple-600 h-2 rounded-full" style="width: 93%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Conversion</span>
+                                <span class="text-sm font-bold text-gray-900 dark:text-white">68%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="progress-bar bg-gradient-to-r from-green-500 to-green-600 h-2 rounded-full" style="width: 68%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="w-full mt-6 gradient-oxford text-white py-3 rounded-xl font-semibold hover:shadow-xl transition-all">
+                        View Analytics
+                    </button>
+                </div>
+            </div>
+
+            <!-- Active Projects -->
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white">Active Projects</h2>
+                    <button class="gradient-gold text-[#0A174E] px-4 py-2 rounded-lg font-semibold hover:shadow-lg transition-all flex items-center space-x-2">
+                        <i class="fas fa-plus"></i>
+                        <span>New Project</span>
+                    </button>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Project Card 1 -->
+                    <div class="border border-gray-200 dark:border-gray-700 rounded-xl p-5 hover:shadow-lg transition-all cursor-pointer">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 text-xs font-semibold rounded-full">In Progress</span>
+                            <button class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                        </div>
+                        <h3 class="font-bold text-gray-900 dark:text-white mb-1">TechCorp Rebrand</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">TechCorp Inc.</p>
+                        <div class="mb-3">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs text-gray-600 dark:text-gray-400">Progress</span>
+                                <span class="text-xs font-bold text-gray-900 dark:text-white">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="gradient-oxford h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
+                            <span><i class="far fa-calendar mr-1"></i>Dec 15</span>
+                            <div class="flex -space-x-2">
+                                <div class="w-6 h-6 rounded-full gradient-oxford border-2 border-white dark:border-gray-800"></div>
+                                <div class="w-6 h-6 rounded-full gradient-gold border-2 border-white dark:border-gray-800"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="border border-gray-200 dark:border-gray-700 rounded-xl p-5 hover:shadow-lg transition-all cursor-pointer">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-600 dark:text-yellow-300 text-xs font-semibold rounded-full">Review</span>
+                            <button class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                        </div>
+                        <h3 class="font-bold text-gray-900 dark:text-white mb-1">Holiday Campaign</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">RetailCo</p>
+                        <div class="mb-3">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs text-gray-600 dark:text-gray-400">Progress</span>
+                                <span class="text-xs font-bold text-gray-900 dark:text-white">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="gradient-gold h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
+                            <span><i class="far fa-calendar mr-1"></i>Nov 30</span>
+                            <div class="flex -space-x-2">
+                                <div class="w-6 h-6 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 border-2 border-white dark:border-gray-800"></div>
+                                <div class="w-6 h-6 rounded-full bg-gradient-to-br from-green-500 to-green-600 border-2 border-white dark:border-gray-800"></div>
+                                <div class="w-6 h-6 rounded-full gradient-oxford border-2 border-white dark:border-gray-800"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="border border-gray-200 dark:border-gray-700 rounded-xl p-5 hover:shadow-lg transition-all cursor-pointer">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 text-xs font-semibold rounded-full">Production</span>
+                            <button class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                        </div>
+                        <h3 class="font-bold text-gray-900 dark:text-white mb-1">Product Launch Video</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">StartupX</p>
+                        <div class="mb-3">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs text-gray-600 dark:text-gray-400">Progress</span>
+                                <span class="text-xs font-bold text-gray-900 dark:text-white">45%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-purple-500 to-purple-600 h-2 rounded-full" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
+                            <span><i class="far fa-calendar mr-1"></i>Jan 10</span>
+                            <div class="flex -space-x-2">
+                                <div class="w-6 h-6 rounded-full gradient-gold border-2 border-white dark:border-gray-800"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 4 -->
+                    <div class="border border-gray-200 dark:border-gray-700 rounded-xl p-5 hover:shadow-lg transition-all cursor-pointer">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-300 text-xs font-semibold rounded-full">Development</span>
+                            <button class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                        </div>
+                        <h3 class="font-bold text-gray-900 dark:text-white mb-1">Website Redesign</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">EcomPlus</p>
+                        <div class="mb-3">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs text-gray-600 dark:text-gray-400">Progress</span>
+                                <span class="text-xs font-bold text-gray-900 dark:text-white">60%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-green-500 to-green-600 h-2 rounded-full" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
+                            <span><i class="far fa-calendar mr-1"></i>Dec 20</span>
+                            <div class="flex -space-x-2">
+                                <div class="w-6 h-6 rounded-full gradient-oxford border-2 border-white dark:border-gray-800"></div>
+                                <div class="w-6 h-6 rounded-full gradient-gold border-2 border-white dark:border-gray-800"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+    <footer class="bg-black text-white mt-12 py-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 gradient-gold rounded-lg flex items-center justify-center font-bold text-[#0A174E] shadow-lg">
+                        AA
+                    </div>
+                    <div>
+                        <p class="text-white font-bold">Atlas Africa</p>
+                        <p class="text-gray-300 text-xs">Creative Marketing & Media Agency</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="text-gray-300 hover:text-yellow-300 transition">
+                        <i class="fab fa-facebook-f text-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-yellow-300 transition">
+                        <i class="fab fa-twitter text-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-yellow-300 transition">
+                        <i class="fab fa-instagram text-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-yellow-300 transition">
+                        <i class="fab fa-linkedin-in text-lg"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-white border-opacity-20 mt-6 pt-6 text-center">
+                <p class="text-gray-300 text-sm">© 2025 Atlas Africa. All rights reserved. | Crafted with excellence for creative storytelling.</p>
+            </div>
+        </div>
+    </footer>
+        </main>
+    </div>
+
+
+
+    <script>
+
+        // Animate progress bars on load
+        window.addEventListener('load', () => {
+            const progressBars = document.querySelectorAll('.progress-bar');
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        });
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            const sidebar = document.getElementById('sidebar');
+            const menuButton = e.target.closest('[onclick="toggleSidebar()"]');
+            
+            if (!sidebar.contains(e.target) && !menuButton && window.innerWidth < 1024) {
+                sidebar.classList.add('-translate-x-full');
+            }
+        });
+    </script>
+</body>
+</html>

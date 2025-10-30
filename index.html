@@ -181,9 +181,9 @@
           <!-- Buttons -->
           <div class="mt-8 flex flex-wrap gap-4 items-center">
            <a href="./consultation/">
-        <button style="border: 1px solid #000;" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-[#E6D27A] text-black hover:bg-[#C3A438] hover:scale-105 transition-all shadow-xl"
+        <button style="border: 1px solid #000;" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-[#E0D19B] text-black hover:bg-[#C3A438] hover:scale-105 transition-all shadow-xl"
         aria-label="Start Your Story">
-    <i class="fa fa-calendar"></i>
+    <img src="./assets/icons/calendar.svg" alt="">
     <span class="text-sm font-semibold">Book a Consultation</span>
   </button>
 </a>
@@ -192,7 +192,7 @@
 
             <a href="./services/">
               <button style="border: 1px solid #000;" class="flex items-center gap-3 px-4 py-3 rounded-lg border border-gray-300 hover:scale-105 transition-transform bg-white shadow-xl" aria-label="View Our Work">
-              <i class="fa fa-play"></i>
+              <img src="./assets/icons/play.svg" alt="">
               <span class="text-sm font-medium">Veiw Our Work</span>
             </button>
             </a>
@@ -261,37 +261,37 @@
 <aside class="lg:col-span-5 flex justify-center lg:justify-end">
   <div class="hero-card relative w-full max-w-sm md:max-w-md lg:max-w-lg bg-white">
     <!-- blue patterned background with rounded corners -->
-    <div class="relative rounded-xl overflow-hidden bg-[#ffff] p-6" >
+    <div class="relative p-6" >
       <!-- Placeholder image (replace this with your Figma export later) -->
       <div class="relative">
         <img 
           src="./assets/team/atlas-group.png" 
           alt="Atlas Africa Creative Artwork" 
-          class="w-full rounded-xl object-cover shadow-xl hover:scale-[1.02] transition-transform duration-500 ease-out"
+          class="w-full rounded-xl object-cover hover:scale-[1.02] transition-transform duration-500 ease-out"
         />
 
         <!-- floating camera icon (top-left) -->
-        <div class="absolute -left-4 -top-4 icon-btn bg-white floaty hover:scale-110 transition-transform duration-300" 
+        <div class="absolute -left-4 -top-4 icon-btn bg-white floaty hover:scale-110 transition-transform duration-300 p-2" 
           style="border: 1px solid black;">
-          <i class="fa fa-camera"></i>
+          <img src="./assets/icons/camera.svg" alt="">
         </div>
 
         <!-- floating phone icon (right middle) -->
-        <div class="absolute -right-3 top-10 icon-btn bg-[#C3A438] floaty hover:scale-110 transition-transform duration-300" 
+        <div class="absolute -right-3 top-10 icon-btn bg-[#C3A438] floaty hover:scale-110 transition-transform duration-300 p-2" 
           style="border: 1px solid rgba(0,0,0,0.06);">
-         <i class="fa-solid fa-mobile-screen-button"></i>
+         <img src="./assets/icons/mobile-android-alt.svg" alt="">
         </div>
 
         <!-- floating video icon (left middle) -->
-        <div class="absolute -left-3 bottom-6 icon-btn bg-[#0A174E] floaty hover:scale-110 transition-transform duration-300" 
+        <div class="absolute -left-3 bottom-6 icon-btn bg-[#0A174E] floaty hover:scale-110 transition-transform duration-300 p-2" 
           style="border: 1px solid rgba(255,255,255,0.06);">
-          <i class="fa fa-video text-white"></i>
+          <img src="./assets/icons/video.svg" alt="">
         </div>
 
         <!-- floating mic icon (bottom-right) -->
-        <div class="absolute -right-3 -bottom-6 icon-btn bg-black floaty hover:scale-110 transition-transform duration-300" 
+        <div class="absolute -right-3 -bottom-6 icon-btn bg-black floaty hover:scale-110 transition-transform duration-300 p-2" 
           style="border: 1px solid rgba(255,255,255,0.06);">
-          <i class="fa fa-microphone text-white"></i>
+          <img src="./assets/icons/microphone.svg" alt="">
         </div>
       </div>
     </div>
@@ -307,7 +307,7 @@
     <div class="mb-16">
      <div
   style="border: 1px solid #000;"
-  class="inline-block px-4 py-1 bg-[#D7BE57] border border-gray-200 text-[black] rounded-lg font-semibold text-sm mb-5 shadow-lg hover:bg-[#C3A438] transition-all duration-300"
+  class="inline-block px-4 py-1 bg-[#F0E8CD] border border-gray-200 text-[black] rounded-lg font-semibold text-sm mb-5 shadow-lg hover:bg-[#C3A438] transition-all duration-300"
 >
   <i class="fa-solid fa-brush"></i> CREATIVE ARSENAL
 </div>
@@ -320,124 +320,217 @@
       </p>
     </div>
 
-    <!-- Services Grid -->
-    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      
-      <!-- CARD 1 -->
-      <div style="border: 1PX solid #000;" class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-        <div class="bg-[#C3A438] p-3 rounded-xl shadow-md w-10">
-          <img src="./assets/icons/Vector.svg">
-        </div>
-         <p class="text-left mt-4 font-bold">TREND • TALK • TAKE OVER</p>
-        <h3 class="text-2xl font-bold text-left text-[#F5D042] mt-6 mb-3">Digital Marketing</h3>
-        <p class="text-gray-600 text-left text-sm leading-relaxed mb-5">
-          You’re not getting views because people scroll past mediocrity. We build communities that feel like a cult.
-        </p>
-        <ul class="text-sm text-left text-gray-700 space-y-1 mb-6">
-          <li>• Campaigns that slap</li>
-          <li>• SEO that flirts with Google</li>
-          <li>• Metrics you’ll brag about</li>
-        </ul>
-        <div >
-        <a href="#" class="text-[#F5D042] font-semibold hover:underline transition">GET STARTED →</a>
-        </div>
-      </div>
+<!-- Services Grid -->
+<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 
-      <!-- CARD 2 -->
-      <div style="border: 1PX solid #000;" class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-        <div class="bg-[#0A174E] p-3 rounded-xl shadow-md w-10">
-          <img src="./assets/icons/video.svg" alt="">
-        </div>
-         <p class="text-left mt-4 font-bold">SHOOT • SCRIPT • SERVE</p>
-        <h3 class="text-2xl text-left text-left font-bold text-[#0A174E] mt-6 mb-3">Video Production</h3>
-        <p class="text-gray-600 text-left text-sm leading-relaxed mb-5">
-          When you’re funny and unforgettable, your content becomes an absolute client magnet.
-        </p>
-        <ul class="text-sm text-left text-gray-700 space-y-1 mb-6">
-          <li>• Storytelling with drama</li>
-          <li>• Copy that marries conversion</li>
-          <li>• Videos with vibe</li>
-        </ul>
-        <a href="#" class="text-[#0A174E] font-semibold hover:underline transition">GET STARTED →</a>
-      </div>
+  <!-- CARD 1 -->
+  <div style="border: 1px solid #000;" 
+    class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-[url('./assets/backgrounds/bg-svg.svg')] bg-cover bg-center">
 
-      <!-- CARD 3 -->
-      <div style="border: 1PX solid #000;" class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-        <div class="bg-[#F5D042] p-3 rounded-xl shadow-md w-10">
-         <img src="./assets/icons/pen.svg" alt="">
-        </div>
-         <p class="text-left mt-4 font-bold">DESIGN • CODE • SLAY</p>
-        <h3 class="text-2xl text-left font-bold text-[#F5D042] mt-6 mb-3">Website Development</h3>
-        <p class="text-gray-600 text-left text-sm leading-relaxed mb-5">
-          If your website’s still stuck in 2015, we need to talk. Modern, responsive, built to convert.
-        </p>
-        <ul class="text-sm text-left text-gray-700 space-y-1 mb-6">
-          <li>• Fast, sexy, functional builds</li>
-          <li>• User experience smoother than silk</li>
-          <li>• Designed to impress (and express)</li>
-        </ul>
-        <a href="#" class="text-[#F5D042] font-semibold hover:underline transition">GET STARTED →</a>
+    <!-- TOP ROW -->
+    <div class="flex items-start justify-between">
+      <div class="bg-[#D9C993] p-4 rounded-xl shadow-lg w-14 h-14 flex items-center justify-center">
+        <img src="./assets/icons/Vector.svg" class="w-8 h-8 object-contain" alt="icon">
       </div>
-
-      <!-- CARD 4 -->
-      <div style="border: 1PX solid #000;" class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-        <div class="bg-[#0A174E] p-3 rounded-xl shadow-md w-10">
-         <img src="./assets/icons/analytics.svg" alt="">
+      <div class="flex gap-3">
+        <div class="bg-gray-100 w-10 h-10 rounded-lg flex items-center justify-center shadow-sm hover:scale-110 hover:shadow-md hover:bg-[#F5D042]/20 transition-all duration-300">
+          <img src="./assets/icons/megaphone-small.svg" class="w-5 h-5 opacity-80" alt="">
         </div>
-         <p class="text-left mt-4 font-bold">PLAN • POSITION • PROFIT</p>
-        <h3 class="text-2xl text-left font-bold text-[#0A174E] mt-6 mb-3">Strategic Consulting</h3>
-        <p class="text-gray-600 text-left text-sm leading-relaxed mb-5">
-          We’ll tell you what’s wrong (nicely). Realistic, ROI-driven growth plans that work.
-        </p>
-        <ul class="text-sm text-left text-gray-700 space-y-1 mb-6">
-          <li>• Long-term gameplans</li>
-          <li>• Bold marketing blueprints</li>
-          <li>• Clarity & charisma</li>
-        </ul>
-        <a href="#" class="text-[#0A174E] font-semibold hover:underline transition">GET STARTED →</a>
-      </div>
-
-      <!-- CARD 5 -->
-      <div style="border: 1PX solid #000;" class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-        <div class="bg-[#F5D042] p-3 rounded-xl shadow-md w-10">
-          <img src="./assets/icons/tag-alt.svg" alt="">
+        <div class="bg-gray-100 w-10 h-10 rounded-lg flex items-center justify-center shadow-sm hover:scale-110 hover:shadow-md hover:bg-[#F5D042]/20 transition-all duration-300">
+          <img src="./assets/icons/mobile-android-alt-small.svg" class="w-5 h-5 opacity-80" alt="">
         </div>
-        <p class="text-left mt-4 font-bold">SHOOT • HOOK • CASHOUT</p>
-        <h3 class="text-2xl text-left font-bold text-[#F5D042] mt-3 mb-3">Ads Specialization</h3>
-        <p class="text-gray-600 text-left text-sm leading-relaxed mb-5">
-          Every brand runs ads. Only a few trend. Let’s make yours unforgettable.
-        </p>
-        <ul class="text-sm text-left text-gray-700 space-y-1 mb-6">
-          <li>• Ideas that slap hard</li>
-          <li>• Campaigns that have people talking</li>
-          <li>• Audiences that never forget you</li>
-        </ul>
-        <a href="#" class="text-[#F5D042] font-semibold hover:underline transition">GET STARTED →</a>
-      </div>
-
-      <!-- CARD 6 -->
-      <div style="border: 1PX solid #000;" class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-        <div class="bg-[#0A174E] p-3 rounded-xl shadow-md w-10">
-          <img src="./assets/icons/book-reader.svg" alt="">
-        </div>
-         <p class="text-left mt-4 font-bold">DEFINE • DIFFERENTIATE • DOMINATE</p>
-        <h3 class="text-2xl text-left font-bold text-[#0A174E] mt-6 mb-3">Brand Positioning</h3>
-        <p class="text-gray-600 text-left text-sm leading-relaxed mb-5">
-          We make your brand an IG/LinkedIn accent and a Lagos influencer attitude. Obsession = inevitable.
-        </p>
-        <ul class="text-sm text-left text-gray-700 space-y-1 mb-6">
-          <li>• Brand personality building</li>
-          <li>• Niche domination strategy</li>
-          <li>• Emotional connection design</li>
-        </ul>
-        <a href="#" class="text-[#0A174E] font-semibold hover:underline transition">GET STARTED →</a>
       </div>
     </div>
 
+    <p class="text-left mt-4 font-bold">TREND • TALK • TAKE OVER</p>
+    <h3 class="text-2xl font-bold text-left text-[#F5D042] mt-6 mb-3">Digital Marketing</h3>
+    <p class="text-gray-600 text-left text-lg leading-relaxed mb-5">
+      You’re not getting views because people scroll past mediocrity. We build communities that feel like a cult.
+    </p>
+    <ul class="text-sm text-left text-gray-700 space-y-2 mb-6">
+      <li class="flex items-start text-xl"><span class="text-[#D9C993] font-bold mr-2 text-4xl">•</span><span>Campaigns that slap</span></li>
+      <li class="flex items-start text-xl"><span class="text-[#D9C993] font-bold mr-2 text-4xl">•</span><span>SEO that flirts with Google</span></li>
+      <li class="flex items-start text-xl"><span class="text-[#D9C993] font-bold mr-2 text-4xl">•</span><span>Metrics you’ll brag about</span></li>
+      <li class="flex items-start text-xl"><span class="text-[#D9C993] font-bold mr-2 text-4xl">•</span><span>Digital footprints</span></li>
+    </ul>
+    <div class="text-left">
+      <a href="#" class="text-[#F5D042] font-semibold hover:underline transition">GET STARTED →</a>
+    </div>
+  </div>
+
+  <!-- CARD 2 -->
+  <div style="border: 1px solid #000;"
+    class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-[url('./assets/backgrounds/bg-svg.svg')] bg-cover bg-center">
+
+    <div class="flex items-start justify-between">
+      <div class="bg-[#506887] p-4 rounded-xl shadow-lg w-14 h-14 flex items-center justify-center">
+        <img src="./assets/icons/video.svg" class="w-8 h-8 object-contain" alt="">
+      </div>
+      <div class="flex gap-3">
+        <div class="bg-gray-100 w-10 h-10 rounded-lg flex items-center justify-center shadow-sm hover:scale-110 hover:bg-[#506887]/20 transition-all duration-300">
+          <img src="./assets/icons/video-small.svg" class="w-5 h-5 opacity-80" alt="">
+        </div>
+        <div class="bg-gray-100 w-10 h-10 rounded-lg flex items-center justify-center shadow-sm hover:scale-110 hover:bg-[#506887]/20 transition-all duration-300">
+          <img src="./assets/icons/desktop.svg" class="w-5 h-5 opacity-80" alt="">
+        </div>
+      </div>
+    </div>
+
+    <p class="text-left mt-4 font-bold">SHOOT • SCRIPT • SERVE</p>
+    <h3 class="text-2xl font-bold text-left text-[#0A174E] mt-6 mb-3">Video Production</h3>
+    <p class="text-gray-600 text-left text-lg leading-relaxed mb-5">
+      When you’re funny and unforgettable, your content becomes an absolute client magnet.
+    </p>
+    <ul class="text-sm text-left text-gray-700 space-y-2 mb-6">
+      <li class="flex items-start text-xl"><span class="text-[#506887] font-bold mr-2 text-4xl">•</span><span>Storytelling with drama</span></li>
+      <li class="flex items-start text-xl"><span class="text-[#506887] font-bold mr-2 text-4xl">•</span><span>Copy that marries conversion</span></li>
+      <li class="flex items-start text-xl"><span class="text-[#506887] font-bold mr-2 text-4xl">•</span><span>Videos with vibe</span></li>
+    </ul>
+    <div class="text-left">
+      <a href="#" class="text-[#0A174E] font-semibold hover:underline transition">GET STARTED →</a>
+    </div>
+  </div>
+
+  <!-- CARD 3 -->
+  <div style="border: 1px solid #000;"
+    class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-[url('./assets/backgrounds/bg-svg.svg')] bg-cover bg-center">
+
+    <div class="flex items-start justify-between">
+      <div class="bg-[#D9C993] p-4 rounded-xl shadow-lg w-14 h-14 flex items-center justify-center">
+        <img src="./assets/icons/pen.svg" class="w-8 h-8 object-contain" alt="">
+      </div>
+      <div class="flex gap-3">
+        <div class="bg-gray-100 w-10 h-10 rounded-lg flex items-center justify-center shadow-sm hover:scale-110 hover:bg-[#F5D042]/20 transition-all duration-300">
+          <img src="./assets/icons/illustration-small.svg" class="w-5 h-5 opacity-80" alt="">
+        </div>
+        <div class="bg-gray-100 w-10 h-10 rounded-lg flex items-center justify-center shadow-sm hover:scale-110 hover:bg-[#F5D042]/20 transition-all duration-300">
+          <img src="./assets/icons/desktop.svg" class="w-5 h-5 opacity-80" alt="">
+        </div>
+      </div>
+    </div>
+
+    <p class="text-left mt-4 font-bold">DESIGN • CODE • SLAY</p>
+    <h3 class="text-2xl font-bold text-left text-[#F5D042] mt-6 mb-3">Website Development</h3>
+    <p class="text-gray-600 text-left text-lg leading-relaxed mb-5">
+      If your website’s still stuck in 2015, we need to talk. Modern, responsive, built to convert.
+    </p>
+    <ul class="text-sm text-left text-gray-700 space-y-2 mb-6">
+      <li class="flex items-start text-xl"><span class="text-[#D9C993] font-bold mr-2 text-4xl">•</span><span>Fast, sexy, functional builds</span></li>
+      <li class="flex items-start text-xl"><span class="text-[#D9C993] font-bold mr-2 text-4xl">•</span><span>User experience smoother than silk</span></li>
+      <li class="flex items-start text-xl"><span class="text-[#D9C993] font-bold mr-2 text-4xl">•</span><span>Designed to impress (and express)</span></li>
+    </ul>
+    <div class="text-left">
+      <a href="#" class="text-[#F5D042] font-semibold hover:underline transition">GET STARTED →</a>
+    </div>
+  </div>
+
+  <!-- CARD 4 -->
+  <div style="border: 1px solid #000;"
+    class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-[url('./assets/backgrounds/bg-svg.svg')] bg-cover bg-center">
+
+    <div class="flex items-start justify-between">
+      <div class="bg-[#D9C993] p-4 rounded-xl shadow-lg w-14 h-14 flex items-center justify-center">
+        <img src="./assets/icons/analytics.svg" class="w-8 h-8 object-contain" alt="">
+      </div>
+      <div class="flex gap-3">
+        <div class="bg-gray-100 w-10 h-10 rounded-lg flex items-center justify-center shadow-sm hover:scale-110 hover:bg-[#0A174E]/20 transition-all duration-300">
+          <img src="./assets/icons/analytics-small.svg" class="w-5 h-5 opacity-80" alt="">
+        </div>
+        <div class="bg-gray-100 w-10 h-10 rounded-lg flex items-center justify-center shadow-sm hover:scale-110 hover:bg-[#0A174E]/20 transition-all duration-300">
+          <img src="./assets/icons/chart-line.svg" class="w-5 h-5 opacity-80" alt="">
+        </div>
+      </div>
+    </div>
+
+    <p class="text-left mt-4 font-bold">PLAN • POSITION • PROFIT</p>
+    <h3 class="text-2xl font-bold text-left text-[#0A174E] mt-6 mb-3">Strategic Consulting</h3>
+    <p class="text-gray-600 text-left text-lg leading-relaxed mb-5">
+      We’ll tell you what’s wrong (nicely). Realistic, ROI-driven growth plans that work.
+    </p>
+    <ul class="text-sm text-left text-gray-700 space-y-2 mb-6">
+      <li class="flex items-start text-xl"><span class="text-[#D9C993] font-bold mr-2 text-4xl">•</span><span>Long-term gameplans</span></li>
+      <li class="flex items-start text-xl"><span class="text-[#D9C993] font-bold mr-2 text-4xl">•</span><span>Bold marketing blueprints</span></li>
+      <li class="flex items-start text-xl"><span class="text-[#D9C993] font-bold mr-2 text-4xl">•</span><span>Clarity & charisma</span></li>
+    </ul>
+    <div class="text-left">
+      <a href="#" class="text-[#0A174E] font-semibold hover:underline transition">GET STARTED →</a>
+    </div>
+  </div>
+
+  <!-- CARD 5 -->
+  <div style="border: 1px solid #000;"
+    class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-[url('./assets/backgrounds/bg-svg.svg')] bg-cover bg-center">
+
+    <div class="flex items-start justify-between">
+      <div class="bg-[#506887] p-4 rounded-xl shadow-lg w-14 h-14 flex items-center justify-center">
+        <img src="./assets/icons/tag-alt.svg" class="w-8 h-8 object-contain" alt="">
+      </div>
+      <div class="flex gap-3">
+        <div class="bg-gray-100 w-10 h-10 rounded-lg flex items-center justify-center shadow-sm hover:scale-110 hover:bg-[#506887]/20 transition-all duration-300">
+          <img src="./assets/icons/tag-alt-small.svg" class="w-5 h-5 opacity-80" alt="">
+        </div>
+        <div class="bg-gray-100 w-10 h-10 rounded-lg flex items-center justify-center shadow-sm hover:scale-110 hover:bg-[#506887]/20 transition-all duration-300">
+          <img src="./assets/icons/money-bill-stack.svg" class="w-5 h-5 opacity-80" alt="">
+        </div>
+      </div>
+    </div>
+
+    <p class="text-left mt-4 font-bold">SHOOT • HOOK • CASHOUT</p>
+    <h3 class="text-2xl font-bold text-left text-[#F5D042] mt-6 mb-3">Ads Specialization</h3>
+    <p class="text-gray-600 text-left text-lg leading-relaxed mb-5">
+      Every brand runs ads. Only a few trend. Let’s make yours unforgettable.
+    </p>
+    <ul class="text-sm text-left text-gray-700 space-y-2 mb-6">
+      <li class="flex items-start text-xl"><span class="text-[#506887] font-bold mr-2 text-4xl">•</span><span>Ideas that slap hard</span></li>
+      <li class="flex items-start text-xl"><span class="text-[#506887] font-bold mr-2 text-4xl">•</span><span>Campaigns that have people talking</span></li>
+      <li class="flex items-start text-xl"><span class="text-[#506887] font-bold mr-2 text-4xl">•</span><span>Audiences that never forget you</span></li>
+    </ul>
+    <div class="text-left">
+      <a href="#" class="text-[#F5D042] font-semibold hover:underline transition">GET STARTED →</a>
+    </div>
+  </div>
+
+  <!-- CARD 6 -->
+  <div style="border: 1px solid #000;"
+    class="group relative bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-[url('./assets/backgrounds/bg-svg.svg')] bg-cover bg-center">
+
+    <div class="flex items-start justify-between">
+      <div class="bg-[#D9C993] p-4 rounded-xl shadow-lg w-14 h-14 flex items-center justify-center">
+        <img src="./assets/icons/book-reader.svg" class="w-8 h-8 object-contain" alt="">
+      </div>
+      <div class="flex gap-3">
+        <div class="bg-gray-100 w-10 h-10 rounded-lg flex items-center justify-center shadow-sm hover:scale-110 hover:bg-[#0A174E]/20 transition-all duration-300">
+          <img src="./assets/icons/book-reader-small.svg" class="w-5 h-5 opacity-80" alt="">
+        </div>
+        <div class="bg-gray-100 w-10 h-10 rounded-lg flex items-center justify-center shadow-sm hover:scale-110 hover:bg-[#0A174E]/20 transition-all duration-300">
+          <img src="./assets/icons/search-alt.svg" class="w-5 h-5 opacity-80" alt="">
+        </div>
+      </div>
+    </div>
+
+    <p class="text-left mt-4 font-bold">DEFINE • DIFFERENTIATE • DOMINATE</p>
+    <h3 class="text-2xl font-bold text-left text-[#0A174E] mt-6 mb-3">Brand Positioning</h3>
+    <p class="text-gray-600 text-left text-lg leading-relaxed mb-5">
+      We make your brand an IG/LinkedIn accent and a Lagos influencer attitude. Obsession = inevitable.
+    </p>
+    <ul class="text-sm text-left text-gray-700 space-y-2 mb-6">
+      <li class="flex items-start text-xl"><span class="text-[#D9C993] font-bold mr-2 text-4xl">•</span><span>Brand personality building</span></li>
+      <li class="flex items-start text-xl"><span class="text-[#D9C993] font-bold mr-2 text-4xl">•</span><span>Niche domination strategy</span></li>
+      <li class="flex items-start text-xl"><span class="text-[#D9C993] font-bold mr-2 text-4xl">•</span><span>Emotional connection design</span></li>
+    </ul>
+    <div class="text-left">
+      <a href="#" class="text-[#0A174E] font-semibold hover:underline transition">GET STARTED →</a>
+    </div>
+  </div>
+
+</div>
+
+
     <!-- CTA -->
     <div class="mt-16">
-      <a href="./consultation/"style="border: 1px solid #000;" class="inline-block bg-[#C3A438] text-[black] font-semibold px-10 py-4 rounded-lg hover:hover:bg-[white] transition-all duration-300 shadow-xl">
-       <i class="fa-solid fa-calendar"></i>  Book a Consultation
+      <a href="./consultation/"style="border: 1px solid #000;" class="inline-block bg-[#F0E8CD] text-[black] font-semibold px-10 py-4 rounded-lg hover:hover:bg-[white] transition-all duration-300 shadow-xl"> 
+        <div class="flex gap-3 items-center justify-center"><img src="./assets/icons/calendar.svg" alt="icon">  <span>Book a Consultation</span></div>
+       
       </a>
     </div>
   </div>
@@ -451,7 +544,7 @@
     <div>
       <!-- Label -->
       <div class="mb-4">
-        <span style="border: 1px solid #000;" class="inline-flex items-center gap-2 bg-[#C3A438] text-[black] text-sm font-medium py-1.5 px-4 rounded-lg shadow-xl">
+        <span style="border: 1px solid #000;" class="inline-flex items-center gap-2 bg-[#F0E8CD] text-[black] text-sm font-medium py-1.5 px-4 rounded-lg shadow-xl">
            <i class="fa-solid fa-book-open-reader"></i>
           Our Story
         </span>
@@ -479,12 +572,13 @@
         <li class="flex gap-3 items-center"><img src="./assets/icons/constructor.svg" alt=""> Built with Africa’s bold dreams.</li>
       </ul>
 
-      <!-- Button -->
-      <a href="./consultation/"> 
-        <button style="border: 1px solid #000;" class="inline-flex items-center gap-2 bg-[#C3A438] text-[black] hover:bg-[white] transition font-semibold py-2.5 px-5 rounded-lg shadow-lg">
-        <i class="fa fa-calendar mr-2"></i> Book a Consultation
-      </button>
+      <!-- CTA -->
+    <div class="mt-16">
+      <a href="./consultation/"style="border: 1px solid #000;" class="inline-block bg-[#F0E8CD] text-[black] font-semibold px-10 py-4 rounded-lg hover:hover:bg-[white] transition-all duration-300 shadow-xl"> 
+        <div class="flex gap-3 items-center justify-center"><img src="./assets/icons/calendar.svg" alt="icon">  <span>Book a Consultation</span></div>
+       
       </a>
+    </div>
      
     </div>
 
@@ -493,8 +587,8 @@
     <!-- Top Left -->
 <div class="relative rounded-2xl overflow-visible group">
   <!-- Floating Camera Icon Above Image -->
-  <span class="absolute -top-6 left-4 z-50 bg-[#D7BE57] text-black p-2 rounded-lg shadow-lg border border-black transform group-hover:-translate-y-1 transition-all duration-300">
-    <i class="fa-solid fa-camera-retro"></i>
+  <span class="absolute -top-6 left-4 z-50 bg-[#E1D19B] text-black p-2 rounded-lg shadow-lg transform group-hover:-translate-y-1 transition-all duration-300">
+    <img src="./assets/icons/camera-small.svg" class="w-10 h-10" alt="icon">
   </span>
 
   <!-- Image -->
@@ -520,7 +614,7 @@
       <div class="relative rounded-2xl overflow-hidden group">
         <img src="./assets/team/FLP-8967.jpg" alt="Atlas Culture" class="w-full h-64 object-cover rounded-2xl transform group-hover:scale-105 transition duration-700">
         <span class="absolute bottom-3 right-3 bg-[#0A174E] text-white p-2 rounded-lg shadow-md">
-          <i class="fa-solid fa-video"></i>
+          <img src="./assets/icons/video.svg" class="w-10 h-10" alt="icon">
         </span>
       </div>
     </div>
@@ -701,20 +795,19 @@
     </div>
   </div>
 
-    <div class="text-center mt-10">
-        <a href="./consultation/"> 
-          <button style="border: 1px solid #000;" class="px-5 py-2 rounded-lg border-2 text-sm font-semibold text-[black] hover:bg-[#C3A438] hover:border-navy transition-colors">
-           <i class="fa fa-calendar mr-2"></i> Book a Consultation
-        </button>
-
-        </a>
-      </div>
+ <!-- CTA -->
+    <div class="mt-16">
+      <a href="./consultation/"style="border: 1px solid #000;" class="inline-block bg-[#F1F1F1] text-[black] font-semibold px-5 py-4 rounded-lg hover:hover:bg-[white] transition-all duration-300 shadow-xl"> 
+        <div class="flex gap-3 items-center justify-center"><img src="./assets/icons/calendar.svg" alt="icon">  <span>Book a Consultation</span></div>
+       
+      </a>
+    </div>
 </section>
 
     <!-- TEAM SECTION -->
     <section class="mt-24 lg:mt-32 mb-20">
       <div class="text-center mb-4">
-        <button style="border: 1px solid #000;" class="px-5 py-2 rounded-lg border-2 text-sm font-semibold text-[black] hover:border-navy transition-colors">
+        <button style="border: 1px solid #000;" class="px-5 py-2 rounded-xl border-2 text-sm font-semibold bg-[#F1F1F1] text-[black] hover:border-navy transition-colors">
           Meet The Team
         </button>
       </div>
@@ -991,7 +1084,7 @@
   <section id="contact" class="bg-gray-50 py-20">
     <div class="container mx-auto">
       <div class="text-center mb-4">
-        <button class="px-5 py-2 rounded-lg border-2 border-gray-300 text-sm font-semibold brand-navy hover:border-navy transition-colors">
+        <button class="px-5 py-2 rounded-2xl border-2 border-gray-300 text-sm font-semibold brand-navy hover:border-navy transition-colors">
           Get In Touch
         </button>
       </div>
@@ -1169,7 +1262,7 @@
         <div class="lg:col-span-2">
           <div class="flex items-center gap-3 mb-4">
             <div style="background-color: #0A174E;" class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center">
-              <img src="./assets/images/atlasafrica-logo.png" alt="Atlas Africa" width="32px">
+              <img src="./assets/icons/Logo-Off-white-06.svg" alt="Atlas Africa" width="32px">
             </div>
             <div>
               <div class="font-bold text-lg">ATLAS <span class="brand-navy">AFRICA</span></div>
