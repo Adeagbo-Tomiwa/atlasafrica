@@ -1,3 +1,7 @@
+<?php 
+include "./auth_check.php"; // Protects page access
+include "./functions/db_connect.php";
+?>
 <!-- HEAD -->
 <?php include "./includes/head.php"; ?>
 
