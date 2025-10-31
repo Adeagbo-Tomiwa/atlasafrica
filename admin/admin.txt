@@ -1,0 +1,9 @@
+INSERT INTO admins (fullname, email, password, role)
+VALUES (
+  'Atlas Africa Admin',
+  'admin@atlasafrica.com',
+  '$2y$10$A1Iu/.bVgPz4Iu8Kc0c9TeZbKJvQnE3UvqLACqCUNj1lXL88ahG12',
+  'Super Admin'
+);
+
+Password123

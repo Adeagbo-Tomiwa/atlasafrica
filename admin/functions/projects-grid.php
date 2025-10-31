@@ -6,7 +6,7 @@
     <p class="text-sm text-gray-600 mb-3">Full creative direction and campaign design.</p>
     <div class="flex justify-between items-center">
       <span class="text-xs px-3 py-1 bg-blue-100 text-blue-600 rounded-full">In Progress</span>
-      <a href="#" class="text-[#D9C993] font-semibold text-sm hover:underline">View Details</a>
+      <a href="./project-details.php" class="text-[#D9C993] font-semibold text-sm hover:underline">View Details</a>
     </div>
   </div>
 </div>
